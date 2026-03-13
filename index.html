@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robert MacNaughton — Executive Coach &amp; Trusted Advisor</title>
+  <meta name="description" content="Robert MacNaughton works privately with founders, executives, and investors facing consequential decisions — where conventional strategy is no longer sufficient.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Calendly badge widget -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <script type="text/javascript">
+    window.onload = function() {
+      Calendly.initBadgeWidget({
+        url: 'https://calendly.com/macnaughton/coaching-discovery',
+        text: "Let's Talk",
+        color: '#326081',
+        textColor: '#ffffff',
+        branding: false
+      });
+    }
+  </script>
+
+  <style>
+    /* ================================================
+       DESIGN TOKENS — derived from IC Brand Guidelines
+       Colors as HSL per PDF spec
+       ================================================ */
+    :root {
+      /* Brand palette */
+      --brand:        hsl(205, 44%, 35%);   /* deep ocean blue   */
+      --brand-hover:  hsl(205, 44%, 28%);
+      --brand-mid:    hsl(205, 19%, 58%);   /* muted steel blue  */
+      --brand-light:  hsl(205, 69%, 87%);   /* sky tint          */
+
+      /* Ink scale (neutral grays per guidelines) */
+      --ink-00:  hsl(0, 0%, 10%);
+      --ink-dark: hsl(0, 0%, 15%);          /* L15               */
+      --ink-mid:  hsl(0, 0%, 35%);          /* L35               */
+      --ink-muted: hsl(0, 0%, 48%);
+      --ink-light: hsl(0, 0%, 60%);
+      --ink-faint: hsl(0, 0%, 68%);         /* near L65          */
+
+      /* Surfaces */
+      --bg:       #F5F3EE;
+      --surface:  #FBFAF7;
+      --rule:     #E0DBCF;
+
+      /* Spacing scale */
+      --s-xs:  8px;
+      --s-sm:  16px;
+      --s-md:  32px;
+      --s-lg:  64px;
+      --s-xl:  96px;
+      --s-2xl: 140px;
+
+      /* Typography */
+      --f-display: 'Cormorant Garamond', 'Athelas', Georgia, serif;
+      --f-label:   'Raleway', system-ui, sans-serif;
+      --f-body:    'Athelas', Georgia, 'Times New Roman', serif;
+    }
+
+    /* ================================================
+       RESET
+       ================================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img { display: block; max-width: 100%; }
+    a   { color: inherit; text-decoration: none; }
+
+    /* ================================================
+       FILM GRAIN OVERLAY
+       ================================================ */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.28;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* ================================================
+       BASE
+       ================================================ */
+    body {
+      background: var(--bg);
+      color: var(--ink-dark);
+      font-family: var(--f-body);
+      line-height: 1.7;
+    }
+
+    .wrap {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 0 56px;
+    }
+
+    /* Shared label style */
+    .label {
+      font-family: var(--f-label);
+      font-size: 0.5625rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--brand);
+    }
+
+    /* Section title row with extending rule */
+    .s-head {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 56px;
+    }
+    .s-head-rule {
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    /* ================================================
+       NAVIGATION
+       ================================================ */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      padding: 22px 0;
+      transition: box-shadow 0.35s ease;
+    }
+    nav.scrolled {
+      box-shadow: 0 1px 0 var(--rule);
+    }
+    .nav-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-name {
+      font-family: var(--f-display);
+      font-size: 1.3125rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--ink-dark);
+      transition: color 0.2s ease;
+    }
+    .nav-name:hover { color: var(--brand); }
+
+    .nav-cta {
+      font-family: var(--f-label);
+      font-size: 0.5625rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 3px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .nav-cta:hover {
+      color: var(--brand);
+      border-color: var(--brand);
+    }
+
+    /* ================================================
+       HERO
+       ================================================ */
+    .hero {
+      display: grid;
+      grid-template-columns: 54% 46%;
+      min-height: calc(100vh - 65px);
+      overflow: hidden;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: var(--s-xl) var(--s-lg) var(--s-xl) 56px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--f-label);
+      font-size: 0.5625rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 36px;
+
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeUp 0.7s ease 0.15s forwards;
+    }
+
+    .hero-h1 {
+      font-family: var(--f-display);
+      font-size: clamp(3rem, 5.25vw, 5.75rem);
+      font-weight: 300;
+      line-height: 1.04;
+      letter-spacing: -0.025em;
+      color: var(--ink-dark);
+      margin-bottom: 40px;
+
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.85s ease 0.28s forwards;
+    }
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--brand);
+    }
+
+    .hero-sub {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--ink-muted);
+      max-width: 460px;
+      margin-bottom: 52px;
+
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeUp 0.75s ease 0.44s forwards;
+    }
+
+    .hero-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--f-label);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--brand);
+      border-bottom: 1px solid var(--brand);
+      padding-bottom: 5px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+
+      opacity: 0;
+      animation: fadeIn 0.7s ease 0.6s forwards;
+    }
+    .hero-link:hover {
+      color: var(--brand-hover);
+      border-color: var(--brand-hover);
+    }
+    .hero-link::after {
+      content: '→';
+      font-family: sans-serif;
+      font-weight: 300;
+      font-size: 1rem;
+      letter-spacing: 0;
+      transition: transform 0.2s ease;
+    }
+    .hero-link:hover::after {
+      transform: translateX(4px);
+    }
+
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 38% top;
+      filter: sepia(7%) saturate(86%) brightness(101%);
+    }
+    /* Left-edge fade: photo dissolves into page background */
+    .hero-right::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, var(--bg) 0%, transparent 36%);
+      z-index: 1;
+    }
+
+    /* ================================================
+       CREDENTIALS
+       ================================================ */
+    .creds {
+      background: var(--surface);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 52px 0;
+    }
+    .creds-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .cred {
+      padding: 0 44px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .cred:first-child {
+      padding-left: 0;
+    }
+    .cred + .cred {
+      border-left: 1px solid var(--rule);
+    }
+    .cred-num {
+      font-family: var(--f-display);
+      font-size: 3.125rem;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--brand);
+    }
+    .cred-tag {
+      font-family: var(--f-label);
+      font-size: 0.5rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      line-height: 1.6;
+    }
+
+    /* ================================================
+       POSITIONING STATEMENT
+       ================================================ */
+    .position {
+      padding: var(--s-lg) 0 var(--s-2xl);
+    }
+    .position-grid {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 88px;
+      align-items: start;
+    }
+    .position-sidebar {
+      padding-top: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .position-sidebar-rule {
+      width: 28px;
+      height: 1px;
+      background: var(--brand);
+    }
+    .position-quote {
+      font-family: var(--f-display);
+      font-size: clamp(1.5rem, 2.4vw, 2.375rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+      color: var(--ink-dark);
+      margin-bottom: 32px;
+    }
+    .position-body {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--ink-muted);
+    }
+    .position-body + .position-body {
+      margin-top: 16px;
+    }
+
+    /* ================================================
+       WORK OFFERINGS
+       ================================================ */
+    .work {
+      border-top: 1px solid var(--rule);
+      padding: var(--s-lg) 0 var(--s-2xl);
+    }
+    .work-items {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+    }
+    .work-item {
+      background: var(--bg);
+      padding: 48px 40px 56px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      border-top: 2px solid transparent;
+      transition: background 0.25s ease, border-color 0.25s ease;
+    }
+    .work-item:hover {
+      background: var(--surface);
+      border-top-color: var(--brand);
+    }
+
+    .work-n {
+      font-family: var(--f-display);
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--brand);
+      letter-spacing: 0.06em;
+    }
+    .work-title {
+      font-family: var(--f-display);
+      font-size: 1.625rem;
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--ink-dark);
+    }
+    .work-desc {
+      font-size: 0.9375rem;
+      line-height: 1.78;
+      color: var(--ink-muted);
+    }
+
+    /* ================================================
+       TESTIMONIALS
+       ================================================ */
+    .testimonials {
+      background: var(--surface);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: var(--s-2xl) 0;
+    }
+    .t-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 52px;
+      align-items: start;
+    }
+    .t-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .t-mark {
+      font-family: var(--f-display);
+      font-size: 4rem;
+      font-weight: 300;
+      line-height: 0.8;
+      color: var(--brand);
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .t-text {
+      font-family: var(--f-display);
+      font-size: 1.125rem;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.65;
+      color: var(--ink-dark);
+      flex: 1;
+      margin-bottom: 28px;
+    }
+    .t-rule {
+      height: 1px;
+      background: var(--rule);
+      margin-bottom: 18px;
+    }
+    .t-name {
+      font-family: var(--f-label);
+      font-size: 0.5625rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-dark);
+    }
+    .t-role {
+      font-family: var(--f-label);
+      font-size: 0.5rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-top: 5px;
+      line-height: 1.7;
+    }
+
+    /* ================================================
+       CLIENT LOGOS MARQUEE
+       ================================================ */
+    .clients {
+      padding: var(--s-md) 0 0;
+    }
+    .clients-marquee {
+      position: relative;
+      overflow: hidden;
+      padding: 20px 0 var(--s-md);
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+    @keyframes marquee-scroll-right {
+      from { transform: translateX(-50%); }
+      to   { transform: translateX(0); }
+    }
+    .clients-track.clients-track--reverse {
+      animation-name: marquee-scroll-right;
+    }
+    /* Fade masks on both edges */
+    .clients-marquee::before,
+    .clients-marquee::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 180px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .clients-marquee::before {
+      left: 0;
+      background: linear-gradient(90deg, var(--bg) 0%, transparent 100%);
+    }
+    .clients-marquee::after {
+      right: 0;
+      background: linear-gradient(-90deg, var(--bg) 0%, transparent 100%);
+    }
+    .clients-track {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      width: max-content;
+      animation: marquee-scroll 70s linear infinite;
+    }
+    .clients-marquee:hover .clients-track {
+      animation-play-state: paused;
+    }
+    @keyframes marquee-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .client-logo {
+      flex-shrink: 0;
+      height: 28px;
+      max-width: 120px;
+      object-fit: contain;
+      filter: grayscale(100%) opacity(0.45);
+      mix-blend-mode: multiply;
+      transition: filter 0.3s ease;
+    }
+    .client-logo:hover {
+      filter: grayscale(100%) opacity(0.85);
+    }
+
+    /* ================================================
+       ABOUT
+       ================================================ */
+    .about {
+      border-top: 1px solid var(--rule);
+      padding: var(--s-2xl) 0;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 460px;
+      gap: 88px;
+      align-items: center;
+    }
+    .about-text {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .about-h2 {
+      font-family: var(--f-display);
+      font-size: clamp(1.75rem, 2.75vw, 2.625rem);
+      font-weight: 300;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+      color: var(--ink-dark);
+    }
+    .about-p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--ink-muted);
+    }
+    .about-portrait {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+    .about-portrait img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center top;
+      filter: sepia(5%) saturate(82%) brightness(103%);
+      transition: transform 0.65s ease;
+    }
+    .about-portrait:hover img {
+      transform: scale(1.025);
+    }
+    /* Subtle brand-tinted vignette */
+    .about-portrait::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top,
+        hsla(205, 44%, 35%, 0.1) 0%,
+        transparent 45%
+      );
+      pointer-events: none;
+    }
+
+    /* ================================================
+       CONTACT
+       ================================================ */
+    .contact {
+      border-top: 1px solid var(--rule);
+      padding: var(--s-2xl) 0;
+      text-align: center;
+    }
+    .contact-eyebrow {
+      display: inline-block;
+      margin-bottom: 32px;
+    }
+    .contact-h2 {
+      font-family: var(--f-display);
+      font-size: clamp(2.25rem, 4vw, 3.875rem);
+      font-weight: 300;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+      color: var(--ink-dark);
+      margin-bottom: 24px;
+    }
+    .contact-body {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--ink-muted);
+      max-width: 400px;
+      margin: 0 auto 52px;
+    }
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--f-label);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--brand);
+      padding: 18px 40px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+    .contact-btn:hover {
+      background: var(--brand-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Calendly badge — match brand typography */
+    .calendly-badge-widget .calendly-badge-content {
+      font-family: var(--f-label) !important;
+      font-size: 0.625rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.16em !important;
+      text-transform: uppercase !important;
+      border-radius: 0 !important;
+    }
+    .contact-btn:active {
+      transform: translateY(0);
+    }
+    .contact-btn:focus-visible {
+      outline: 2px solid var(--brand);
+      outline-offset: 3px;
+    }
+    .contact-btn::after {
+      content: '→';
+      font-family: sans-serif;
+      font-weight: 300;
+      font-size: 1rem;
+      letter-spacing: 0;
+      transition: transform 0.2s ease;
+    }
+    .contact-btn:hover::after {
+      transform: translateX(4px);
+    }
+
+    /* ================================================
+       FOOTER
+       ================================================ */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 28px 0;
+    }
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-copy,
+    .footer-link {
+      font-family: var(--f-label);
+      font-size: 0.5rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+    .footer-link {
+      border-bottom: 1px solid transparent;
+      padding-bottom: 1px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .footer-link:hover {
+      color: var(--ink-mid);
+      border-color: var(--ink-mid);
+    }
+
+    /* ================================================
+       SCROLL REVEAL
+       ================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .d1 { transition-delay: 0.1s; }
+    .d2 { transition-delay: 0.2s; }
+    .d3 { transition-delay: 0.3s; }
+    .d4 { transition-delay: 0.4s; }
+
+    /* ================================================
+       KEYFRAMES
+       ================================================ */
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* ================================================
+       RESPONSIVE
+       ================================================ */
+    @media (max-width: 1100px) {
+      .wrap { padding: 0 40px; }
+      .hero-left { padding: 72px 48px 72px 40px; }
+      .position-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-grid { grid-template-columns: 1fr; gap: 56px; }
+      .about-portrait img { aspect-ratio: 4 / 3; }
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-right { height: 62vw; order: -1; }
+      .hero-right::before {
+        background: linear-gradient(to top, var(--bg) 0%, transparent 45%);
+      }
+      .hero-left { padding: 52px 40px 64px; }
+      .creds-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 0; }
+      .cred + .cred { border-left: none; }
+      .cred:nth-child(2n+1) { padding-left: 0; border-right: 1px solid var(--rule); }
+      .cred:nth-child(2n)   { padding-right: 0; }
+      .cred:nth-child(n+3)  { padding-top: 28px; border-top: 1px solid var(--rule); }
+      .work-items { grid-template-columns: 1fr; }
+      .t-grid { grid-template-columns: 1fr; gap: 40px; }
+
+    }
+
+    @media (max-width: 640px) {
+      .wrap { padding: 0 24px; }
+
+      .footer-row { flex-direction: column; gap: 16px; text-align: center; }
+      .about-portrait img { aspect-ratio: 4 / 3; }
+      :root {
+        --s-xl: 64px;
+        --s-2xl: 88px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====================================================
+       NAVIGATION
+       ==================================================== -->
+  <nav id="nav">
+    <div class="wrap">
+      <div class="nav-row">
+        <a href="/" class="nav-name">Robert MacNaughton</a>
+        <a href="https://calendly.com/macnaughton/coaching-discovery" target="_blank" rel="noopener noreferrer" class="nav-cta">Get in Touch</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ====================================================
+       HERO
+       ==================================================== -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Executive Coach &nbsp;·&nbsp; Trusted Advisor</p>
+
+      <h1 class="hero-h1">
+        Clarity for<br>
+        <em>decisions that<br>
+        can't be made<br>
+        from templates.</em>
+      </h1>
+
+      <p class="hero-sub">
+        I work with founders, executives, and leaders operating at real leverage —
+        helping them think clearly, make the hard calls, have the conversations
+        they've been avoiding, and build something they're proud of.
+      </p>
+
+      <a href="https://calendly.com/macnaughton/coaching-discovery" target="_blank" rel="noopener noreferrer" class="hero-link">Get in touch</a>
+    </div>
+
+    <div class="hero-right">
+      <img
+        src="brand_assets/Headhost_2023.png"
+        alt="Robert MacNaughton"
+        loading="eager"
+      >
+    </div>
+  </section>
+
+
+  <!-- ====================================================
+       CREDENTIALS
+       ==================================================== -->
+  <div class="creds">
+    <div class="wrap">
+      <div class="creds-grid">
+
+        <div class="cred reveal">
+          <span class="cred-num">5,000+</span>
+          <span class="cred-tag">Hours of 1:1 paid<br>coaching sessions</span>
+        </div>
+
+        <div class="cred reveal d1">
+          <span class="cred-num">100+</span>
+          <span class="cred-tag">In-person group sessions<br>facilitated</span>
+        </div>
+
+        <div class="cred reveal d2">
+          <span class="cred-num" style="font-size: 2.25rem;">36+<br><span style="font-size: 1.25rem; letter-spacing: 0; font-weight: 400;">months</span></span>
+          <span class="cred-tag">Average client<br>relationship</span>
+        </div>
+
+        <div class="cred reveal d3">
+          <span class="cred-num">20+</span>
+          <span class="cred-tag">Years at the intersection of<br>leadership &amp; human development</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ====================================================
+       CLIENT LOGOS
+       ==================================================== -->
+  <section class="clients">
+    <div class="wrap">
+      <div class="s-head reveal">
+        <span class="label">Worked with executives at</span>
+        <div class="s-head-rule"></div>
+      </div>
+    </div>
+
+    <div class="clients-marquee">
+      <!-- Row 1 → scrolls left -->
+      <div class="clients-track">
+        <img class="client-logo" src="brand_assets/client-logos/instacart-logo-brandlogos.net_.png" alt="Instacart">
+        <img class="client-logo" src="brand_assets/client-logos/IVP_Logo.svg" alt="IVP">
+        <img class="client-logo" src="brand_assets/client-logos/diligent-transparent.webp" alt="Diligent Robotics">
+        <img class="client-logo" src="brand_assets/client-logos/ophelia.png" alt="Ophelia">
+        <img class="client-logo" src="brand_assets/client-logos/ActBlue_logo.png" alt="ActBlue">
+        <img class="client-logo" src="brand_assets/client-logos/formic-removebg-preview.png" alt="Formic">
+        <img class="client-logo" src="brand_assets/client-logos/co-star.png" alt="Co–Star">
+        <img class="client-logo" src="brand_assets/client-logos/boompop-removebg-preview.png" alt="BoomPop">
+        <img class="client-logo" src="brand_assets/client-logos/Pg_Logo_Primary_Black.png" alt="PolicyGenius">
+        <img class="client-logo" src="brand_assets/client-logos/weatherstream-removebg-preview.png" alt="WeatherStream">
+        <img class="client-logo" src="brand_assets/client-logos/Antelope-logo-1.png" alt="Antelope Recovery">
+        <img class="client-logo" src="brand_assets/client-logos/Dandy_Logo-removebg-preview.png" alt="Dandy">
+        <img class="client-logo" src="brand_assets/client-logos/fi-removebg-preview.png" alt="Fi">
+        <img class="client-logo" src="brand_assets/client-logos/urbit-logo.png" alt="Urbit">
+        <img class="client-logo" src="brand_assets/client-logos/Oden_Tech_Logo_full-black.webp" alt="Oden Tech">
+        <!-- duplicate -->
+        <img class="client-logo" src="brand_assets/client-logos/instacart-logo-brandlogos.net_.png" alt="Instacart">
+        <img class="client-logo" src="brand_assets/client-logos/IVP_Logo.svg" alt="IVP">
+        <img class="client-logo" src="brand_assets/client-logos/diligent-transparent.webp" alt="Diligent Robotics">
+        <img class="client-logo" src="brand_assets/client-logos/ophelia.png" alt="Ophelia">
+        <img class="client-logo" src="brand_assets/client-logos/ActBlue_logo.png" alt="ActBlue">
+        <img class="client-logo" src="brand_assets/client-logos/formic-removebg-preview.png" alt="Formic">
+        <img class="client-logo" src="brand_assets/client-logos/co-star.png" alt="Co–Star">
+        <img class="client-logo" src="brand_assets/client-logos/boompop-removebg-preview.png" alt="BoomPop">
+        <img class="client-logo" src="brand_assets/client-logos/Pg_Logo_Primary_Black.png" alt="PolicyGenius">
+        <img class="client-logo" src="brand_assets/client-logos/weatherstream-removebg-preview.png" alt="WeatherStream">
+        <img class="client-logo" src="brand_assets/client-logos/Antelope-logo-1.png" alt="Antelope Recovery">
+        <img class="client-logo" src="brand_assets/client-logos/Dandy_Logo-removebg-preview.png" alt="Dandy">
+        <img class="client-logo" src="brand_assets/client-logos/fi-removebg-preview.png" alt="Fi">
+        <img class="client-logo" src="brand_assets/client-logos/urbit-logo.png" alt="Urbit">
+        <img class="client-logo" src="brand_assets/client-logos/Oden_Tech_Logo_full-black.webp" alt="Oden Tech">
+      </div>
+      <!-- Row 2 → scrolls right, different logos -->
+      <div class="clients-track clients-track--reverse">
+        <img class="client-logo" src="brand_assets/client-logos/adonis.png" alt="Adonis">
+        <img class="client-logo" src="brand_assets/client-logos/ares.png" alt="Ares">
+        <img class="client-logo" src="brand_assets/client-logos/foria.png" alt="Foria">
+        <img class="client-logo" src="brand_assets/client-logos/harperwilde.png" alt="Harper Wilde">
+        <img class="client-logo" src="brand_assets/client-logos/Olio_Labs__Logo-removebg-preview.png" alt="Olio Labs">
+        <img class="client-logo" src="brand_assets/client-logos/png-clipart-logo-kickstarter-product-design-font-minion-lens-text.png" alt="Kickstarter">
+        <img class="client-logo" src="brand_assets/client-logos/TrustCB-Logo-Png.webp" alt="TrustCB">
+        <img class="client-logo" src="brand_assets/client-logos/reyou.svg" alt="ReYou" style="filter: invert(1) grayscale(100%) opacity(0.45);">
+        <img class="client-logo" src="brand_assets/client-logos/picknik-logo_dark.png" alt="PickNik">
+        <img class="client-logo" src="brand_assets/client-logos/Strata-Logo-1200x1200-1.png" alt="Strata">
+        <img class="client-logo" src="brand_assets/client-logos/argonaut-inc-logo-vector-removebg-preview.png" alt="Argonaut">
+        <img class="client-logo" src="brand_assets/client-logos/brighteventrentalslogohero_0-removebg-preview.png" alt="Bright Event Rentals">
+        <img class="client-logo" src="brand_assets/client-logos/scroll-removebg-preview.png" alt="Scroll">
+        <img class="client-logo" src="brand_assets/client-logos/TMG_Logo.webp" alt="The Moresby Group">
+        <img class="client-logo" src="brand_assets/client-logos/Transformation_Capital_Logo-removebg-preview.png" alt="Transformation Capital">
+        <img class="client-logo" src="brand_assets/client-logos/Weave-AI.png" alt="Weave AI">
+        <!-- duplicate -->
+        <img class="client-logo" src="brand_assets/client-logos/adonis.png" alt="Adonis">
+        <img class="client-logo" src="brand_assets/client-logos/ares.png" alt="Ares">
+        <img class="client-logo" src="brand_assets/client-logos/foria.png" alt="Foria">
+        <img class="client-logo" src="brand_assets/client-logos/harperwilde.png" alt="Harper Wilde">
+        <img class="client-logo" src="brand_assets/client-logos/Olio_Labs__Logo-removebg-preview.png" alt="Olio Labs">
+        <img class="client-logo" src="brand_assets/client-logos/png-clipart-logo-kickstarter-product-design-font-minion-lens-text.png" alt="Kickstarter">
+        <img class="client-logo" src="brand_assets/client-logos/TrustCB-Logo-Png.webp" alt="TrustCB">
+        <img class="client-logo" src="brand_assets/client-logos/reyou.svg" alt="ReYou" style="filter: invert(1) grayscale(100%) opacity(0.45);">
+        <img class="client-logo" src="brand_assets/client-logos/picknik-logo_dark.png" alt="PickNik">
+        <img class="client-logo" src="brand_assets/client-logos/Strata-Logo-1200x1200-1.png" alt="Strata">
+        <img class="client-logo" src="brand_assets/client-logos/argonaut-inc-logo-vector-removebg-preview.png" alt="Argonaut">
+        <img class="client-logo" src="brand_assets/client-logos/brighteventrentalslogohero_0-removebg-preview.png" alt="Bright Event Rentals">
+        <img class="client-logo" src="brand_assets/client-logos/scroll-removebg-preview.png" alt="Scroll">
+        <img class="client-logo" src="brand_assets/client-logos/TMG_Logo.webp" alt="The Moresby Group">
+        <img class="client-logo" src="brand_assets/client-logos/Transformation_Capital_Logo-removebg-preview.png" alt="Transformation Capital">
+        <img class="client-logo" src="brand_assets/client-logos/Weave-AI.png" alt="Weave AI">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====================================================
+       POSITIONING STATEMENT
+       ==================================================== -->
+  <section class="position">
+    <div class="wrap">
+      <div class="position-grid">
+
+        <div class="position-sidebar">
+          <span class="label">The Work</span>
+          <div class="position-sidebar-rule"></div>
+        </div>
+
+        <div class="reveal">
+          <p class="position-quote">
+            "The most expensive thing in your life is the conversation you're avoiding."
+          </p>
+          <p class="position-body">
+            I've watched capable leaders spend months — sometimes years — circling
+            something they needed to say. To a co-founder, a direct report, an investor.
+            Sometimes to themselves. Every week it doesn't happen, the cost compounds:
+            the team senses the avoidance, the culture absorbs the ambiguity, the
+            decision calcifies in the wrong direction. When the conversation finally
+            happens, it almost always goes better than they feared. That's what happens
+            when you set it up right.
+          </p>
+          <p class="position-body">
+            That's where most of the real work lives. Not in strategy decks or
+            frameworks — in the things people are circling and haven't yet said.
+            I help leaders see those things clearly, and then do something about them.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====================================================
+       WORK OFFERINGS
+       ==================================================== -->
+  <section class="work">
+    <div class="wrap">
+
+      <div class="s-head">
+        <span class="label">What I Offer</span>
+        <div class="s-head-rule"></div>
+      </div>
+
+      <div class="work-items">
+
+        <div class="work-item reveal">
+          <span class="work-n">01</span>
+          <h3 class="work-title">Executive Coaching</h3>
+          <p class="work-desc">
+            One-on-one, ongoing work with founders, executives, and leaders under
+            real pressure. Early on, that might mean helping draft the email you've
+            been sitting on for two weeks, auditing your calendar, or working through
+            a co-founder dynamic that's quietly draining the company. As trust builds,
+            the work goes deeper — into the beliefs and patterns that are actually
+            running the show. Strategic clarity, difficult conversations, high-stakes
+            decisions, and whatever is driving the stress. Even when that's personal.
+          </p>
+        </div>
+
+        <div class="work-item reveal d1">
+          <span class="work-n">02</span>
+          <h3 class="work-title">Leadership Offsites &amp; Strategic Conversations</h3>
+          <p class="work-desc">
+            Facilitated sessions for executive teams, co-founders, and boards.
+            Strategy, alignment, relational repair, and organizational design. The
+            most important work is often naming what's been unspoken — and creating
+            a container where that's possible. What gets said in a well-run offsite
+            usually couldn't surface any other way.
+          </p>
+        </div>
+
+        <div class="work-item reveal d2">
+          <span class="work-n">03</span>
+          <h3 class="work-title">Strategic Advisory</h3>
+          <p class="work-desc">
+            Direct advisory for leaders navigating consequential decisions: acquisitions,
+            exits, fundraising, AI adoption, organizational restructuring, long-term
+            positioning. Thinking partner, not engagement manager. Fast, direct,
+            non-bureaucratic.
+          </p>
+        </div>
+
+        <div class="work-item reveal d3">
+          <span class="work-n">04</span>
+          <h3 class="work-title">Curated Gatherings</h3>
+          <p class="work-desc">
+            Invite-only salons and dinners for leaders who want to think in good
+            company. Not networking events. Protected spaces where serious people
+            can speak honestly about what they're actually navigating — technology,
+            responsibility, power, and what it means to lead well right now.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====================================================
+       TESTIMONIALS
+       ==================================================== -->
+  <section class="testimonials">
+    <div class="wrap">
+
+      <div class="s-head">
+        <span class="label">What Clients Say</span>
+        <div class="s-head-rule"></div>
+      </div>
+
+      <div class="t-grid">
+
+        <div class="t-item reveal">
+          <div class="t-mark">&ldquo;</div>
+          <p class="t-text">
+            Robert has an uncommon ability to apply a systems view to organizational
+            challenges. He helps leaders not only identify immediate leverage points,
+            but also understand the broader patterns at play. His approach is creative,
+            pragmatic, and rooted in a deep commitment to clarity and alignment.
+          </p>
+          <div class="t-rule"></div>
+          <div class="t-name">Casey Capshaw</div>
+          <div class="t-role">Chief People Officer &nbsp;·&nbsp; SaaS Operations</div>
+        </div>
+
+        <div class="t-item reveal d1">
+          <div class="t-mark">&ldquo;</div>
+          <p class="t-text">
+            He has a different way of looking at situations based on his vast experience
+            working with executives — there have been no situations I have presented
+            to him that he couldn't help me think through and address.
+          </p>
+          <div class="t-rule"></div>
+          <div class="t-name">Ellen Terchila</div>
+          <div class="t-role">Chief Customer Officer &nbsp;·&nbsp; OneSource Virtual</div>
+        </div>
+
+        <div class="t-item reveal d2">
+          <div class="t-mark">&ldquo;</div>
+          <p class="t-text">
+            The methodology we used has provided the structure and accountability I
+            needed to bring some of my weakest leadership qualities up to A+ in just
+            a few months. I highly recommend Robert to anyone in search of a grounded,
+            professional, yet engaging and dynamic guide.
+          </p>
+          <div class="t-rule"></div>
+          <div class="t-name">David Champion</div>
+          <div class="t-role">Exited Entrepreneur &nbsp;·&nbsp; CPO &nbsp;·&nbsp; FinTech &amp; SaaS Advisor</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====================================================
+       ABOUT
+       ==================================================== -->
+  <section class="about">
+    <div class="wrap">
+      <div class="about-grid">
+
+        <div class="about-text reveal">
+          <span class="label">About</span>
+          <h2 class="about-h2">
+            Working privately with leaders<br>who carry real stakes.
+          </h2>
+          <p class="about-p">
+            I studied electrical engineering and music — an odd pairing that still
+            describes how I think. Systems and signal. Pattern and noise. What's
+            actually happening beneath what's being said. I've spent 20 years applying
+            that to how people build, lead, and make decisions under real pressure.
+          </p>
+          <p class="about-p">
+            I founded The Integral Center, a leadership development organization built
+            in collaboration with philosopher Ken Wilber — 100+ contractors, 25+ cities
+            at its peak. I was a Senior Partner at NeubergGore. I co-founded Antelope
+            Recovery. I've been in rooms where acquisitions were negotiated, co-founder
+            relationships broke, and leaders made decisions they'd carry for the rest
+            of their careers. I'm not advising from the sideline.
+          </p>
+          <p class="about-p">
+            My clients include startup founders, executives, investors, post-exit
+            founders, AI engineers, and political leaders. The through-line is high
+            stakes and the self-awareness to know that doing it alone isn't working
+            anymore. Clients who would never sit with a therapist do significant
+            developmental work in our sessions — because the container is leadership,
+            and that earns a different kind of access.
+          </p>
+          <a
+            href="https://calendly.com/macnaughton/coaching-discovery"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-btn"
+            style="margin-top: var(--s-sm); align-self: flex-start;"
+          >Check Robert's Availability</a>
+        </div>
+
+        <div class="about-portrait reveal d1">
+          <img
+            src="brand_assets/Robert-MacNaughton-Antelope-headshot.jpg"
+            alt="Robert MacNaughton"
+          >
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====================================================
+       CTA
+       ==================================================== -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2 class="contact-h2">Let me know when you're ready to talk.</h2>
+      <a
+        href="https://calendly.com/macnaughton/coaching-discovery"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-btn"
+      >Schedule a Conversation</a>
+    </div>
+  </section>
+
+
+  <!-- ====================================================
+       FOOTER
+       ==================================================== -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-row">
+        <span class="footer-copy">&copy; 2026 Robert MacNaughton</span>
+        <a
+          href="https://www.linkedin.com/in/robertmacnaughton/"
+          class="footer-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ====================================================
+       JAVASCRIPT
+       ==================================================== -->
+  <script>
+    (function () {
+      // Sticky nav shadow on scroll
+      var nav = document.getElementById('nav');
+      window.addEventListener('scroll', function () {
+        nav.classList.toggle('scrolled', window.scrollY > 8);
+      }, { passive: true });
+
+      // Scroll-triggered reveal
+      var revealEls = document.querySelectorAll('.reveal');
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+
+      revealEls.forEach(function (el) { obs.observe(el); });
+    })();
+  </script>
+
+</body>
+</html>
