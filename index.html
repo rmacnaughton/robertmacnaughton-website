@@ -381,6 +381,41 @@
     .position-body + .position-body {
       margin-top: 16px;
     }
+    .position-quad {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-top: var(--s-lg);
+      border-top: 1px solid var(--rule);
+      border-left: 1px solid var(--rule);
+    }
+    .position-quad-item {
+      padding: 44px 48px;
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .position-quad-axis {
+      display: block;
+      font-family: var(--f-label);
+      font-size: 0.4375rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brand-mid);
+      margin-bottom: 14px;
+      opacity: 0.7;
+    }
+    .position-quad-h {
+      font-family: var(--f-display);
+      font-size: clamp(1.25rem, 1.6vw, 1.625rem);
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+    .position-quad-body {
+      font-size: 0.9375rem;
+      line-height: 1.8;
+      color: var(--ink-muted);
+    }
 
     /* ================================================
        WORK OFFERINGS
@@ -786,6 +821,9 @@
 
     @media (max-width: 640px) {
       .wrap { padding: 0 24px; }
+      .position-quad { grid-template-columns: 1fr; border-left: none; }
+      .position-quad-item { padding: 32px 0; border-right: none; }
+      .position-quad-item:last-child { border-bottom: none; }
 
       .footer-row { flex-direction: column; gap: 16px; text-align: center; }
       .about-portrait img { aspect-ratio: 4 / 3; }
@@ -988,9 +1026,58 @@
             when you set it up right.
           </p>
           <p class="position-body">
-            That's where most of the real work lives. Not in strategy decks or
-            frameworks — in the things people are circling and haven't yet said.
-            I help leaders see those things clearly, and then do something about them.
+            That's where most of the leverage lives. But it doesn't end there.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="position-quad">
+
+        <div class="position-quad-item reveal">
+          <span class="position-quad-axis">Individual &nbsp;·&nbsp; Interior</span>
+          <h4 class="position-quad-h">Your Inner State</h4>
+          <p class="position-quad-body">
+            Most problems arrive dressed as strategy. Underneath: binary thinking
+            that's collapsed real complexity into false choices, or a nervous system
+            that's been running hot for months, or shame that makes everything feel
+            urgent. We start here — not because it's therapy, but because clear
+            thinking requires a regulated state.
+          </p>
+        </div>
+
+        <div class="position-quad-item reveal d1">
+          <span class="position-quad-axis">Individual &nbsp;·&nbsp; Exterior</span>
+          <h4 class="position-quad-h">What You Take Away</h4>
+          <p class="position-quad-body">
+            Most sessions end with something built. A script for the conversation
+            you've been dreading. A decision rule. A 30/60/90. The email you've
+            been avoiding for two weeks — sent, while I watch. I respond to
+            ambiguity with lightweight scaffolding you can use immediately, not
+            more abstraction.
+          </p>
+        </div>
+
+        <div class="position-quad-item reveal d2">
+          <span class="position-quad-axis">Collective &nbsp;·&nbsp; Interior</span>
+          <h4 class="position-quad-h">Your Relationships</h4>
+          <p class="position-quad-body">
+            The co-founder dynamic you're managing around. The direct report
+            you've rescheduled three times. The investor relationship nobody's
+            naming clearly. More than half of the work is strategizing these
+            conversations — what to say, how to open, where the invisible dynamics
+            are, and how to set it up so it actually goes well.
+          </p>
+        </div>
+
+        <div class="position-quad-item reveal d3">
+          <span class="position-quad-axis">Collective &nbsp;·&nbsp; Exterior</span>
+          <h4 class="position-quad-h">Your Systems</h4>
+          <p class="position-quad-body">
+            Role clarity. Decision rights. Meeting cadence. The organizational
+            design questions that keep showing up as people problems. Sequence
+            before you scale. A memo and a weekly review will consistently
+            outperform a sophisticated tool with low adoption.
           </p>
         </div>
 
