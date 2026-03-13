@@ -769,9 +769,9 @@
 
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-right { height: 62vw; order: -1; }
+      .hero-right { height: 72vw; }
       .hero-right::before {
-        background: linear-gradient(to top, var(--bg) 0%, transparent 45%);
+        background: linear-gradient(to bottom, var(--bg) 0%, transparent 35%), linear-gradient(to top, var(--bg) 0%, transparent 35%);
       }
       .hero-left { padding: 52px 40px 64px; }
       .creds-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 0; }
