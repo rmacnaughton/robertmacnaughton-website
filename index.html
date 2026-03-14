@@ -381,17 +381,95 @@
     .position-body + .position-body {
       margin-top: 16px;
     }
+    .position-quad-outer {
+      display: grid;
+      grid-template-columns: 28px 1fr 28px;
+      grid-template-rows: auto 1fr auto;
+      margin-top: var(--s-lg);
+      align-items: center;
+    }
+    .pq-axis {
+      font-family: var(--f-label);
+      font-size: 0.625rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--brand-mid);
+      opacity: 0.55;
+    }
+    .pq-axis--top {
+      grid-area: 1 / 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding-bottom: 10px;
+    }
+    .pq-axis--bottom {
+      grid-area: 3 / 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding-top: 10px;
+    }
+    .pq-axis--top::before, .pq-axis--top::after,
+    .pq-axis--bottom::before, .pq-axis--bottom::after {
+      content: '';
+      height: 1px;
+      flex: 0 0 40px;
+      background: var(--brand-mid);
+      opacity: 0.35;
+    }
+    .pq-axis--left {
+      grid-area: 2 / 1;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      text-align: center;
+      align-self: center;
+      justify-self: center;
+    }
+    .pq-axis--right {
+      grid-area: 2 / 3;
+      writing-mode: vertical-rl;
+      text-align: center;
+      align-self: center;
+      justify-self: center;
+    }
     .position-quad {
+      grid-area: 2 / 2;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      margin-top: var(--s-lg);
       border-top: 1px solid var(--rule);
       border-left: 1px solid var(--rule);
     }
     .position-quad-item {
+      position: relative;
       padding: 44px 48px;
       border-right: 1px solid var(--rule);
       border-bottom: 1px solid var(--rule);
+    }
+    /* GlowingEffect — mouse-tracking radial spotlight */
+    .quad-glow {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(
+        circle 260px at var(--mx, -200px) var(--my, -200px),
+        hsl(205 69% 78% / 0.13) 0%,
+        hsl(205 44% 55% / 0.05) 50%,
+        transparent 75%
+      );
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: 0;
+    }
+    .quad-glow.is-active {
+      opacity: 1;
+    }
+    /* ensure text content sits above the glow layer */
+    .position-quad-item > *:not(.quad-glow) {
+      position: relative;
+      z-index: 1;
     }
     .position-quad-axis {
       display: block;
@@ -467,7 +545,7 @@
     }
 
     /* ================================================
-       TESTIMONIALS
+       TESTIMONIALS — animated deck
        ================================================ */
     .testimonials {
       background: var(--surface);
@@ -475,57 +553,134 @@
       border-bottom: 1px solid var(--rule);
       padding: var(--s-2xl) 0;
     }
-    .t-grid {
+    .at-inner {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 52px;
-      align-items: start;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
     }
-    .t-item {
+    /* Image deck */
+    .at-inner > * { min-width: 0; }
+    .at-images {
+      position: relative;
+      width: 100%;
+      height: 400px;
+    }
+    .at-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      transform-origin: bottom center;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      will-change: transform, opacity;
+      transform: scale(0.95) rotate(var(--r, 0deg));
+      opacity: 0.6;
+    }
+    .at-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .at-image.is-active {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+      z-index: 10;
+    }
+    @keyframes at-bounce {
+      0%   { transform: scale(1) rotate(0deg) translateY(0); }
+      35%  { transform: scale(1) rotate(0deg) translateY(-52px); }
+      100% { transform: scale(1) rotate(0deg) translateY(0); }
+    }
+    .at-image.is-bouncing {
+      animation: at-bounce 0.5s cubic-bezier(0.34, 1.36, 0.64, 1);
+    }
+    /* Quote text panel */
+    .at-text {
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
+      min-height: 340px;
     }
-    .t-mark {
+    .at-quote-name {
       font-family: var(--f-display);
-      font-size: 4rem;
-      font-weight: 300;
-      line-height: 0.8;
-      color: var(--brand);
-      letter-spacing: -0.02em;
-      margin-bottom: 16px;
+      font-size: 1.625rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 6px;
+      transition: opacity 0.2s ease, transform 0.2s ease;
     }
-    .t-text {
-      font-family: var(--f-display);
-      font-size: 1.125rem;
-      font-style: italic;
-      font-weight: 400;
-      line-height: 1.65;
-      color: var(--ink-dark);
-      flex: 1;
-      margin-bottom: 28px;
-    }
-    .t-rule {
-      height: 1px;
-      background: var(--rule);
-      margin-bottom: 18px;
-    }
-    .t-name {
+    .at-quote-role {
       font-family: var(--f-label);
       font-size: 0.5625rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--ink-dark);
-    }
-    .t-role {
-      font-family: var(--f-label);
-      font-size: 0.5rem;
-      font-weight: 400;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--ink-light);
-      margin-top: 5px;
-      line-height: 1.7;
+      color: var(--ink-muted);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .at-quote-text {
+      font-family: var(--f-display);
+      font-size: 1.0625rem;
+      font-style: italic;
+      line-height: 1.72;
+      color: var(--ink-dark);
+      margin-top: 32px;
+      flex: 1;
+    }
+    .at-word {
+      display: inline;
+      transition: opacity 0.2s ease, filter 0.2s ease, transform 0.2s ease;
+    }
+    .at-nav {
+      display: flex;
+      gap: 10px;
+      margin-top: 36px;
+    }
+    .at-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: transparent;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+    .at-btn:hover {
+      background: var(--brand-light);
+      border-color: var(--brand-mid);
+    }
+    .at-btn:focus-visible {
+      outline: 2px solid var(--brand);
+      outline-offset: 2px;
+    }
+    .at-btn:active { transform: scale(0.93); }
+    .at-btn svg {
+      width: 15px;
+      height: 15px;
+      stroke: var(--ink);
+      stroke-width: 1.75;
+      fill: none;
+      transition: transform 0.25s ease;
+    }
+    .at-btn:first-child:hover svg { transform: rotate(12deg); }
+    .at-btn:last-child:hover svg  { transform: rotate(-12deg); }
+    @media (max-width: 700px) {
+      .at-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .at-images { height: 280px; }
     }
 
     /* ================================================
@@ -821,7 +976,9 @@
 
     @media (max-width: 640px) {
       .wrap { padding: 0 24px; }
-      .position-quad { grid-template-columns: 1fr; border-left: none; }
+      .position-quad-outer { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .pq-axis { display: none; }
+      .position-quad { grid-area: auto; grid-template-columns: 1fr; border-left: none; }
       .position-quad-item { padding: 32px 0; border-right: none; }
       .position-quad-item:last-child { border-bottom: none; }
 
@@ -1032,46 +1189,51 @@
 
       </div>
 
+      <div class="position-quad-outer">
+        <div class="pq-axis pq-axis--top">Individual</div>
+        <div class="pq-axis pq-axis--left">Interior</div>
+        <div class="pq-axis pq-axis--right">Exterior</div>
+        <div class="pq-axis pq-axis--bottom">Collective</div>
+
       <div class="position-quad">
 
         <div class="position-quad-item reveal">
-          <span class="position-quad-axis">Individual &nbsp;·&nbsp; Interior</span>
-          <h4 class="position-quad-h">Your Inner State</h4>
+          <div class="quad-glow"></div>
+          <h4 class="position-quad-h">Your Experience</h4>
           <p class="position-quad-body">
-            Most problems arrive dressed as strategy. Underneath: binary thinking
-            that's collapsed real complexity into false choices, or a nervous system
-            that's been running hot for months, or shame that makes everything feel
-            urgent. We start here — not because it's therapy, but because clear
-            thinking requires a regulated state.
+            You often already know what needs to change. You're still not doing it.
+            Something's in the way — a story you're telling yourself, a fear you
+            haven't looked at directly, a pattern you keep running. The work here
+            is finding what's actually keeping you stuck, naming it clearly, and
+            building the awareness and courage to move.
           </p>
         </div>
 
         <div class="position-quad-item reveal d1">
-          <span class="position-quad-axis">Individual &nbsp;·&nbsp; Exterior</span>
-          <h4 class="position-quad-h">What You Take Away</h4>
+          <div class="quad-glow"></div>
+          <h4 class="position-quad-h">Your Actions</h4>
           <p class="position-quad-body">
             Most sessions end with something built. A script for the conversation
             you've been dreading. A decision rule. A 30/60/90. The email you've
-            been avoiding for two weeks — sent, while I watch. I respond to
-            ambiguity with lightweight scaffolding you can use immediately, not
-            more abstraction.
+            been avoiding for two weeks. I respond to ambiguity with lightweight
+            scaffolding you can use immediately, not more abstraction.
           </p>
         </div>
 
         <div class="position-quad-item reveal d2">
-          <span class="position-quad-axis">Collective &nbsp;·&nbsp; Interior</span>
-          <h4 class="position-quad-h">Your Relationships</h4>
+          <div class="quad-glow"></div>
+          <h4 class="position-quad-h">Your People</h4>
           <p class="position-quad-body">
             The co-founder dynamic you're managing around. The direct report
             you've rescheduled three times. The investor relationship nobody's
             naming clearly. More than half of the work is strategizing these
-            conversations — what to say, how to open, where the invisible dynamics
+            conversations: what to say, how to open, where the invisible dynamics
             are, and how to set it up so it actually goes well.
           </p>
         </div>
 
         <div class="position-quad-item reveal d3">
-          <span class="position-quad-axis">Collective &nbsp;·&nbsp; Exterior</span>
+          <div class="quad-glow"></div>
           <h4 class="position-quad-h">Your Systems</h4>
           <p class="position-quad-body">
             Role clarity. Decision rights. Meeting cadence. The organizational
@@ -1081,7 +1243,8 @@
           </p>
         </div>
 
-      </div>
+      </div><!-- /.position-quad -->
+      </div><!-- /.position-quad-outer -->
     </div>
   </section>
 
@@ -1163,44 +1326,40 @@
         <div class="s-head-rule"></div>
       </div>
 
-      <div class="t-grid">
+      <div class="at-inner">
 
-        <div class="t-item reveal">
-          <div class="t-mark">&ldquo;</div>
-          <p class="t-text">
-            Robert has an uncommon ability to apply a systems view to organizational
-            challenges. He helps leaders not only identify immediate leverage points,
-            but also understand the broader patterns at play. His approach is creative,
-            pragmatic, and rooted in a deep commitment to clarity and alignment.
-          </p>
-          <div class="t-rule"></div>
-          <div class="t-name">Casey Capshaw</div>
-          <div class="t-role">Chief People Officer &nbsp;·&nbsp; SaaS Operations</div>
+        <!-- Image deck -->
+        <div class="at-images">
+          <div class="at-image is-active" style="--r: 0deg; z-index: 10;">
+            <img src="brand_assets/casey-capshaw-square.jpg" alt="Casey Capshaw" draggable="false">
+          </div>
+          <div class="at-image" style="--r: -6deg; z-index: 9;">
+            <img src="brand_assets/Ellen-terchila-square.png" alt="Ellen Terchila" draggable="false">
+          </div>
+          <div class="at-image" style="--r: 4deg; z-index: 8;">
+            <img src="brand_assets/David-Champion-square.png" alt="David Champion" draggable="false">
+          </div>
         </div>
 
-        <div class="t-item reveal d1">
-          <div class="t-mark">&ldquo;</div>
-          <p class="t-text">
-            He has a different way of looking at situations based on his vast experience
-            working with executives — there have been no situations I have presented
-            to him that he couldn't help me think through and address.
-          </p>
-          <div class="t-rule"></div>
-          <div class="t-name">Ellen Terchila</div>
-          <div class="t-role">Chief Customer Officer &nbsp;·&nbsp; OneSource Virtual</div>
-        </div>
-
-        <div class="t-item reveal d2">
-          <div class="t-mark">&ldquo;</div>
-          <p class="t-text">
-            The methodology we used has provided the structure and accountability I
-            needed to bring some of my weakest leadership qualities up to A+ in just
-            a few months. I highly recommend Robert to anyone in search of a grounded,
-            professional, yet engaging and dynamic guide.
-          </p>
-          <div class="t-rule"></div>
-          <div class="t-name">David Champion</div>
-          <div class="t-role">Exited Entrepreneur &nbsp;·&nbsp; CPO &nbsp;·&nbsp; FinTech &amp; SaaS Advisor</div>
+        <!-- Quote text -->
+        <div class="at-text">
+          <div>
+            <div class="at-quote-name">Casey Capshaw</div>
+            <div class="at-quote-role">Chief People Officer &nbsp;·&nbsp; SaaS Operations</div>
+            <p class="at-quote-text"></p>
+          </div>
+          <div class="at-nav">
+            <button class="at-btn at-btn-prev" aria-label="Previous testimonial">
+              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </button>
+            <button class="at-btn at-btn-next" aria-label="Next testimonial">
+              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </div>
         </div>
 
       </div>
@@ -1320,6 +1479,132 @@
       }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
 
       revealEls.forEach(function (el) { obs.observe(el); });
+    })();
+  </script>
+
+  <script>
+    /* ── Animated Testimonials — image deck + word-blur quote ── */
+    (function () {
+      var data = [
+        {
+          name: 'Casey Capshaw',
+          role: 'Chief People Officer \u00b7 SaaS Operations',
+          quote: 'Robert has an uncommon ability to apply a systems view to organizational challenges. He helps leaders not only identify immediate leverage points, but also understand the broader patterns at play. His approach is creative, pragmatic, and rooted in a deep commitment to clarity and alignment.'
+        },
+        {
+          name: 'Ellen Terchila',
+          role: 'Chief Customer Officer \u00b7 OneSource Virtual',
+          quote: 'He has a different way of looking at situations based on his vast experience working with executives \u2014 there have been no situations I have presented to him that he couldn\u2019t help me think through and address.'
+        },
+        {
+          name: 'David Champion',
+          role: 'Exited Entrepreneur \u00b7 CPO \u00b7 FinTech & SaaS Advisor',
+          quote: 'The methodology we used has provided the structure and accountability I needed to bring some of my weakest leadership qualities up to A+ in just a few months. I highly recommend Robert to anyone in search of a grounded, professional, yet engaging and dynamic guide.'
+        }
+      ];
+
+      var active   = 0;
+      var images   = Array.from(document.querySelectorAll('.at-image'));
+      var nameEl   = document.querySelector('.at-quote-name');
+      var roleEl   = document.querySelector('.at-quote-role');
+      var quoteEl  = document.querySelector('.at-quote-text');
+      var btnPrev  = document.querySelector('.at-btn-prev');
+      var btnNext  = document.querySelector('.at-btn-next');
+
+      function randRotate() {
+        return (Math.random() * 18 - 9).toFixed(1) + 'deg';
+      }
+
+      function updateImages(idx) {
+        images.forEach(function (img, i) {
+          img.classList.remove('is-active', 'is-bouncing');
+          if (i === idx) {
+            img.style.zIndex = images.length + 1;
+            img.classList.add('is-active');
+            requestAnimationFrame(function () {
+              img.classList.add('is-bouncing');
+              img.addEventListener('animationend', function () {
+                img.classList.remove('is-bouncing');
+              }, { once: true });
+            });
+          } else {
+            img.style.zIndex = images.length - i;
+            img.style.setProperty('--r', randRotate());
+          }
+        });
+      }
+
+      function animateWords(text) {
+        var words = text.split(' ');
+        quoteEl.innerHTML = words.map(function (w) {
+          return '<span class="at-word">' + w + '</span>';
+        }).join(' ');
+        quoteEl.querySelectorAll('.at-word').forEach(function (span, i) {
+          span.style.opacity = '0';
+          span.style.filter  = 'blur(8px)';
+          span.style.transform = 'translateY(4px)';
+          span.style.transitionDelay = (i * 0.018) + 's';
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+              span.style.opacity   = '1';
+              span.style.filter    = 'blur(0px)';
+              span.style.transform = 'translateY(0)';
+            });
+          });
+        });
+      }
+
+      function goTo(idx) {
+        active = ((idx % data.length) + data.length) % data.length;
+        var t = data[active];
+        updateImages(active);
+        /* fade name/role out → update → fade in */
+        nameEl.style.opacity   = '0';
+        roleEl.style.opacity   = '0';
+        nameEl.style.transform = 'translateY(8px)';
+        roleEl.style.transform = 'translateY(8px)';
+        setTimeout(function () {
+          nameEl.textContent   = t.name;
+          roleEl.textContent   = t.role;
+          nameEl.style.opacity = '1';
+          roleEl.style.opacity = '1';
+          nameEl.style.transform = 'translateY(0)';
+          roleEl.style.transform = 'translateY(0)';
+        }, 180);
+        animateWords(t.quote);
+      }
+
+      btnPrev.addEventListener('click', function () { goTo(active - 1); });
+      btnNext.addEventListener('click', function () { goTo(active + 1); });
+
+      /* init */
+      goTo(0);
+    })();
+  </script>
+
+  <script>
+    /* ── Quad spotlight — radial glow follows cursor within each card ── */
+    (function () {
+      var items = document.querySelectorAll('.position-quad-item');
+
+      items.forEach(function (item) {
+        var glow = item.querySelector('.quad-glow');
+        if (!glow) return;
+
+        item.addEventListener('mouseenter', function () {
+          glow.classList.add('is-active');
+        });
+
+        item.addEventListener('mouseleave', function () {
+          glow.classList.remove('is-active');
+        });
+
+        item.addEventListener('mousemove', function (e) {
+          var rect = item.getBoundingClientRect();
+          glow.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
+          glow.style.setProperty('--my', (e.clientY - rect.top) + 'px');
+        });
+      });
     })();
   </script>
 
