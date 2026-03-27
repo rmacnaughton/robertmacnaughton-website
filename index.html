@@ -560,7 +560,7 @@
     }
 
     /* ================================================
-       TESTIMONIALS — animated deck
+       TESTIMONIALS — static 3-col grid
        ================================================ */
     .testimonials {
       background: var(--surface);
@@ -568,138 +568,60 @@
       border-bottom: 1px solid var(--rule);
       padding: var(--s-2xl) 0;
     }
-    .at-inner {
+    .t-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
-      align-items: center;
-      max-width: 900px;
-      margin: 0 auto;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
     }
-    /* Image deck */
-    .at-inner > * { min-width: 0; }
-    .at-images {
-      position: relative;
-      width: 100%;
-      height: 400px;
+    .t-card {
+      background: var(--bg);
+      padding: 48px 44px 52px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
     }
-    .at-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 20px;
+    .t-photo {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
       overflow: hidden;
-      transform-origin: bottom center;
-      transition: opacity 0.4s ease, transform 0.4s ease;
-      will-change: transform, opacity;
-      transform: scale(0.95) rotate(var(--r, 0deg));
-      opacity: 0.6;
+      flex-shrink: 0;
+      margin-bottom: 32px;
     }
-    .at-image img {
+    .t-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center top;
       display: block;
     }
-    .at-image.is-active {
-      opacity: 1;
-      transform: scale(1) rotate(0deg);
-      z-index: 10;
-    }
-    @keyframes at-bounce {
-      0%   { transform: scale(1) rotate(0deg) translateY(0); }
-      35%  { transform: scale(1) rotate(0deg) translateY(-52px); }
-      100% { transform: scale(1) rotate(0deg) translateY(0); }
-    }
-    .at-image.is-bouncing {
-      animation: at-bounce 0.5s cubic-bezier(0.34, 1.36, 0.64, 1);
-    }
-    /* Quote text panel */
-    .at-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 340px;
-    }
-    .at-quote-name {
+    .t-quote {
       font-family: var(--f-display);
-      font-size: 1.625rem;
-      font-weight: 500;
-      color: var(--ink);
-      line-height: 1.2;
-      margin-bottom: 6px;
-      transition: opacity 0.2s ease, transform 0.2s ease;
+      font-size: 1.125rem;
+      font-style: italic;
+      line-height: 1.75;
+      color: var(--ink-dark);
+      flex: 1;
+      margin-bottom: 36px;
     }
-    .at-quote-role {
+    .t-name {
+      font-family: var(--f-display);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--ink-dark);
+      margin-bottom: 6px;
+    }
+    .t-role {
       font-family: var(--f-label);
-      font-size: 0.5625rem;
+      font-size: 0.625rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--ink-muted);
-      transition: opacity 0.2s ease, transform 0.2s ease;
+      line-height: 1.6;
     }
-    .at-quote-text {
-      font-family: var(--f-display);
-      font-size: 1.1875rem;
-      font-style: italic;
-      line-height: 1.72;
-      color: var(--ink-dark);
-      margin-top: 32px;
-      flex: 1;
-    }
-    .at-word {
-      display: inline;
-      transition: opacity 0.2s ease, filter 0.2s ease, transform 0.2s ease;
-    }
-    .at-nav {
-      display: flex;
-      gap: 10px;
-      margin-top: 36px;
-    }
-    .at-btn {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      border: 1px solid var(--rule);
-      background: transparent;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s ease, border-color 0.2s ease;
-    }
-    .at-btn:hover {
-      background: var(--brand-light);
-      border-color: var(--brand-mid);
-    }
-    .at-btn:focus-visible {
-      outline: 2px solid var(--brand);
-      outline-offset: 2px;
-    }
-    .at-btn:active { transform: scale(0.93); }
-    .at-btn svg {
-      width: 15px;
-      height: 15px;
-      stroke: var(--ink);
-      stroke-width: 1.75;
-      fill: none;
-      transition: transform 0.25s ease;
-    }
-    .at-btn:first-child:hover svg { transform: rotate(12deg); }
-    .at-btn:last-child:hover svg  { transform: rotate(-12deg); }
-    @media (max-width: 700px) {
-      .at-inner {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
-      .at-images { height: 220px; }
-      .at-image { border-radius: 14px; }
-      .at-text { min-height: unset; }
-      .at-quote-text { margin-top: 20px; }
-      .at-nav { margin-top: 24px; }
+    @media (max-width: 900px) {
+      .t-grid { grid-template-columns: 1fr; gap: 20px; }
+      .t-card { padding: 40px 36px 44px; }
     }
 
     /* ================================================
@@ -1352,40 +1274,36 @@
         <div class="s-head-rule"></div>
       </div>
 
-      <div class="at-inner">
+      <div class="t-grid">
 
-        <!-- Image deck -->
-        <div class="at-images">
-          <div class="at-image is-active" style="--r: 0deg; z-index: 10;">
-            <img src="brand_assets/casey-capshaw-square.jpg" alt="Casey Capshaw" draggable="false">
+        <div class="t-card reveal">
+          <div class="t-photo">
+            <img src="brand_assets/casey-capshaw-square.jpg" alt="Casey Capshaw">
           </div>
-          <div class="at-image" style="--r: -6deg; z-index: 9;">
-            <img src="brand_assets/Ellen-terchila-square.png" alt="Ellen Terchila" draggable="false">
-          </div>
-          <div class="at-image" style="--r: 4deg; z-index: 8;">
-            <img src="brand_assets/David-Champion-square.png" alt="David Champion" draggable="false">
-          </div>
+
+          <p class="t-quote">Robert has an uncommon ability to apply a systems view to organizational challenges. He helps leaders not only identify immediate leverage points, but also understand the broader patterns at play. His approach is creative, pragmatic, and rooted in a deep commitment to clarity and alignment.</p>
+          <div class="t-name">Casey Capshaw</div>
+          <div class="t-role">Chief People Officer &nbsp;·&nbsp; SaaS Operations</div>
         </div>
 
-        <!-- Quote text -->
-        <div class="at-text">
-          <div>
-            <div class="at-quote-name">Casey Capshaw</div>
-            <div class="at-quote-role">Chief People Officer &nbsp;·&nbsp; SaaS Operations</div>
-            <p class="at-quote-text"></p>
+        <div class="t-card reveal d1">
+          <div class="t-photo">
+            <img src="brand_assets/Ellen-terchila-square.png" alt="Ellen Terchila">
           </div>
-          <div class="at-nav">
-            <button class="at-btn at-btn-prev" aria-label="Previous testimonial">
-              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="15 18 9 12 15 6"/>
-              </svg>
-            </button>
-            <button class="at-btn at-btn-next" aria-label="Next testimonial">
-              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="9 18 15 12 9 6"/>
-              </svg>
-            </button>
+
+          <p class="t-quote">He has a different way of looking at situations based on his vast experience working with executives — there have been no situations I have presented to him that he couldn't help me think through and address.</p>
+          <div class="t-name">Ellen Terchila</div>
+          <div class="t-role">Chief Customer Officer &nbsp;·&nbsp; OneSource Virtual</div>
+        </div>
+
+        <div class="t-card reveal d2">
+          <div class="t-photo">
+            <img src="brand_assets/David-Champion-square.png" alt="David Champion">
           </div>
+
+          <p class="t-quote">The methodology we used has provided the structure and accountability I needed to bring some of my weakest leadership qualities up to A+ in just a few months. I highly recommend Robert to anyone in search of a grounded, professional, yet engaging and dynamic guide.</p>
+          <div class="t-name">David Champion</div>
+          <div class="t-role">Exited Entrepreneur &nbsp;·&nbsp; CPO &nbsp;·&nbsp; FinTech & SaaS Advisor</div>
         </div>
 
       </div>
@@ -1508,105 +1426,6 @@
     })();
   </script>
 
-  <script>
-    /* ── Animated Testimonials — image deck + word-blur quote ── */
-    (function () {
-      var data = [
-        {
-          name: 'Casey Capshaw',
-          role: 'Chief People Officer \u00b7 SaaS Operations',
-          quote: 'Robert has an uncommon ability to apply a systems view to organizational challenges. He helps leaders not only identify immediate leverage points, but also understand the broader patterns at play. His approach is creative, pragmatic, and rooted in a deep commitment to clarity and alignment.'
-        },
-        {
-          name: 'Ellen Terchila',
-          role: 'Chief Customer Officer \u00b7 OneSource Virtual',
-          quote: 'He has a different way of looking at situations based on his vast experience working with executives \u2014 there have been no situations I have presented to him that he couldn\u2019t help me think through and address.'
-        },
-        {
-          name: 'David Champion',
-          role: 'Exited Entrepreneur \u00b7 CPO \u00b7 FinTech & SaaS Advisor',
-          quote: 'The methodology we used has provided the structure and accountability I needed to bring some of my weakest leadership qualities up to A+ in just a few months. I highly recommend Robert to anyone in search of a grounded, professional, yet engaging and dynamic guide.'
-        }
-      ];
-
-      var active   = 0;
-      var images   = Array.from(document.querySelectorAll('.at-image'));
-      var nameEl   = document.querySelector('.at-quote-name');
-      var roleEl   = document.querySelector('.at-quote-role');
-      var quoteEl  = document.querySelector('.at-quote-text');
-      var btnPrev  = document.querySelector('.at-btn-prev');
-      var btnNext  = document.querySelector('.at-btn-next');
-
-      function randRotate() {
-        return (Math.random() * 18 - 9).toFixed(1) + 'deg';
-      }
-
-      function updateImages(idx) {
-        images.forEach(function (img, i) {
-          img.classList.remove('is-active', 'is-bouncing');
-          if (i === idx) {
-            img.style.zIndex = images.length + 1;
-            img.classList.add('is-active');
-            requestAnimationFrame(function () {
-              img.classList.add('is-bouncing');
-              img.addEventListener('animationend', function () {
-                img.classList.remove('is-bouncing');
-              }, { once: true });
-            });
-          } else {
-            img.style.zIndex = images.length - i;
-            img.style.setProperty('--r', randRotate());
-          }
-        });
-      }
-
-      function animateWords(text) {
-        var words = text.split(' ');
-        quoteEl.innerHTML = words.map(function (w) {
-          return '<span class="at-word">' + w + '</span>';
-        }).join(' ');
-        quoteEl.querySelectorAll('.at-word').forEach(function (span, i) {
-          span.style.opacity = '0';
-          span.style.filter  = 'blur(8px)';
-          span.style.transform = 'translateY(4px)';
-          span.style.transitionDelay = (i * 0.018) + 's';
-          requestAnimationFrame(function () {
-            requestAnimationFrame(function () {
-              span.style.opacity   = '1';
-              span.style.filter    = 'blur(0px)';
-              span.style.transform = 'translateY(0)';
-            });
-          });
-        });
-      }
-
-      function goTo(idx) {
-        active = ((idx % data.length) + data.length) % data.length;
-        var t = data[active];
-        updateImages(active);
-        /* fade name/role out → update → fade in */
-        nameEl.style.opacity   = '0';
-        roleEl.style.opacity   = '0';
-        nameEl.style.transform = 'translateY(8px)';
-        roleEl.style.transform = 'translateY(8px)';
-        setTimeout(function () {
-          nameEl.textContent   = t.name;
-          roleEl.textContent   = t.role;
-          nameEl.style.opacity = '1';
-          roleEl.style.opacity = '1';
-          nameEl.style.transform = 'translateY(0)';
-          roleEl.style.transform = 'translateY(0)';
-        }, 180);
-        animateWords(t.quote);
-      }
-
-      btnPrev.addEventListener('click', function () { goTo(active - 1); });
-      btnNext.addEventListener('click', function () { goTo(active + 1); });
-
-      /* init */
-      goTo(0);
-    })();
-  </script>
 
   <script>
     /* ── Quad spotlight — radial glow follows cursor within each card ── */
