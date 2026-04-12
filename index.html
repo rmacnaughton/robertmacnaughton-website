@@ -560,6 +560,45 @@
     }
 
     /* ================================================
+       AI SECTION
+       ================================================ */
+    .ai-section {
+      border-top: 1px solid var(--rule);
+      padding: var(--s-xl) 0;
+    }
+    .ai-inner {
+      max-width: 760px;
+    }
+    .ai-eyebrow {
+      display: block;
+      font-family: var(--f-label);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 28px;
+    }
+    .ai-h2 {
+      font-family: var(--f-display);
+      font-size: clamp(1.875rem, 3.5vw, 3rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--ink-dark);
+      margin-bottom: 36px;
+    }
+    .ai-body {
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: var(--ink-muted);
+    }
+    @media (max-width: 640px) {
+      .ai-h2 { font-size: clamp(1.75rem, 7vw, 2.25rem); }
+    }
+
+    /* ================================================
        TESTIMONIALS — static 3-col grid
        ================================================ */
     .testimonials {
@@ -888,6 +927,143 @@
     }
 
     /* ================================================
+       SELECTED PROJECTS
+       ================================================ */
+    .projects {
+      border-top: 1px solid var(--rule);
+      padding: var(--s-2xl) 0;
+    }
+    .proj-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+    .proj-card {
+      background: var(--surface);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .proj-img {
+      width: 100%;
+      height: 260px;
+      overflow: hidden;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .proj-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      transition: transform 0.65s ease;
+    }
+    .proj-card:hover .proj-img img {
+      transform: scale(1.025);
+    }
+    .proj-img--logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #EFF0EE;
+    }
+    .proj-img--logo img {
+      object-fit: contain;
+      max-width: 65%;
+      max-height: 55%;
+    }
+    .proj-img--text {
+      background: var(--brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+    .proj-hashtag {
+      font-family: var(--f-display);
+      font-size: clamp(1.625rem, 2.6vw, 2.625rem);
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(255,255,255,0.90);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      text-align: center;
+      word-break: break-word;
+    }
+    .proj-body {
+      padding: 40px 44px 48px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .proj-role {
+      font-family: var(--f-label);
+      font-size: 0.5625rem;
+      font-weight: 600;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 14px;
+    }
+    .proj-title {
+      font-family: var(--f-display);
+      font-size: clamp(1.375rem, 2vw, 1.875rem);
+      font-weight: 400;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      color: var(--ink-dark);
+      margin-bottom: 24px;
+    }
+    .proj-p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--ink-muted);
+    }
+    .proj-p + .proj-p {
+      margin-top: 20px;
+    }
+    .proj-caption {
+      font-family: var(--f-label);
+      font-size: 0.5rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-top: 8px;
+    }
+    .proj-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 28px;
+      font-family: var(--f-label);
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--brand);
+      border-bottom: 1px solid var(--brand);
+      padding-bottom: 3px;
+      align-self: flex-start;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .proj-link:hover {
+      color: var(--brand-hover);
+      border-color: var(--brand-hover);
+    }
+
+    /* Nav link */
+    .nav-link {
+      font-family: var(--f-label);
+      font-size: 0.5625rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+      transition: color 0.2s ease;
+    }
+    .nav-link:hover { color: var(--brand); }
+
+    /* ================================================
        RESPONSIVE
        ================================================ */
     @media (max-width: 1100px) {
@@ -914,6 +1090,9 @@
       .cred-tag { font-size: 0.625rem; letter-spacing: 0.14em; }
       .work-items { grid-template-columns: 1fr; }
       .t-grid { grid-template-columns: 1fr; gap: 40px; }
+      .proj-grid { grid-template-columns: 1fr; }
+      .proj-img { height: 220px; }
+      .proj-body { padding: 36px 36px 40px; }
     }
 
     @media (max-width: 640px) {
@@ -947,6 +1126,7 @@
     <div class="wrap">
       <div class="nav-row">
         <a href="/" class="nav-name">Robert MacNaughton</a>
+        <a href="#right-relationship" class="nav-link">#RightRelationshipwithAI</a>
         <a href="https://calendly.com/macnaughton/coaching-discovery" target="_blank" rel="noopener noreferrer" class="nav-cta">Get in Touch</a>
       </div>
     </div>
@@ -1264,6 +1444,20 @@
 
 
   <!-- ====================================================
+       AI SECTION
+       ==================================================== -->
+  <section class="ai-section">
+    <div class="wrap">
+      <div class="ai-inner reveal">
+        <span class="ai-eyebrow">How I Work With AI</span>
+        <h2 class="ai-h2">Building at the Frontier</h2>
+        <p class="ai-body">My coaching practice runs on AI infrastructure I build myself. I use context-engineered prompt architectures to maintain living client documents, API-driven transcript pipelines to extract patterns across sessions, and trust-boundary-aware data design for sensitive contexts. I analyzed 376 session transcripts to independently validate my coaching methodology. I'm not advising leaders on AI adoption from the outside — I'm doing it inside my own practice every day.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====================================================
        TESTIMONIALS
        ==================================================== -->
   <section class="testimonials">
@@ -1304,6 +1498,75 @@
           <p class="t-quote">The methodology we used has provided the structure and accountability I needed to bring some of my weakest leadership qualities up to A+ in just a few months. I highly recommend Robert to anyone in search of a grounded, professional, yet engaging and dynamic guide.</p>
           <div class="t-name">David Champion</div>
           <div class="t-role">Exited Entrepreneur &nbsp;·&nbsp; CPO &nbsp;·&nbsp; FinTech & SaaS Advisor</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====================================================
+       SELECTED PROJECTS
+       ==================================================== -->
+  <section class="projects">
+    <div class="wrap">
+
+      <div class="s-head">
+        <span class="label">Selected Projects</span>
+        <div class="s-head-rule"></div>
+      </div>
+
+      <div class="proj-grid">
+
+        <!-- Card 1: Antelope Recovery -->
+        <div class="proj-card reveal">
+          <div class="proj-img proj-img--logo">
+            <img src="brand_assets/client-logos/Antelope-logo-1.png" alt="Antelope Recovery">
+          </div>
+          <div class="proj-body">
+            <div class="proj-role">Cofounder &amp; CSO</div>
+            <h3 class="proj-title">Antelope Recovery</h3>
+            <p class="proj-p">Behavioral telehealth for justice-involved teens, built for the cases other programs hand off. We're building an AI-enabled clinical model that automates administration so every dollar goes to the human to human relationship these kids actually need. What was always needed in this space is now finally achievable.</p>
+          </div>
+        </div>
+
+        <!-- Card 2: The Integral Center -->
+        <div class="proj-card reveal d1">
+          <div class="proj-img">
+            <img src="brand_assets/Ken-Robert.jpg" alt="Robert MacNaughton with Ken Wilber at The Integral Center" style="object-position: center 20%;">
+          </div>
+          <div class="proj-body">
+            <div class="proj-role">Founder &nbsp;·&nbsp; 2011–2018 &nbsp;·&nbsp; Boulder, CO</div>
+            <h3 class="proj-title">The Integral Center</h3>
+            <p class="proj-p">A leadership development organization and 14,000 sq ft community center in downtown Boulder, built in collaboration with philosopher Ken Wilber. We trained facilitators, hosted transformational workshops, ran a holistic health clinic, and drew teachers and practitioners from around the world. 100+ contractors across 25+ cities at peak. People moved to Boulder to train with us.</p>
+            <p class="proj-p">I closed it at its most profitable. What I carried forward: how to lead when everyone in the room is projecting onto you, how to make hard decisions inside a values-driven culture, and a deep working knowledge of developmental psychology that now shows up in every coaching engagement.</p>
+            <p class="proj-caption">With Ken Wilber at The Integral Center</p>
+          </div>
+        </div>
+
+        <!-- Card 3: #RightRelationshipwithAI -->
+        <div class="proj-card reveal d2" id="right-relationship">
+          <div class="proj-img proj-img--text">
+            <span class="proj-hashtag">#RightRelationship<br>withAI</span>
+          </div>
+          <div class="proj-body">
+            <div class="proj-role">Ongoing Initiative</div>
+            <h3 class="proj-title">#RightRelationshipwithAI</h3>
+            <p class="proj-p">I'm a stand for developing a healthy orientation to the most disruptive force our generation has faced. Monthly facilitated conversations, recorded dialogues, and a growing body of frameworks for leaders who want to engage the Intelligence Age with intention and discernment.</p>
+          </div>
+        </div>
+
+        <!-- Card 4: Saturn Leadership Index Podcast -->
+        <div class="proj-card reveal d3">
+          <div class="proj-img">
+            <img src="brand_assets/SaturnPodcast.png" alt="Saturn Leadership Index Podcast">
+          </div>
+          <div class="proj-body">
+            <div class="proj-role">Co-host with Jason Gore (NeubergGore) &nbsp;·&nbsp; 46 Episodes</div>
+            <h3 class="proj-title">Saturn Leadership Index Podcast</h3>
+            <p class="proj-p">A structured deep dive into the leadership behaviors that are make-or-break for startup founders. One micro-practice per episode, organized across seven leadership pillars. Built on the Saturn Leadership Index, an effective tool for identifying leadership blindspots and growth areas. A rich archive of distinctions tailor-made for the leaders I work with.</p>
+            <a href="https://open.spotify.com/show/5SSQg4di2zbvEj6vy7luJN" target="_blank" rel="noopener noreferrer" class="proj-link">🎧 Listen on Spotify</a>
+          </div>
         </div>
 
       </div>
@@ -1362,22 +1625,6 @@
         </div>
 
       </div>
-    </div>
-  </section>
-
-
-  <!-- ====================================================
-       CTA
-       ==================================================== -->
-  <section class="contact" id="contact">
-    <div class="wrap">
-      <h2 class="contact-h2">Let me know when you're ready to talk.</h2>
-      <a
-        href="https://calendly.com/macnaughton/coaching-discovery"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="contact-btn"
-      >Schedule a Conversation</a>
     </div>
   </section>
 
