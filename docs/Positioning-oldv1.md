@@ -5,7 +5,7 @@
 This is the strategic constraint document for RobertMacNaughton.com.
 All website copy should be written from this document — not by copying it, but by internalizing it.
 
-This reflects the real person, the real work, the real voice. It was developed through extended conversation with Robert, and draws directly from how he actually describes what he does. The methodology sections are grounded in an independent analysis of 376 coaching session transcripts.
+This reflects the real person, the real work, the real voice. It was developed through extended conversation with Robert, and draws directly from how he actually describes what he does.
 
 ---
 
@@ -41,30 +41,9 @@ The site should let all of this be present without making any single dimension t
 
 ---
 
-## How the Coaching Actually Works
+## What Robert Actually Does
 
-Based on analysis of 376 session transcripts, a stable intervention sequence appears across Robert's work:
-
-**1. Lower the threat level.**
-Robert starts by reducing activation — validating the client's experience, normalizing stress or uncertainty, and checking for capacity. This is not small talk. It's the precondition for clear thinking. When shame, panic, or physiological strain decreases, clients become capable of distinguishing signal from noise.
-
-**2. Find the actual leverage point.**
-He doesn't stay at the level of a broad complaint. He asks for the real issue: the root constraint, the biggest undecided decision, the proof point that matters in the next window, or what "winning" would look like from here.
-
-**3. Name the underlying pattern.**
-Robert shifts clients from event-by-event reacting to systemic recognition. He names dynamics: overfunctioning, triangulation, false binaries, role confusion, safety deficits, premature scaling, or heroically staying in the weeds. Once the pattern is named, the client stops treating each flare-up as unique and starts seeing the structure generating it.
-
-**4. Convert insight into operating design.**
-The next move is concrete: boundaries, scripts, decision rights, KPIs, meeting structures, 30/60/90 plans, stop-doing lists, calendars, dashboards, or a bounded experiment. Robert rarely responds to ambiguity with more abstraction. He responds with lightweight scaffolding that's usable immediately.
-
-**5. Anchor action in visible follow-through.**
-Commitments get tied to a date, an owner, a review point, or a communication event. Progress is made observable. The gap between insight and behavior is shortened deliberately — often in real time during the session itself.
-
-In effect, this coaching treats most problems as having **both a state problem and a design problem.** Clients are helped to regulate enough to think clearly, then redesign the surrounding system so better behavior doesn't depend on willpower alone.
-
----
-
-## What Robert Actually Does (In His Own Words)
+Here's how Robert describes it:
 
 **The core work:** He quickly assesses a leader's native capabilities — what got them their success — then develops a leadership plan targeting the high-leverage growth areas they need to measure and manage. All along, he's teaching normative best practices, systems for managing growth, and modeling how to have effective meetings and relational conversations.
 
@@ -82,30 +61,6 @@ In effect, this coaching treats most problems as having **both a state problem a
 
 ---
 
-## Signature Coaching Moves
-
-These are recurring, identifiable patterns from the transcript analysis. They are specific to Robert's style and can be referenced as copy material:
-
-**Force a sharper question.** He collapses sprawl into one useful focal point: What's the single biggest decision not yet made? What's the real constraint? What proof point matters in the next 30–90 days? What do you want the other person to feel, know, or do? This is how vague stress becomes a tractable problem.
-
-**Break false binaries.** He loosens all-or-nothing thinking. "Stay or leave" becomes criteria, clocks, and reversible steps. "Be kind or be direct" becomes a false choice — directness is caring. "Scale yourself or hire someone" becomes valid paths with tradeoffs. This move reduces the urgency to force certainty too early.
-
-**Script the hard conversation.** A distinctive feature is the amount of language design. Robert often gives exact phrasing, openings grounded in empathy, consent-based feedback frames, boundary scripts, termination scripts, and same-day sequencing for sensitive conversations. A client who "knows they need to be direct" often cannot do it under pressure. Precise language lowers the activation threshold.
-
-**Install minimum viable structure.** He favors simple systems over elegant complexity: weekly memos, start/stop/continue, scorecards, simple dashboards, 30/60/90 plans, calendar-blocked deep work, one metric per project, spreadsheets instead of heavy software. The bias is toward structures that are usable immediately and don't depend on adoption of new tools.
-
-**Use criteria, clocks, and bounded experiments.** He reduces anxiety by setting explicit thresholds and review points: a 90-day evaluation date, a six-month sandbox, no-go criteria, minimum viable tests before building a full system. Clients can act without pretending uncertainty is gone.
-
-**Sequence before scale.** He challenges premature complexity: don't automate before the human workflow works; don't scale before unit economics are proven; don't add software when a memo will do; don't expand while fundamentals are unstable.
-
-**Push ownership to the right level.** Robert is consistently anti-rescue. He redirects clients away from over-managing peers' reactions, taking work back from reports, or carrying execution themselves. He clarifies DRIs, decision rights, and executive altitude.
-
-**Work live when useful.** This is not purely reflective coaching. Robert uses session time to do the work: send the draft, rank outreach targets, outline the memo, build the facilitation agenda, review the P&L, define the KPI set. This shortens the gap between insight and behavior.
-
-**Name power and safety directly.** He doesn't stay at the level of technique. He's willing to name authority gaps, retaliation risk, favoritism, gendered dynamics, and the need for guardrails. Ethics and safety are treated as performance issues, not side concerns.
-
----
-
 ## Key Frames and Talk Tracks
 
 These are Robert's own frames. They can be referenced, adapted, or quoted on the site:
@@ -115,16 +70,6 @@ These are Robert's own frames. They can be referenced, adapted, or quoted on the
 **The cost of delay.** The number one impact to a company's bottom line is the time between when a decision has been made and when you do something about it. Similarly: the time between when you recognize a mistake and when you fix it. Start a 90-day clock. Put it on your calendar. Identify expectations, measure progress, give every opportunity to improve — and know when you have to have the hard conversation. Transition costs are high, but nowhere near as high as the cost of waiting too long to do what you knew you needed to do earlier.
 
 **The cost of the conversation you're not having.** The most expensive thing in your life is the conversation you're avoiding. But set it up for success, and it goes well far more often than people anticipate. We can create a game we can actually win.
-
-**Both a state problem and a design problem.** Most recurring leadership challenges involve both — the leader is activated (stressed, defensive, flooded) *and* the surrounding system is poorly designed (unclear roles, missing cadence, invisible expectations). Address only the state and they'll feel better temporarily. Address only the design and they can't execute it. Address both and the change sticks.
-
-**Structure is humane.** Clear expectations, boundaries, metrics, and communication channels reduce anxiety and politics. Structure isn't bureaucracy — it's the thing that lets people stop guessing and start performing.
-
-**Directness is caring.** Avoidance is not kindness. Candor in service of standards, safety, or relationship repair is stewardship. The most generous thing you can do for someone is tell them what you actually see.
-
-**Simple systems outperform elegant complexity.** A spreadsheet, a memo, a weekly review, and a few meaningful KPIs will outperform a sophisticated tool with low adoption every time.
-
-**Proof before scale.** Validate fundamentals before automating, hiring aggressively, or expanding. Sequence before you scale.
 
 ---
 
@@ -138,50 +83,11 @@ These are Robert's own frames. They can be referenced, adapted, or quoted on the
 
 * **He meets people where they are — then expands the frame.** He'll steelman your position until you don't have to fight for it anymore, and you start seeing beyond it. Then you find options that include more of the people around you.
 
-* **Unusually high translation from insight to artifact.** Many coaches help clients understand. Robert helps them leave with something built: a script, a scorecard, a memo, a dashboard, a pricing frame, a 30/60/90, a decision rule. The work produces tangible operating improvements, not just awareness.
-
-* **Strong blend of empathy and directness.** He can be warm and blunt in the same conversation — validate someone's fear and then immediately name avoidance, scapegoating, or weak authority. This is not a contradiction. It's the core of the style.
-
-* **Anti-triangulation stance.** He pushes complaints back toward the relevant relationship. He equips clients to address issues directly rather than routing through third parties, side channels, or the coach himself.
-
 * **He's a lifelong learner who questions how much he thinks he knows.** His models are always changing — as they need to, as business and culture rapidly change. He's currently in an advanced training program and evolving his practice constantly.
 
-* **He builds rapport fast and creates expansiveness.** People on Robert's teams describe feeling special when they get to talk to him. His energy is infectious. He broadens people's thinking. He has big visions. And he's funny.
+* **He builds rapport fast and creates expansiveness.** People on Robert's teams — at Antelope, at the Integral Center, in his communities — describe feeling special when they get to talk to him. His energy is infectious. He broadens people's thinking. He has big visions. And he's funny.
 
-* **Cross-domain consistency.** The same intervention logic shows up in founder scaling, family conflict, pricing, career transitions, health recovery, co-founder mediation, and team cadence design. It's a coherent underlying method, not a bag of tricks.
-
----
-
-## What the Coaching Is Best Suited For
-
-This approach is especially effective for:
-
-- Founders and executives in overload, scaling, or role-transition periods
-- Leaders facing repeated interpersonal conflict with structural roots
-- Situations where emotional activation and operating dysfunction are intertwined
-- People who benefit from concrete tools, scripts, and accountability — not just reflection
-- Teams that need more candor, ownership, and basic operating hygiene
-- Clients with enough authority to change boundaries, cadence, or decision rules
-- Post-exit or post-transaction founders navigating identity and what's next
-- Personal situations where the core issue is pattern recognition and boundaries
-
-It is particularly effective when the client is not lacking intelligence or effort, but is lacking **clarity, containment, and clean leverage.**
-
----
-
-## How Transformation Happens
-
-Transformation in this work is not a dramatic insight event. It happens through a series of practical shifts:
-
-- Reduced threat restores thinking. When activation decreases, clients can distinguish signal from noise.
-- Pattern naming reduces confusion. Once a recurring dynamic is identified, the client stops treating situations as random.
-- Boundaries and decision rights restore agency. Clients stop trying to control everything and start acting on what's actually theirs.
-- Scripts make courage executable. Precise language lowers the activation threshold for hard conversations.
-- Lightweight systems stabilize new behavior. Cadences, metrics, and review dates make change visible and repeatable.
-- Small experiments create evidence. Time-boxed tests generate real data and reduce rumination.
-- Identity shifts follow repeated behavior. Over time, clients move from rescuer to developer, from reactive operator to executive, from conflict avoider to direct steward, from overwhelmed founder to structured leader.
-
-The method relies on **repeated enacted evidence, not just insight.**
+* **He has an overflowing toolkit.** Acknowledged for a "bottomless toolkit of solutions" — and the judgment to know which tool fits which moment.
 
 ---
 
@@ -209,7 +115,6 @@ The specific people Robert serves best:
 * Co-Founder, Strategic Lead & Advisor, Antelope Recovery (behavioral health)
 * Trusted advisor to founders navigating acquisitions, exits, and term-sheet decisions
 * Currently writing a chapter on relational intelligence in business and leadership
-* Coaching methodology independently validated through analysis of 376 session transcripts
 * B.S. in Music (Naropa University), studied Electrical & Computer Engineering (University of Colorado Boulder)
 
 ---
