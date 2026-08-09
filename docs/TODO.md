@@ -8,7 +8,7 @@ Merged from the personal notes file and the Niamh punch list (2026-04-15 co-work
 
 - [x] **Strip the AI whitewash off every photo.** Done 2026-08-08: removed the desaturating sepia/saturate filters on hero and About portrait; cut the hero dissolve gradient from 36% to 16% (mobile fades 35% → 14%). Decision: the hero photo itself (`Headhost_2023.png`) stays — Niamh saw the original and approved it; the wash was the CSS treatment, not the file.
 - [x] **"Selected Projects" → "Special Projects."** Done 2026-08-08.
-- [x] **Heavier heading typeface.** Done 2026-08-08: hero h1 300 → 600; section display headings (s-head labels, ai-h2, about-h2) 300 → 500. Still Cormorant Garamond — revisit with a font swap only if it still reads thin against cosmos-institute.org.
+- [x] **Heading typeface swapped, not just thickened.** 2026-08-08: weight-bumping Cormorant Garamond read as "just fatter" (Robert). Cosmos-institute.org uses PP Fragment (commercial); display face swapped to **Instrument Serif** — closest free match, single 400 weight, all display-heading weights normalized. Alternates viewable at `/font-compare.html` (local only, gitignored): Zodiak, Fraunces, DM Serif Display, Newsreader. Buying PP Fragment itself remains an option if Instrument doesn't land.
 - [x] **Deepen black/white contrast.** Done 2026-08-08: ink scale darkened (L10/15/35/48 → L7/11/29/40). Palette and blue untouched.
 
 ## Tier 2 — Cuts (high impact, low effort, minimal new writing)
