@@ -195,6 +195,11 @@
       color: var(--brand);
       border-color: var(--brand);
     }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
 
     /* ================================================
        HERO
@@ -361,17 +366,21 @@
     .position {
       padding: var(--s-xl) 0 var(--s-2xl);
     }
-    .position-grid {
+    /* ── Two-column layout: quote left, cards right ── */
+    .position-two-col {
       display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 88px;
+      grid-template-columns: 5fr 7fr;
+      gap: 80px;
       align-items: start;
     }
-    .position-sidebar {
+    .position-left {
       padding-top: 6px;
+    }
+    .position-sidebar {
       display: flex;
       flex-direction: column;
       gap: 18px;
+      margin-bottom: 48px;
     }
     .position-sidebar-rule {
       width: 28px;
@@ -380,7 +389,7 @@
     }
     .position-quote {
       font-family: var(--f-display);
-      font-size: clamp(1.5rem, 2.4vw, 2.375rem);
+      font-size: clamp(1.375rem, 2vw, 2.125rem);
       font-weight: 300;
       font-style: italic;
       line-height: 1.45;
@@ -389,79 +398,34 @@
       margin-bottom: 32px;
     }
     .position-body {
-      font-size: 1.125rem;
+      font-size: 1.0625rem;
       line-height: 1.8;
       color: var(--ink-muted);
     }
     .position-body + .position-body {
-      margin-top: 28px;
+      margin-top: 24px;
     }
-    .position-quad-outer {
-      display: grid;
-      grid-template-columns: 28px 1fr 28px;
-      grid-template-rows: auto 1fr auto;
-      margin-top: var(--s-lg);
-      align-items: center;
-    }
-    .pq-axis {
-      font-family: var(--f-label);
-      font-size: 0.625rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--brand-mid);
-      opacity: 0.55;
-    }
-    .pq-axis--top {
-      grid-area: 1 / 2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding-bottom: 10px;
-    }
-    .pq-axis--bottom {
-      grid-area: 3 / 2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding-top: 10px;
-    }
-    .pq-axis--top::before, .pq-axis--top::after,
-    .pq-axis--bottom::before, .pq-axis--bottom::after {
-      content: '';
-      height: 1px;
-      flex: 0 0 40px;
-      background: var(--brand-mid);
-      opacity: 0.35;
-    }
-    .pq-axis--left {
-      grid-area: 2 / 1;
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-      text-align: center;
-      align-self: center;
-      justify-self: center;
-    }
-    .pq-axis--right {
-      grid-area: 2 / 3;
-      writing-mode: vertical-rl;
-      text-align: center;
-      align-self: center;
-      justify-self: center;
-    }
-    .position-quad {
-      grid-area: 2 / 2;
+    /* ── Compact 2×2 card grid ── */
+    .position-compact-quad {
       display: grid;
       grid-template-columns: 1fr 1fr;
       border-top: 1px solid var(--rule);
       border-left: 1px solid var(--rule);
     }
-    .position-quad-item {
+    .position-compact-item {
       position: relative;
-      padding: 56px 60px;
+      background: var(--bg);
+      padding: 40px 36px;
       border-right: 1px solid var(--rule);
       border-bottom: 1px solid var(--rule);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    @media (hover: hover) {
+      .position-compact-item:hover {
+        background: #FFFFFF;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+        z-index: 2;
+      }
     }
     /* GlowingEffect — mouse-tracking radial spotlight */
     .quad-glow {
@@ -469,7 +433,7 @@
       inset: 0;
       pointer-events: none;
       background: radial-gradient(
-        circle 260px at var(--mx, -200px) var(--my, -200px),
+        circle 220px at var(--mx, -200px) var(--my, -200px),
         hsl(205 69% 78% / 0.13) 0%,
         hsl(205 44% 55% / 0.05) 50%,
         transparent 75%
@@ -481,33 +445,135 @@
     .quad-glow.is-active {
       opacity: 1;
     }
-    /* ensure text content sits above the glow layer */
-    .position-quad-item > *:not(.quad-glow) {
+    .position-compact-item > *:not(.quad-glow) {
       position: relative;
       z-index: 1;
     }
-    .position-quad-axis {
-      display: block;
-      font-family: var(--f-label);
-      font-size: 0.4375rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--brand-mid);
-      margin-bottom: 14px;
-      opacity: 0.7;
-    }
     .position-quad-h {
       font-family: var(--f-display);
-      font-size: clamp(1.375rem, 1.85vw, 1.875rem);
+      font-size: clamp(1.125rem, 1.5vw, 1.5rem);
       font-weight: 500;
       color: var(--ink);
       line-height: 1.2;
-      margin-bottom: 20px;
+      margin-bottom: 14px;
     }
     .position-quad-body {
-      font-size: 1.0625rem;
-      line-height: 1.8;
+      font-size: 0.9375rem;
+      line-height: 1.75;
       color: var(--ink-muted);
+    }
+
+    /* ================================================
+       QUAD ICONS — static by default, animate on hover
+       ================================================ */
+    .quad-icon {
+      display: block;
+      margin-bottom: 24px;
+      flex-shrink: 0;
+    }
+
+    /* ── Shared keyframes ── */
+    @keyframes spin-cw  { to { transform: rotate( 360deg); } }
+    @keyframes spin-ccw { to { transform: rotate(-360deg); } }
+    @keyframes xp-pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50%       { transform: scale(1.6); opacity: 0.35; }
+    }
+    @keyframes ppl-dot-flash {
+      0%, 55%, 100% { transform: scale(1);   opacity: 0.70; }
+      27%            { transform: scale(2.5); opacity: 0.15; }
+    }
+    @keyframes ppl-triple-flash {
+      0%, 100% { transform: scale(1);   opacity: 0.90; }
+      50%       { transform: scale(3.0); opacity: 0.12; }
+    }
+    @keyframes node-wave {
+      0%, 65%, 100% { transform: scale(1); }
+      22%            { transform: scale(2.1); }
+    }
+
+    /* ── Default: all paused ── */
+    .xp-center {
+      transform-box: fill-box; transform-origin: center;
+      animation: xp-pulse 3s ease-in-out infinite paused;
+    }
+    .xp-arc-1 { transform-origin: 50px 50px; animation: spin-cw  14s linear infinite paused; }
+    .xp-arc-2 { transform-origin: 50px 50px; animation: spin-ccw 23s linear infinite paused; }
+    .xp-arc-3 { transform-origin: 50px 50px; animation: spin-cw  37s linear infinite paused; }
+
+    .act-group { transform-origin: 50px 50px; animation: spin-cw 25s linear infinite paused; }
+
+    .ppl-group { transform-origin: 50px 50px; animation: spin-ccw 65s linear infinite paused; }
+    .ppl-dot-1 {
+      transform-box: fill-box; transform-origin: center;
+      animation: ppl-dot-flash 3s ease-in-out infinite 0s paused;
+    }
+    .ppl-dot-2 {
+      transform-box: fill-box; transform-origin: center;
+      animation: ppl-dot-flash 3s ease-in-out infinite 1s paused;
+    }
+    .ppl-dot-3 {
+      transform-box: fill-box; transform-origin: center;
+      animation: ppl-dot-flash 3s ease-in-out infinite 2s paused;
+    }
+    .ppl-triple {
+      transform-box: fill-box; transform-origin: center;
+      animation: ppl-triple-flash 2s ease-in-out infinite paused;
+    }
+
+    .sys-center {
+      transform-box: fill-box; transform-origin: center;
+      animation: node-wave 2s ease-in-out infinite paused;
+    }
+    .sys-node {
+      transform-box: fill-box; transform-origin: center;
+      animation: node-wave 4.5s ease-in-out infinite paused;
+    }
+    .sys-n0 { animation-delay: 0.00s; }
+    .sys-n1 { animation-delay: 0.75s; }
+    .sys-n2 { animation-delay: 1.50s; }
+    .sys-n3 { animation-delay: 2.25s; }
+    .sys-n4 { animation-delay: 3.00s; }
+    .sys-n5 { animation-delay: 3.75s; }
+
+    /* ── Hover: run at faster/more dynamic speeds ── */
+    @media (hover: hover) {
+      .position-compact-item:hover .xp-center {
+        animation: xp-pulse 0.9s ease-in-out infinite running;
+      }
+      .position-compact-item:hover .xp-arc-1 {
+        animation: spin-cw  3s linear infinite running;
+      }
+      .position-compact-item:hover .xp-arc-2 {
+        animation: spin-ccw 5s linear infinite running;
+      }
+      .position-compact-item:hover .xp-arc-3 {
+        animation: spin-cw  9s linear infinite running;
+      }
+      .position-compact-item:hover .act-group {
+        animation: spin-cw 4s linear infinite running;
+      }
+      .position-compact-item:hover .ppl-group {
+        animation: spin-ccw 8s linear infinite running;
+      }
+      .position-compact-item:hover .ppl-dot-1 {
+        animation: ppl-dot-flash 0.9s ease-in-out infinite 0s running;
+      }
+      .position-compact-item:hover .ppl-dot-2 {
+        animation: ppl-dot-flash 0.9s ease-in-out infinite 0.3s running;
+      }
+      .position-compact-item:hover .ppl-dot-3 {
+        animation: ppl-dot-flash 0.9s ease-in-out infinite 0.6s running;
+      }
+      .position-compact-item:hover .ppl-triple {
+        animation: ppl-triple-flash 0.6s ease-in-out infinite running;
+      }
+      .position-compact-item:hover .sys-center {
+        animation: node-wave 0.6s ease-in-out infinite running;
+      }
+      .position-compact-item:hover .sys-node {
+        animation: node-wave 1.2s ease-in-out infinite running;
+      }
     }
 
     /* ================================================
@@ -1069,7 +1135,7 @@
     @media (max-width: 1100px) {
       .wrap { padding: 0 40px; }
       .hero-left { padding: 72px 48px 72px 40px; }
-      .position-grid { grid-template-columns: 1fr; gap: 40px; }
+      .position-two-col { grid-template-columns: 1fr; gap: 48px; }
       .about-grid { grid-template-columns: 1fr; gap: 56px; }
       .about-portrait img { aspect-ratio: 4 / 3; }
     }
@@ -1097,11 +1163,9 @@
 
     @media (max-width: 640px) {
       .wrap { padding: 0 24px; }
-      .position-quad-outer { grid-template-columns: 1fr; grid-template-rows: auto; }
-      .pq-axis { display: none; }
-      .position-quad { grid-area: auto; grid-template-columns: 1fr; border-left: none; }
-      .position-quad-item { padding: 40px 24px; border-right: none; }
-      .position-quad-item:last-child { border-bottom: none; }
+      .position-compact-quad { grid-template-columns: 1fr; }
+      .position-compact-item { border-right: none; }
+      .position-compact-item:last-child { border-bottom: none; }
       .s-head .label:not(.label--small),
       .position-sidebar .label {
         font-size: clamp(1.75rem, 7vw, 2.25rem);
@@ -1126,8 +1190,10 @@
     <div class="wrap">
       <div class="nav-row">
         <a href="/" class="nav-name">Robert MacNaughton</a>
-        <a href="#right-relationship" class="nav-link">#RightRelationshipwithAI</a>
-        <a href="https://calendly.com/macnaughton/coaching-discovery" target="_blank" rel="noopener noreferrer" class="nav-cta">Get in Touch</a>
+        <div class="nav-right">
+          <a href="#right-relationship" class="nav-link">#RightRelationshipwithAI</a>
+          <a href="https://calendly.com/macnaughton/coaching-discovery" target="_blank" rel="noopener noreferrer" class="nav-cta">Get in Touch</a>
+        </div>
       </div>
     </div>
   </nav>
@@ -1290,14 +1356,14 @@
        ==================================================== -->
   <section class="position">
     <div class="wrap">
-      <div class="position-grid">
+      <div class="position-two-col">
 
-        <div class="position-sidebar">
-          <span class="label">The Work</span>
-          <div class="position-sidebar-rule"></div>
-        </div>
-
-        <div class="reveal">
+        <!-- LEFT: label + quote + body -->
+        <div class="position-left reveal">
+          <div class="position-sidebar">
+            <span class="label">The Work</span>
+            <div class="position-sidebar-rule"></div>
+          </div>
           <p class="position-quote">
             "The most expensive thing in your life is the conversation you're avoiding."
           </p>
@@ -1315,64 +1381,103 @@
           </p>
         </div>
 
-      </div>
+        <!-- RIGHT: 2×2 compact card grid -->
+        <div class="position-compact-quad">
 
-      <div class="position-quad-outer">
-        <div class="pq-axis pq-axis--top">Individual</div>
-        <div class="pq-axis pq-axis--left">Interior</div>
-        <div class="pq-axis pq-axis--right">Exterior</div>
-        <div class="pq-axis pq-axis--bottom">Collective</div>
+          <div class="position-compact-item reveal">
+            <div class="quad-glow"></div>
+            <svg class="quad-icon quad-icon--experience" width="72" height="72" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle class="xp-center" cx="50" cy="50" r="6" fill="#4A80AA"/>
+              <path class="xp-arc-1" d="M 61.3 38.7 A 16 16 0 1 1 38.7 38.7" stroke="#4A80AA" stroke-width="2.5" stroke-linecap="round" opacity="0.70"/>
+              <path class="xp-arc-2" d="M 68.4 31.6 A 26 26 0 1 1 31.6 31.6" stroke="#4A80AA" stroke-width="2"   stroke-linecap="round" opacity="0.45"/>
+              <path class="xp-arc-3" d="M 75.5 24.5 A 36 36 0 1 1 24.5 24.5" stroke="#4A80AA" stroke-width="1.5" stroke-linecap="round" opacity="0.25"/>
+            </svg>
+            <h4 class="position-quad-h">Your Experience</h4>
+            <p class="position-quad-body">
+              You often already know what needs to change. Something's in the
+              way — a story you're telling yourself, a fear you haven't looked
+              at directly, a pattern you keep running.
+            </p>
+          </div>
 
-      <div class="position-quad">
+          <div class="position-compact-item reveal d1">
+            <div class="quad-glow"></div>
+            <svg class="quad-icon quad-icon--actions" width="72" height="72" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <g class="act-group">
+                <circle cx="50" cy="50" r="5" fill="#4A80AA"/>
+                <line x1="50" y1="43" x2="49" y2="16" stroke="#4A80AA" stroke-width="2.5" stroke-linecap="round" opacity="0.80"/>
+                <line x1="54" y1="44" x2="67" y2="24" stroke="#4A80AA" stroke-width="2.5" stroke-linecap="round" opacity="0.75"/>
+                <line x1="56" y1="47" x2="76" y2="38" stroke="#4A80AA" stroke-width="2.0" stroke-linecap="round" opacity="0.65"/>
+                <line x1="57" y1="51" x2="77" y2="52" stroke="#4A80AA" stroke-width="2.0" stroke-linecap="round" opacity="0.55"/>
+                <line x1="56" y1="54" x2="71" y2="65" stroke="#4A80AA" stroke-width="2.0" stroke-linecap="round" opacity="0.50"/>
+                <line x1="52" y1="57" x2="58" y2="72" stroke="#4A80AA" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/>
+                <line x1="49" y1="57" x2="46" y2="72" stroke="#4A80AA" stroke-width="1.5" stroke-linecap="round" opacity="0.40"/>
+                <line x1="45" y1="55" x2="33" y2="65" stroke="#4A80AA" stroke-width="1.5" stroke-linecap="round" opacity="0.40"/>
+                <line x1="43" y1="49" x2="27" y2="47" stroke="#4A80AA" stroke-width="1.5" stroke-linecap="round" opacity="0.38"/>
+                <line x1="46" y1="44" x2="36" y2="27" stroke="#4A80AA" stroke-width="2.0" stroke-linecap="round" opacity="0.48"/>
+              </g>
+            </svg>
+            <h4 class="position-quad-h">Your Actions</h4>
+            <p class="position-quad-body">
+              Most sessions end with something built. A script, a decision rule,
+              a 30/60/90. I respond to ambiguity with lightweight scaffolding you
+              can use immediately.
+            </p>
+          </div>
 
-        <div class="position-quad-item reveal">
-          <div class="quad-glow"></div>
-          <h4 class="position-quad-h">Your Experience</h4>
-          <p class="position-quad-body">
-            You often already know what needs to change. You're still not doing it.
-            Something's in the way — a story you're telling yourself, a fear you
-            haven't looked at directly, a pattern you keep running. The work here
-            is finding what's actually keeping you stuck, naming it clearly, and
-            building the awareness and courage to move.
-          </p>
-        </div>
+          <div class="position-compact-item reveal d2">
+            <div class="quad-glow"></div>
+            <svg class="quad-icon quad-icon--people" width="72" height="72" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <g class="ppl-group">
+                <circle cx="50" cy="30" r="22" stroke="#4A80AA" stroke-width="2" opacity="0.50"/>
+                <circle cx="36" cy="58" r="22" stroke="#4A80AA" stroke-width="2" opacity="0.50"/>
+                <circle cx="64" cy="58" r="22" stroke="#4A80AA" stroke-width="2" opacity="0.50"/>
+                <circle class="ppl-dot-1" cx="57" cy="51" r="3"   fill="#4A80AA" opacity="0.70"/>
+                <circle class="ppl-dot-2" cx="43" cy="51" r="3"   fill="#4A80AA" opacity="0.70"/>
+                <circle class="ppl-dot-3" cx="50" cy="42" r="3"   fill="#4A80AA" opacity="0.70"/>
+                <circle class="ppl-triple" cx="50" cy="48" r="2.5" fill="#4A80AA" opacity="0.90"/>
+              </g>
+            </svg>
+            <h4 class="position-quad-h">Your People</h4>
+            <p class="position-quad-body">
+              The co-founder dynamic. The direct report you've rescheduled three
+              times. More than half the work is strategizing these conversations
+              before you have them.
+            </p>
+          </div>
 
-        <div class="position-quad-item reveal d1">
-          <div class="quad-glow"></div>
-          <h4 class="position-quad-h">Your Actions</h4>
-          <p class="position-quad-body">
-            Most sessions end with something built. A script for the conversation
-            you've been dreading. A decision rule. A 30/60/90. The email you've
-            been avoiding for two weeks. I respond to ambiguity with lightweight
-            scaffolding you can use immediately, not more abstraction.
-          </p>
-        </div>
+          <div class="position-compact-item reveal d3">
+            <div class="quad-glow"></div>
+            <svg class="quad-icon quad-icon--systems" width="72" height="72" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <line x1="50" y1="50" x2="50" y2="20"  stroke="#4A80AA" stroke-width="1.5" opacity="0.35"/>
+              <line x1="50" y1="50" x2="75" y2="66"  stroke="#4A80AA" stroke-width="1.5" opacity="0.35"/>
+              <line x1="50" y1="50" x2="23" y2="66"  stroke="#4A80AA" stroke-width="1.5" opacity="0.35"/>
+              <line x1="50" y1="20" x2="77" y2="35"  stroke="#4A80AA" stroke-width="1.0" opacity="0.25"/>
+              <line x1="77" y1="35" x2="75" y2="66"  stroke="#4A80AA" stroke-width="1.0" opacity="0.25"/>
+              <line x1="75" y1="66" x2="50" y2="80"  stroke="#4A80AA" stroke-width="1.0" opacity="0.25"/>
+              <line x1="50" y1="80" x2="23" y2="66"  stroke="#4A80AA" stroke-width="1.0" opacity="0.25"/>
+              <line x1="23" y1="66" x2="25" y2="35"  stroke="#4A80AA" stroke-width="1.0" opacity="0.25"/>
+              <line x1="25" y1="35" x2="50" y2="20"  stroke="#4A80AA" stroke-width="1.0" opacity="0.25"/>
+              <line x1="50" y1="20" x2="75" y2="66"  stroke="#4A80AA" stroke-width="1.0" opacity="0.20"/>
+              <line x1="77" y1="35" x2="23" y2="66"  stroke="#4A80AA" stroke-width="1.0" opacity="0.20"/>
+              <circle class="sys-center"      cx="50" cy="50" r="4"  fill="#4A80AA"/>
+              <circle class="sys-node sys-n0" cx="50" cy="20" r="5"  fill="#4A80AA"/>
+              <circle class="sys-node sys-n1" cx="77" cy="35" r="5"  fill="#4A80AA"/>
+              <circle class="sys-node sys-n2" cx="75" cy="66" r="5"  fill="#4A80AA"/>
+              <circle class="sys-node sys-n3" cx="50" cy="80" r="5"  fill="#4A80AA"/>
+              <circle class="sys-node sys-n4" cx="23" cy="66" r="5"  fill="#4A80AA"/>
+              <circle class="sys-node sys-n5" cx="25" cy="35" r="5"  fill="#4A80AA"/>
+            </svg>
+            <h4 class="position-quad-h">Your Systems</h4>
+            <p class="position-quad-body">
+              Role clarity. Decision rights. Meeting cadence. The organizational
+              design questions that keep showing up as people problems.
+            </p>
+          </div>
 
-        <div class="position-quad-item reveal d2">
-          <div class="quad-glow"></div>
-          <h4 class="position-quad-h">Your People</h4>
-          <p class="position-quad-body">
-            The co-founder dynamic you're managing around. The direct report
-            you've rescheduled three times. The investor relationship nobody's
-            naming clearly. More than half of the work is strategizing these
-            conversations: what to say, how to open, where the invisible dynamics
-            are, and how to set it up so it actually goes well.
-          </p>
-        </div>
+        </div><!-- /.position-compact-quad -->
 
-        <div class="position-quad-item reveal d3">
-          <div class="quad-glow"></div>
-          <h4 class="position-quad-h">Your Systems</h4>
-          <p class="position-quad-body">
-            Role clarity. Decision rights. Meeting cadence. The organizational
-            design questions that keep showing up as people problems. Sequence
-            before you scale. A memo and a weekly review will consistently
-            outperform a sophisticated tool with low adoption.
-          </p>
-        </div>
-
-      </div><!-- /.position-quad -->
-      </div><!-- /.position-quad-outer -->
+      </div><!-- /.position-two-col -->
     </div>
   </section>
 
@@ -1677,7 +1782,7 @@
   <script>
     /* ── Quad spotlight — radial glow follows cursor within each card ── */
     (function () {
-      var items = document.querySelectorAll('.position-quad-item');
+      var items = document.querySelectorAll('.position-compact-item');
 
       items.forEach(function (item) {
         var glow = item.querySelector('.quad-glow');
