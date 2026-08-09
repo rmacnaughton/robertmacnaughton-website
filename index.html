@@ -39,10 +39,10 @@
       --brand-light:  hsl(205, 69%, 87%);   /* sky tint          */
 
       /* Ink scale (neutral grays per guidelines) */
-      --ink-00:  hsl(0, 0%, 10%);
-      --ink-dark: hsl(0, 0%, 15%);          /* L15               */
-      --ink-mid:  hsl(0, 0%, 35%);          /* L35               */
-      --ink-muted: hsl(0, 0%, 48%);
+      --ink-00:  hsl(0, 0%, 7%);
+      --ink-dark: hsl(0, 0%, 11%);
+      --ink-mid:  hsl(0, 0%, 29%);
+      --ink-muted: hsl(0, 0%, 40%);
       --ink-light: hsl(0, 0%, 60%);
       --ink-faint: hsl(0, 0%, 68%);         /* near L65          */
 
@@ -136,7 +136,7 @@
     .position-sidebar .label {
       font-family: var(--f-display);
       font-size: clamp(2rem, 4vw, 3.25rem);
-      font-weight: 300;
+      font-weight: 500;
       font-style: italic;
       letter-spacing: -0.02em;
       text-transform: none;
@@ -237,7 +237,7 @@
     .hero-h1 {
       font-family: var(--f-display);
       font-size: clamp(3rem, 5.25vw, 5.75rem);
-      font-weight: 300;
+      font-weight: 600;
       line-height: 1.04;
       letter-spacing: -0.025em;
       color: var(--ink-dark);
@@ -306,14 +306,13 @@
       height: 100%;
       object-fit: cover;
       object-position: 38% top;
-      filter: sepia(7%) saturate(86%) brightness(101%);
     }
     /* Left-edge fade: photo dissolves into page background */
     .hero-right::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, var(--bg) 0%, transparent 36%);
+      background: linear-gradient(90deg, var(--bg) 0%, transparent 16%);
       z-index: 1;
     }
 
@@ -648,7 +647,7 @@
     .ai-h2 {
       font-family: var(--f-display);
       font-size: clamp(1.875rem, 3.5vw, 3rem);
-      font-weight: 300;
+      font-weight: 500;
       font-style: italic;
       line-height: 1.15;
       letter-spacing: -0.02em;
@@ -817,7 +816,7 @@
     .about-h2 {
       font-family: var(--f-display);
       font-size: clamp(2.25rem, 3.5vw, 3.5rem);
-      font-weight: 300;
+      font-weight: 500;
       line-height: 1.2;
       letter-spacing: -0.02em;
       color: var(--ink-dark);
@@ -839,7 +838,6 @@
       aspect-ratio: 3 / 4;
       object-fit: cover;
       object-position: center top;
-      filter: sepia(5%) saturate(82%) brightness(103%);
       transition: transform 0.65s ease;
     }
     .about-portrait:hover img {
@@ -1144,7 +1142,7 @@
       .hero { grid-template-columns: 1fr; min-height: auto; }
       .hero-right { height: 72vw; }
       .hero-right::before {
-        background: linear-gradient(to bottom, var(--bg) 0%, transparent 35%), linear-gradient(to top, var(--bg) 0%, transparent 35%);
+        background: linear-gradient(to bottom, var(--bg) 0%, transparent 14%), linear-gradient(to top, var(--bg) 0%, transparent 14%);
       }
       .hero-left { padding: 52px 40px 64px; }
       .creds-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 0; }
@@ -1617,7 +1615,7 @@
     <div class="wrap">
 
       <div class="s-head">
-        <span class="label">Selected Projects</span>
+        <span class="label">Special Projects</span>
         <div class="s-head-rule"></div>
       </div>
 

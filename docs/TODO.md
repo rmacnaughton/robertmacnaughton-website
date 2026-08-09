@@ -6,10 +6,10 @@ Merged from the personal notes file and the Niamh punch list (2026-04-15 co-work
 
 ## Tier 1 — Visual quick wins (high impact, low effort — Niamh's direct feedback)
 
-- [ ] **Strip the AI whitewash off every photo.** Niamh's strongest reaction: the white overlay flattens the humanity, reads as stock. Restore original depth and contrast. Applies to the hero photo *and* the projects images. *(The designated "pick one" 20-minute item.)*
-- [ ] **"Selected Projects" → "Special Projects."** One-word change; still reads "Selected" on the live site.
-- [ ] **Heavier heading typeface.** Current thin weight "doesn't make me wanna read it." Thin is fine dotted through the page, wrong for the first thing on it. Reference: [cosmos-institute.org](https://cosmos-institute.org).
-- [ ] **Deepen black/white contrast.** Palette and the blue stay; make the type pop.
+- [x] **Strip the AI whitewash off every photo.** Done 2026-08-08: removed the desaturating sepia/saturate filters on hero and About portrait; cut the hero dissolve gradient from 36% to 16% (mobile fades 35% → 14%). Decision: the hero photo itself (`Headhost_2023.png`) stays — Niamh saw the original and approved it; the wash was the CSS treatment, not the file.
+- [x] **"Selected Projects" → "Special Projects."** Done 2026-08-08.
+- [x] **Heavier heading typeface.** Done 2026-08-08: hero h1 300 → 600; section display headings (s-head labels, ai-h2, about-h2) 300 → 500. Still Cormorant Garamond — revisit with a font swap only if it still reads thin against cosmos-institute.org.
+- [x] **Deepen black/white contrast.** Done 2026-08-08: ink scale darkened (L10/15/35/48 → L7/11/29/40). Palette and blue untouched.
 
 ## Tier 2 — Cuts (high impact, low effort, minimal new writing)
 

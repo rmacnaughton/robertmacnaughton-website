@@ -49,6 +49,7 @@ await page.evaluate(async () => {
 // Force all reveal elements visible (for full-page screenshot)
 await page.evaluate(() => {
   document.querySelectorAll('.r').forEach(el => el.classList.add('on'));
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
 });
 
 // Wait for animations to settle
