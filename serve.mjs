@@ -36,7 +36,7 @@ const FONT_PICKER = `
 <script>
 (function () {
   var FONTS = [
-    { name: 'Cormorant Garamond (current)', family: null },
+    { name: 'Site default (DM Serif Display)', family: null },
     { name: 'Zodiak', family: 'Zodiak', big: 500, mid: 500 },
     { name: 'Newsreader', family: 'Newsreader', big: 500, mid: 500 },
     { name: 'Playfair Display', family: 'Playfair Display', big: 500, mid: 500 },
