@@ -37,7 +37,12 @@ Niamh's structural sequence, in her order:
 ## Tier 5 — Structural, gated on upstream decisions
 
 - [ ] **Update docs/Positioning.md before rewriting offering copy.** The 2026-08-08 commit added the transcript-grounded methodology, but the doc still lists Curated Gatherings as offering #3 and has no teaching leg. It governs all site copy.
-- [ ] **Add the missing teacher leg to "What I Offer."** Site covers coach (Executive Coaching, Strategic Advisory) and facilitator (Offsites, Curated Gatherings) — no teaching/workshops/training. Restructure around the triple threat (coach / teacher / facilitator), each with distinct entry points, buyers, price points; AI/RRwAI as the priority application. Corporate training named (2026-08-08) as easiest sale, warmest buyer, highest $/hour — quarantined as revenue engine, separate from the development track.
+- [ ] **Restructure "What I Offer" around the triple threat.** Decided 2026-08-09:
+  - **Layout: rows, not columns** — each offering gets a full-width row instead of the current 4-column grid.
+  - **Slot #3: replace Strategic Advisory with Trainings** — the various topics Robert can teach (management, business principles, power dynamics, Integral, AI, et al). This adds the missing teacher leg.
+  - Resulting triple-threat mapping — coach: Executive Coaching · facilitator: Leadership Offsites & Strategic Conversations · teacher: Trainings. Each mode has distinct entry points, buyers, price points; AI/RRwAI is the priority application.
+  - Corporate training named (2026-08-08) as easiest sale, warmest buyer, highest $/hour — quarantined as revenue engine, separate from the development track.
+  - Pair with the Tier 2 copy cut (less text under each offering) when rebuilding.
 - [ ] **Resolve Curated Gatherings.** Taken off the board 2026-08-08 until an operator exists, but still advertised on the site.
 - [ ] **IntegralCentered.com decision** — fold in, keep as event brand, or sunset. Gates how the Integral Center legacy section reads.
 - [ ] **Card animations** à la [commonsstack.org](https://www.commonsstack.org/). Polish; do after structure settles.
