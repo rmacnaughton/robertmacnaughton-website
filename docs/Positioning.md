@@ -41,6 +41,29 @@ The site should let all of this be present without making any single dimension t
 
 ---
 
+## The Intersection
+
+*From Robert, 2026-08-09 — verbatim:*
+
+> * triple threat: teacher (Integral / AI / etc); exec coach; experienced facilitator;
+> * plus: I'm an engineer by training who then focused on applied psychology and philosophy -- phronesis. I've been following AI development for 20+ years from the perspective of both cognitive science and spiritual practitioner. This is my zone in a way others can't keep pace.
+
+This is what the site has to make legible. Two claims stacked.
+
+**The triple threat** — teacher, executive coach, experienced facilitator. Three modes, not one. The teacher leg (Integral, AI, and more) is currently absent from the site's *What I Offer* entirely.
+
+**The formation behind it** — engineer by training, then applied psychology and philosophy. *Phronesis* — practical wisdom, judgment in particular circumstances — is the through-line, and it is the scarce resource in the Intelligence Age. Twenty-plus years tracking AI development from two seats at once: cognitive science and spiritual practice. Few people hold both, and fewer have been at it that long.
+
+The claim to make audible without saying it in these words: **this is his zone in a way others can't keep pace with.**
+
+How this lands on the site (decided 2026-08-09):
+- Hero title: **"Advisor for the Intelligence Age"** — carries the era and the AI position.
+- Hero subtext carries phronesis: judgment, not more information.
+- Hero eyebrow plants the triple threat: Executive Coach · Teacher · Facilitator.
+- The economic thesis — *"When intelligence gets cheap, judgment gets expensive."* — lives in the AI section, commentator register, not the hero.
+
+---
+
 ## How the Coaching Actually Works
 
 Based on analysis of 376 session transcripts, a stable intervention sequence appears across Robert's work:

@@ -13,7 +13,7 @@ Merged from the personal notes file and the Niamh punch list (2026-04-15 co-work
 
 ## Tier 2 — Cuts (high impact, low effort, minimal new writing)
 
-- [ ] **Trim the hero subtext.** Currently four stacked claims in one sentence. Rule: "If you can ever just say less, it's usually a good thing."
+- [x] **Trim the hero subtext.** Done 2026-08-09: four stacked claims replaced with one sentence carrying phronesis — "I work with founders and executives on the judgment that doesn't come from more information."
 - [ ] **Cut the copy under "What I Offer."** The four offerings are right; the explanatory text underneath is too heavy.
 - [ ] **Stat maintenance.** Live claims — 5,000+ hours, 100+ group sessions, 36+ months average relationship, 20+ years, "376 sessions" — need a source and a date per the endorsement protocol. The 376 number decays monthly.
 
@@ -21,8 +21,8 @@ Merged from the personal notes file and the Niamh punch list (2026-04-15 co-work
 
 Niamh's structural sequence, in her order:
 
-- [ ] **Hero = name + one big statement, nothing else yet.** Stronger font, deeper color, same palette. The sentence is unwritten; candidates: "Advisor for the (dawn of the) Intelligence Age" / "AI-Native Executive Coach."
-- [ ] **Decide the headline positioning.** The differentiator stack: trusted-advisor relationship (not project-based) × senior-leader buyer × developmental lens × builder credibility. Boundary line to keep: "I don't do AI consulting engagements. I work with leaders in an ongoing advisory relationship where AI is one of several strategic threads… If your challenge is *leading through this transition* — that's what I do."
+- [x] **Hero = name + one big statement.** Done 2026-08-09: headline is **"Advisor for the Intelligence Age"** (Robert's call, validated by everyone he ran it by). Eyebrow now plants the triple threat: Executive Coach · Teacher · Facilitator. "When intelligence gets cheap, judgment gets expensive" placed in the AI section as its thesis line — commentator register kept out of the hero. See "The Intersection" in Positioning.md.
+- [x] **Headline positioning decided** — see above. Boundary line still unused on the site, keep for offer copy: "I don't do AI consulting engagements. I work with leaders in an ongoing advisory relationship where AI is one of several strategic threads… If your challenge is *leading through this transition* — that's what I do."
 - [ ] **Move "the most expensive thing in your life is the conversation you're avoiding" further down.** It scopes the work too narrowly ("It's just about conversations… the work spans beyond that").
 - [ ] **Replace that slot with subtext that teaches the four quadrants** — how to read Experience / Actions / People / Systems, and that they get worked simultaneously: "most coaching or advisory will focus on one of these four quadrants, whereas I'm well versed across all of them" (the idea, not the copy).
 - [ ] **Write quadrant copy for the buyer who actually walks in** — the skeptical engineering CEO. Describe the inner landscape through a lens they'd already value. The site builds trust; it doesn't disclose the scope.
