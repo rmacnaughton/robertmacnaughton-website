@@ -1,6 +1,6 @@
 /* DYC Impact Showcase — offline cache.
    Bump CACHE when you upload a new version of the page. */
-var CACHE = 'dyc-showcase-v2';
+var CACHE = 'dyc-showcase-v3';
 var ASSETS = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './icon-180.png'];
 
 self.addEventListener('install', function(e){
