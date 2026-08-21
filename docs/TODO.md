@@ -30,7 +30,7 @@ Niamh's structural sequence, in her order:
 ## Tier 4 — Section-level copy updates (medium impact, moderate effort)
 
 - [ ] **Rewrite "How I Work With AI."** Currently reads as proving AI knowledge; should assume the reputation — *AI-native advisor*, stated flatly. Editorial rule (2026-08-08): don't cover AI, cover what AI is doing to humans; publish only what will still be true in two years. Much more material exists now: ICON, Keith Martin-Smith / Integral Life episode, Walsh and Dupuy, RRwAI reference deck, the Mirror.
-- [ ] **Exec coaching section:** remove "draft email"; open with onboarding, capability assessments, etc.
+- [x] **Exec coaching section.** Done 2026-08-10 via the offer rebuild: "draft the email" gone; copy now opens with capability assessment and traction.
 - [ ] **About section:** true timeline — Atlanta → Boulder → engineering → Naropa → Integral → community builder → coach.
 - [ ] **Surface the NeubergGore relationships** more prominently.
 - [ ] **Extend "the wolf" into the About section.** The frame is live as the What I Offer intro; Positioning.md has it under Services → The Wolf. Consider a beat in About (crisis work, "throw me in").
