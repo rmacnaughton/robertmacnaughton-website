@@ -583,76 +583,85 @@
       padding: var(--s-xl) 0 var(--s-2xl);
     }
     .work-intro {
-      max-width: 620px;
-      font-size: 1.1875rem;
-      line-height: 1.75;
+      max-width: 640px;
+      font-size: 1.25rem;
+      line-height: 1.7;
       color: var(--ink-mid);
-      margin: -16px 0 72px;
+      margin: -16px 0 80px;
     }
-    .work-intro em {
-      font-style: italic;
-      color: var(--brand);
-    }
-    .work-items {
-      display: flex;
-      flex-direction: column;
-    }
-    .work-item {
+    /* Lead offering: full-width, heavier */
+    .work-lead {
       display: grid;
-      grid-template-columns: 110px 4fr 7fr;
-      gap: 48px;
-      padding: 60px 0 64px;
+      grid-template-columns: 5fr 7fr;
+      gap: 64px;
+      padding: 64px 0 72px;
       border-top: 1px solid var(--rule);
-      transition: background 0.25s ease;
-    }
-    .work-item:last-child {
       border-bottom: 1px solid var(--rule);
     }
-    .work-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      padding-top: 8px;
-    }
     .work-mode {
+      display: block;
       font-family: var(--f-label);
       font-size: 0.625rem;
       font-weight: 700;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--brand);
+      margin-bottom: 18px;
     }
-    .work-copy {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+    .work-lead .work-title {
+      font-size: clamp(2rem, 3vw, 2.875rem);
+    }
+    .work-lead .work-desc {
+      font-size: 1.1875rem;
+      padding-top: 6px;
+    }
+    /* Bridge line into the group modes */
+    .work-bridge {
+      font-family: var(--f-display);
+      font-style: italic;
+      font-size: clamp(1.25rem, 1.8vw, 1.625rem);
+      color: var(--ink-mid);
+      margin: 64px 0 48px;
+    }
+    /* Supporting pair */
+    .work-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--rule);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .work-pair-item {
+      background: var(--bg);
+      padding: 52px 56px 60px 0;
+    }
+    .work-pair-item + .work-pair-item {
+      padding-left: 56px;
+      padding-right: 0;
+    }
+    .work-pair-item .work-title {
+      font-size: clamp(1.5rem, 2vw, 1.9375rem);
+      margin-bottom: 20px;
     }
     .work-kicker {
       font-family: var(--f-display);
-      font-size: 1.1875rem;
+      font-size: 1.125rem;
       font-style: italic;
       color: var(--ink-dark);
-      line-height: 1.5;
-    }
-
-    .work-n {
-      font-family: var(--f-display);
-      font-size: 0.875rem;
-      font-weight: 400;
-      color: var(--brand);
-      letter-spacing: 0.06em;
+      line-height: 1.55;
+      margin-top: 22px;
     }
     .work-title {
       font-family: var(--f-display);
-      font-size: clamp(1.5rem, 2vw, 2rem);
       font-weight: 400;
-      line-height: 1.2;
+      line-height: 1.15;
       letter-spacing: -0.01em;
       color: var(--ink-dark);
     }
     .work-desc {
-      font-size: 1.125rem;
-      line-height: 1.78;
+      font-size: 1.0625rem;
+      line-height: 1.75;
       color: var(--ink-muted);
     }
 
@@ -675,6 +684,30 @@
       text-transform: uppercase;
       color: var(--brand);
       margin-bottom: 28px;
+    }
+    .ai-projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 44px 56px;
+      margin-top: 72px;
+    }
+    .ai-proj {
+      border-top: 1px solid var(--rule);
+      padding-top: 26px;
+    }
+    .ai-proj-name {
+      font-family: var(--f-display);
+      font-size: 1.375rem;
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--ink-dark);
+      margin-bottom: 12px;
+    }
+    .ai-proj-desc {
+      font-size: 0.9875rem;
+      line-height: 1.7;
+      color: var(--ink-muted);
     }
     .ai-thesis {
       font-family: var(--f-display);
@@ -699,8 +732,12 @@
       line-height: 1.8;
       color: var(--ink-muted);
     }
+    .ai-body + .ai-body {
+      margin-top: 20px;
+    }
     @media (max-width: 640px) {
       .ai-h2 { font-size: clamp(1.75rem, 7vw, 2.25rem); }
+      .ai-projects { grid-template-columns: 1fr; gap: 32px; margin-top: 52px; }
     }
 
     /* ================================================
@@ -1192,8 +1229,10 @@
       .cred:nth-child(n+3)  { padding-top: 28px; border-top: 1px solid var(--rule); }
       .cred-num { font-size: 2.25rem; }
       .cred-tag { font-size: 0.625rem; letter-spacing: 0.14em; }
-      .work-item { grid-template-columns: 1fr; gap: 18px; padding: 48px 0; }
-      .work-meta { flex-direction: row; align-items: center; gap: 14px; padding-top: 0; }
+      .work-lead { grid-template-columns: 1fr; gap: 24px; padding: 48px 0 52px; }
+      .work-pair { grid-template-columns: 1fr; }
+      .work-pair-item { padding: 44px 0 48px; }
+      .work-pair-item + .work-pair-item { padding-left: 0; }
       .t-grid { grid-template-columns: 1fr; gap: 40px; }
       .proj-grid { grid-template-columns: 1fr; }
       .proj-img { height: 220px; }
@@ -1210,7 +1249,7 @@
         font-size: clamp(1.75rem, 7vw, 2.25rem);
       }
       .hero-sub { font-size: 1.125rem; }
-      .work-item { padding: 40px 0 48px; }
+      .work-bridge { margin: 44px 0 32px; }
       .footer-row { flex-direction: column; gap: 16px; text-align: center; }
       .about-portrait img { aspect-ratio: 4 / 3; }
       :root {
@@ -1529,66 +1568,55 @@
       </div>
 
       <p class="work-intro reveal">
-        My coaching community has a name for my gift:
-        <em>&ldquo;Robert is the wolf.&rdquo;</em> The one leaders call when a
-        situation needs taking care of. Throw me in, and things get moving.
+        Leaders call me when something has to go well. A stuck quarter, a
+        co-founder rift, a reorg, a crisis with no playbook. The job is the
+        same: get it moving, and grow the people carrying it.
       </p>
 
-      <div class="work-items">
-
-        <div class="work-item reveal">
-          <div class="work-meta">
-            <span class="work-n">01</span>
-            <span class="work-mode">Coach</span>
-          </div>
+      <div class="work-lead reveal">
+        <div>
+          <span class="work-mode">Coach</span>
           <h3 class="work-title">Executive Coaching</h3>
-          <div class="work-copy">
-            <p class="work-desc">
-              One-on-one, ongoing work with founders, executives, and leaders under
-              real pressure. To start, this typically looks like assessing your
-              capabilities and getting traction on anything that's stuck. It's my
-              job to make sure you and your team are growing at least as fast as
-              the company.
-            </p>
-          </div>
         </div>
+        <p class="work-desc">
+          One-on-one, ongoing work with founders, executives, and leaders under
+          real pressure. To start, this typically looks like assessing your
+          capabilities and getting traction on anything that's stuck. It's my
+          job to make sure you and your team are growing at least as fast as
+          the company.
+        </p>
+      </div>
 
-        <div class="work-item reveal d1">
-          <div class="work-meta">
-            <span class="work-n">02</span>
-            <span class="work-mode">Facilitator</span>
-          </div>
+      <p class="work-bridge reveal">At some point, the work outgrows the private conversation.</p>
+
+      <div class="work-pair">
+
+        <div class="work-pair-item reveal d1">
+          <span class="work-mode">Facilitator</span>
           <h3 class="work-title">Facilitation</h3>
-          <div class="work-copy">
-            <p class="work-desc">
-              Facilitation is the art of creating a context. When the work outgrows
-              the private conversation — an offsite, a planning cycle, a crisis that
-              needs a coordinated response — I design and run the room. The purpose
-              of a meeting is to change the future, so every session ends in
-              commitments people actually track.
-            </p>
-            <p class="work-kicker">
-              A company's ability to execute is correlated with the do:say ratio
-              of its executive team.
-            </p>
-          </div>
+          <p class="work-desc">
+            Facilitation is the art of creating a context. Offsites, planning
+            cycles, coordinated response to a crisis. Groups are complex: power
+            and status are in the room, and people try to look aligned before
+            they actually are. I design sessions that end in commitments people
+            track.
+          </p>
+          <p class="work-kicker">
+            A company's ability to execute is correlated with the do:say ratio
+            of its executive team.
+          </p>
         </div>
 
-        <div class="work-item reveal d2">
-          <div class="work-meta">
-            <span class="work-n">03</span>
-            <span class="work-mode">Teacher</span>
-          </div>
+        <div class="work-pair-item reveal d2">
+          <span class="work-mode">Teacher</span>
           <h3 class="work-title">Trainings</h3>
-          <div class="work-copy">
-            <p class="work-desc">
-              Structured programs that upgrade a whole team at once: first-time
-              manager training, feedback and difficult conversations, conflict and
-              communication, Right Relationship with AI, and AI enablement and
-              implementation. I also build bespoke trainings that meet your team
-              where it is and take it to the next level.
-            </p>
-          </div>
+          <p class="work-desc">
+            Structured programs that upgrade a whole team at once: first-time
+            managers, feedback and difficult conversations, conflict and
+            communication, Right Relationship with AI, and AI enablement and
+            implementation. I also design bespoke trainings that meet your team
+            where it is and take it to the next level.
+          </p>
         </div>
 
       </div>
@@ -1605,7 +1633,42 @@
         <span class="ai-eyebrow">How I Work With AI</span>
         <h2 class="ai-h2">Building at the Frontier</h2>
         <p class="ai-thesis">When intelligence gets cheap, judgment gets expensive.</p>
-        <p class="ai-body">My coaching practice runs on AI infrastructure I build myself. I use context-engineered prompt architectures to maintain living client documents, API-driven transcript pipelines to extract patterns across sessions, and trust-boundary-aware data design for sensitive contexts. I analyzed 376 session transcripts to independently validate my coaching methodology. I'm not advising leaders on AI adoption from the outside — I'm doing it inside my own practice every day.</p>
+        <p class="ai-body">I've followed AI for twenty years from two seats at once: cognitive science and contemplative practice. Now I build with it daily. My practice runs on tools I make myself.</p>
+        <p class="ai-body">What I care about is what these systems do to human judgment, attention, and relationships. That's the conversation I hold with leaders, and it's the standard for what I build.</p>
+      </div>
+
+      <div class="ai-projects">
+
+        <div class="ai-proj reveal">
+          <h3 class="ai-proj-name">The Mirror</h3>
+          <p class="ai-proj-desc">Realtime collective synthesis. It shows a group what it's actually saying while the conversation is still happening.</p>
+        </div>
+
+        <div class="ai-proj reveal d1">
+          <h3 class="ai-proj-name">Adaptive Epistemic Training</h3>
+          <p class="ai-proj-desc">AI knowledge transfer that adapts to how each person actually learns, instead of how the material was written.</p>
+        </div>
+
+        <div class="ai-proj reveal d2">
+          <h3 class="ai-proj-name">Vault Voice Agent</h3>
+          <p class="ai-proj-desc">A voice interface to twenty years of my own notes, models, and frameworks. I talk to my thinking; it talks back.</p>
+        </div>
+
+        <div class="ai-proj reveal">
+          <h3 class="ai-proj-name">Transcript Intelligence</h3>
+          <p class="ai-proj-desc">Pipelines that surface the patterns across hundreds of my coaching sessions. I used them to independently validate my methodology.</p>
+        </div>
+
+        <div class="ai-proj reveal d1">
+          <h3 class="ai-proj-name">Living Wikis</h3>
+          <p class="ai-proj-desc">LLM-maintained knowledge bases that communities and clients can talk to, including the #RightRelationshipwithAI wiki.</p>
+        </div>
+
+        <div class="ai-proj reveal d2">
+          <h3 class="ai-proj-name">Adaptive Assessments</h3>
+          <p class="ai-proj-desc">Assessments that meet the person where they are, in clinical use at Antelope Recovery.</p>
+        </div>
+
       </div>
     </div>
   </section>

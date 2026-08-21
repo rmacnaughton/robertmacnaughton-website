@@ -15,7 +15,7 @@ Merged from the personal notes file and the Niamh punch list (2026-04-15 co-work
 
 - [x] **Trim the hero subtext.** Done 2026-08-09: four stacked claims replaced with one sentence carrying phronesis — "I work with founders and executives on the judgment that doesn't come from more information."
 - [x] **Cut the copy under "What I Offer."** Done 2026-08-10 as part of the triple-threat rebuild — each offering is now one tight paragraph.
-- [ ] **Stat maintenance.** Live claims — 5,000+ hours, 100+ group sessions, 36+ months average relationship, 20+ years, "376 sessions" — need a source and a date per the endorsement protocol. The 376 number decays monthly.
+- [ ] **Stat maintenance.** Live claims — 5,000+ hours, 100+ group sessions, 36+ months average relationship, 20+ years — need a source and a date per the endorsement protocol. ("376 sessions" resolved 2026-08-10: replaced on-site with the durable "hundreds of sessions.")
 
 ## Tier 3 — Hero & quadrant restructure (high impact, needs copy decisions)
 
@@ -29,7 +29,7 @@ Niamh's structural sequence, in her order:
 
 ## Tier 4 — Section-level copy updates (medium impact, moderate effort)
 
-- [ ] **Rewrite "How I Work With AI."** Currently reads as proving AI knowledge; should assume the reputation — *AI-native advisor*, stated flatly. Editorial rule (2026-08-08): don't cover AI, cover what AI is doing to humans; publish only what will still be true in two years. Much more material exists now: ICON, Keith Martin-Smith / Integral Life episode, Walsh and Dupuy, RRwAI reference deck, the Mirror.
+- [x] **Rewrite "How I Work With AI."** Done 2026-08-10: reputation assumed, human-centered stance, six named builds from the AI Projects list (The Mirror, Adaptive Epistemic Training, Vault Voice Agent, Transcript Intelligence, Living Wikis, Adaptive Assessments). Still unused material for future passes: ICON, Keith Martin-Smith / Integral Life episode, Walsh and Dupuy, RRwAI reference deck.
 - [x] **Exec coaching section.** Done 2026-08-10 via the offer rebuild: "draft the email" gone; copy now opens with capability assessment and traction.
 - [ ] **About section:** true timeline — Atlanta → Boulder → engineering → Naropa → Integral → community builder → coach.
 - [ ] **Surface the NeubergGore relationships** more prominently.

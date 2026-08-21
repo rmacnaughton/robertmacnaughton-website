@@ -129,6 +129,14 @@ These are recurring, identifiable patterns from the transcript analysis. They ar
 
 ---
 
+## The AI Section (Building at the Frontier)
+
+Rebuilt 2026-08-10 from the [[AI Projects]] list. Rules (from Niamh + the 2026-08-08 session): assume the reputation, don't prove it; cover what AI is doing to humans, not AI itself; publish only what will still be true in two years.
+
+Structure: thesis line ("When intelligence gets cheap, judgment gets expensive."), two-paragraph stance (twenty years, two seats: cognitive science and contemplative practice; builds daily; cares about what these systems do to human judgment, attention, relationships), then six named builds: The Mirror, Adaptive Epistemic Training, Vault Voice Agent, Transcript Intelligence, Living Wikis, Adaptive Assessments. Kept private: Phase Finder, User Manual for Robert, AIOS/daily-brief, NOMAD, personal wikis. The "376 transcripts" stat replaced with the durable "hundreds of sessions."
+
+---
+
 ## Key Frames and Talk Tracks
 
 These are Robert's own frames. They can be referenced, adapted, or quoted on the site:
@@ -251,7 +259,14 @@ Facilitation is the art of creating a context. For when the work outgrows the pr
 Structured programs that upgrade a whole team at once. Current topics: first-time manager training, feedback and difficult conversations, conflict and communication, Right Relationship with AI, AI enablement and implementation, plus bespoke designs. Named 2026-08-08 as easiest sale, warmest buyer, highest $/hour — quarantined as revenue engine, separate from the development track.
 
 ### The Wolf
-Robert's coaching community set this intention for him: **"Robert is the wolf"** — the fixer from Pulp Fiction. The person leaders call to handle any situation; throw him in and things get moving. Integrated 2026-08-10 as the What I Offer intro. Available as a frame for About and future copy.
+Robert's coaching community set this intention for him: **"Robert is the wolf"** — the fixer from Pulp Fiction. The person leaders call to handle any situation; throw him in and things get moving.
+
+**How to use it (revised 2026-08-10):** like the Intersection, this is a claim to make *audible without saying it.* The site does not quote the community line or the movie. The wolf is a quality the copy carries:
+
+- The reader should finish the site believing: *whatever I'm facing, this is someone I can call, and things will start moving.*
+- Current expression: the What I Offer intro ("Leaders call me when something has to go well. A stuck quarter, a co-founder rift, a reorg, a crisis with no playbook. The job is the same: get it moving, and grow the people carrying it."); "getting traction on anything that's stuck" in the coaching copy; crisis response in Facilitation.
+- Future expression: an About beat; possibly the contact section ("if it's on fire, call").
+- The wolf pairs with, not against, the developmental frame: he gets it moving *and* grows the people carrying it. Fixer alone reads as mercenary; the pairing is the positioning.
 
 ---
 
