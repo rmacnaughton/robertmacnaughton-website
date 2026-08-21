@@ -29,7 +29,7 @@ Niamh's structural sequence, in her order:
 
 ## Tier 4 — Section-level copy updates (medium impact, moderate effort)
 
-- [x] **Rewrite "How I Work With AI."** Done 2026-08-10: reputation assumed, human-centered stance, six named builds from the AI Projects list (The Mirror, Adaptive Epistemic Training, Vault Voice Agent, Transcript Intelligence, Living Wikis, Adaptive Assessments). Still unused material for future passes: ICON, Keith Martin-Smith / Integral Life episode, Walsh and Dupuy, RRwAI reference deck.
+- [x] **Rewrite "How I Work With AI."** Done 2026-08-10 (revised same day): reputation assumed, human-centered stance, breadth summarized in prose — Robert's call: no project portfolio list on the site. Still unused material for future passes: ICON, Keith Martin-Smith / Integral Life episode, Walsh and Dupuy, RRwAI reference deck.
 - [x] **Exec coaching section.** Done 2026-08-10 via the offer rebuild: "draft the email" gone; copy now opens with capability assessment and traction.
 - [ ] **About section:** true timeline — Atlanta → Boulder → engineering → Naropa → Integral → community builder → coach.
 - [ ] **Surface the NeubergGore relationships** more prominently.

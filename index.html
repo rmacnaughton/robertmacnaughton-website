@@ -589,14 +589,36 @@
       color: var(--ink-mid);
       margin: -16px 0 80px;
     }
-    /* Lead offering: full-width, heavier */
-    .work-lead {
+    /* Offer cards — same family as the quadrant cards */
+    .offer-card {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      overflow: hidden;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    @media (hover: hover) {
+      .offer-card:hover {
+        background: #FFFFFF;
+        box-shadow:
+          0 12px 36px hsl(205 32% 38% / 0.10),
+          0 2px 10px hsl(205 32% 38% / 0.06);
+        z-index: 2;
+      }
+    }
+    .offer-lead {
       display: grid;
-      grid-template-columns: 5fr 7fr;
-      gap: 64px;
-      padding: 64px 0 72px;
-      border-top: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
+      grid-template-columns: 120px 4fr 6fr;
+      gap: 56px;
+      align-items: start;
+      padding: 60px 64px 64px;
+    }
+    .offer-lead-title {
+      font-size: clamp(2rem, 3vw, 2.75rem);
+    }
+    .offer-lead-desc {
+      font-size: 1.125rem;
+      padding-top: 8px;
     }
     .work-mode {
       display: block;
@@ -606,43 +628,65 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--brand);
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
-    .work-lead .work-title {
-      font-size: clamp(2rem, 3vw, 2.875rem);
+    .offer-icon {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 0;
     }
-    .work-lead .work-desc {
-      font-size: 1.1875rem;
-      padding-top: 6px;
-    }
-    /* Bridge line into the group modes */
     .work-bridge {
       font-family: var(--f-display);
       font-style: italic;
       font-size: clamp(1.25rem, 1.8vw, 1.625rem);
       color: var(--ink-mid);
-      margin: 64px 0 48px;
+      margin: 56px 0 40px;
+      text-align: center;
     }
-    /* Supporting pair */
-    .work-pair {
+    .offer-pair {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--rule);
-      border-top: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
+      gap: 28px;
     }
-    .work-pair-item {
-      background: var(--bg);
-      padding: 52px 56px 60px 0;
+    .offer-pair-item {
+      padding: 52px 52px 56px;
+      display: flex;
+      flex-direction: column;
     }
-    .work-pair-item + .work-pair-item {
-      padding-left: 56px;
-      padding-right: 0;
+    .offer-pair-item .offer-icon {
+      margin-bottom: 28px;
     }
-    .work-pair-item .work-title {
+    .offer-pair-title {
       font-size: clamp(1.5rem, 2vw, 1.9375rem);
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+    }
+    /* Offer icon motion — paused until hover, same contract as quad icons */
+    .oc-dot {
+      transform-box: fill-box; transform-origin: center;
+      animation: xp-pulse 3s ease-in-out infinite paused;
+    }
+    .oc-orbit { transform-origin: 50px 50px; animation: spin-cw 30s linear infinite paused; }
+    .fc-ring  { transform-origin: 50px 50px; animation: spin-ccw 45s linear infinite paused; }
+    .tc-src {
+      transform-box: fill-box; transform-origin: center;
+      animation: xp-pulse 3s ease-in-out infinite paused;
+    }
+    .tc-d { transform-box: fill-box; transform-origin: center; }
+    .tc-d0 { animation: ppl-dot-flash 3s ease-in-out infinite 0.0s paused; }
+    .tc-d1 { animation: ppl-dot-flash 3s ease-in-out infinite 0.3s paused; }
+    .tc-d2 { animation: ppl-dot-flash 3s ease-in-out infinite 0.6s paused; }
+    .tc-d3 { animation: ppl-dot-flash 3s ease-in-out infinite 0.9s paused; }
+    .tc-d4 { animation: ppl-dot-flash 3s ease-in-out infinite 1.2s paused; }
+    @media (hover: hover) {
+      .offer-card:hover .oc-dot   { animation: xp-pulse 1s ease-in-out infinite running; }
+      .offer-card:hover .oc-orbit { animation: spin-cw 7s linear infinite running; }
+      .offer-card:hover .fc-ring  { animation: spin-ccw 9s linear infinite running; }
+      .offer-card:hover .tc-src   { animation: xp-pulse 1s ease-in-out infinite running; }
+      .offer-card:hover .tc-d0 { animation: ppl-dot-flash 1.5s ease-in-out infinite 0.00s running; }
+      .offer-card:hover .tc-d1 { animation: ppl-dot-flash 1.5s ease-in-out infinite 0.15s running; }
+      .offer-card:hover .tc-d2 { animation: ppl-dot-flash 1.5s ease-in-out infinite 0.30s running; }
+      .offer-card:hover .tc-d3 { animation: ppl-dot-flash 1.5s ease-in-out infinite 0.45s running; }
+      .offer-card:hover .tc-d4 { animation: ppl-dot-flash 1.5s ease-in-out infinite 0.60s running; }
     }
     .work-kicker {
       font-family: var(--f-display);
@@ -685,30 +729,6 @@
       color: var(--brand);
       margin-bottom: 28px;
     }
-    .ai-projects {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 44px 56px;
-      margin-top: 72px;
-    }
-    .ai-proj {
-      border-top: 1px solid var(--rule);
-      padding-top: 26px;
-    }
-    .ai-proj-name {
-      font-family: var(--f-display);
-      font-size: 1.375rem;
-      font-weight: 400;
-      line-height: 1.2;
-      letter-spacing: -0.01em;
-      color: var(--ink-dark);
-      margin-bottom: 12px;
-    }
-    .ai-proj-desc {
-      font-size: 0.9875rem;
-      line-height: 1.7;
-      color: var(--ink-muted);
-    }
     .ai-thesis {
       font-family: var(--f-display);
       font-size: clamp(1.375rem, 2vw, 1.75rem);
@@ -737,7 +757,6 @@
     }
     @media (max-width: 640px) {
       .ai-h2 { font-size: clamp(1.75rem, 7vw, 2.25rem); }
-      .ai-projects { grid-template-columns: 1fr; gap: 32px; margin-top: 52px; }
     }
 
     /* ================================================
@@ -1229,10 +1248,9 @@
       .cred:nth-child(n+3)  { padding-top: 28px; border-top: 1px solid var(--rule); }
       .cred-num { font-size: 2.25rem; }
       .cred-tag { font-size: 0.625rem; letter-spacing: 0.14em; }
-      .work-lead { grid-template-columns: 1fr; gap: 24px; padding: 48px 0 52px; }
-      .work-pair { grid-template-columns: 1fr; }
-      .work-pair-item { padding: 44px 0 48px; }
-      .work-pair-item + .work-pair-item { padding-left: 0; }
+      .offer-lead { grid-template-columns: 1fr; gap: 28px; padding: 44px 36px 48px; }
+      .offer-pair { grid-template-columns: 1fr; }
+      .offer-pair-item { padding: 44px 36px 48px; }
       .t-grid { grid-template-columns: 1fr; gap: 40px; }
       .proj-grid { grid-template-columns: 1fr; }
       .proj-img { height: 220px; }
@@ -1573,12 +1591,19 @@
         same: get it moving, and grow the people carrying it.
       </p>
 
-      <div class="work-lead reveal">
+      <div class="offer-card offer-lead reveal">
+        <div class="quad-glow"></div>
+        <svg class="quad-icon offer-icon" width="92" height="92" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle class="oc-dot" cx="50" cy="50" r="5" fill="#4A80AA"/>
+          <path d="M 38 24 A 30 30 0 0 0 38 76" stroke="#4A80AA" stroke-width="2.5" stroke-linecap="round" opacity="0.70"/>
+          <path d="M 62 24 A 30 30 0 0 1 62 76" stroke="#4A80AA" stroke-width="2.5" stroke-linecap="round" opacity="0.45"/>
+          <circle class="oc-orbit" cx="50" cy="50" r="40" stroke="#4A80AA" stroke-width="1" stroke-dasharray="1 7" stroke-linecap="round" opacity="0.30"/>
+        </svg>
         <div>
           <span class="work-mode">Coach</span>
-          <h3 class="work-title">Executive Coaching</h3>
+          <h3 class="work-title offer-lead-title">Executive Coaching</h3>
         </div>
-        <p class="work-desc">
+        <p class="work-desc offer-lead-desc">
           One-on-one, ongoing work with founders, executives, and leaders under
           real pressure. To start, this typically looks like assessing your
           capabilities and getting traction on anything that's stuck. It's my
@@ -1589,11 +1614,26 @@
 
       <p class="work-bridge reveal">At some point, the work outgrows the private conversation.</p>
 
-      <div class="work-pair">
+      <div class="offer-pair">
 
-        <div class="work-pair-item reveal d1">
+        <div class="offer-card offer-pair-item reveal d1">
+          <div class="quad-glow"></div>
+          <svg class="quad-icon offer-icon" width="72" height="72" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="50" cy="50" r="9" stroke="#4A80AA" stroke-width="2.5" opacity="0.85"/>
+            <g class="fc-ring">
+              <circle cx="77" cy="50" r="3" fill="#4A80AA" opacity="0.70"/>
+              <circle cx="69.1" cy="69.1" r="3" fill="#4A80AA" opacity="0.55"/>
+              <circle cx="50" cy="77" r="3" fill="#4A80AA" opacity="0.70"/>
+              <circle cx="30.9" cy="69.1" r="3" fill="#4A80AA" opacity="0.55"/>
+              <circle cx="23" cy="50" r="3" fill="#4A80AA" opacity="0.70"/>
+              <circle cx="30.9" cy="30.9" r="3" fill="#4A80AA" opacity="0.55"/>
+              <circle cx="50" cy="23" r="3" fill="#4A80AA" opacity="0.70"/>
+              <circle cx="69.1" cy="30.9" r="3" fill="#4A80AA" opacity="0.55"/>
+            </g>
+            <circle cx="50" cy="50" r="38" stroke="#4A80AA" stroke-width="1" stroke-dasharray="2 6" opacity="0.25"/>
+          </svg>
           <span class="work-mode">Facilitator</span>
-          <h3 class="work-title">Facilitation</h3>
+          <h3 class="work-title offer-pair-title">Facilitation</h3>
           <p class="work-desc">
             Facilitation is the art of creating a context. Offsites, planning
             cycles, coordinated response to a crisis. Groups are complex: power
@@ -1607,9 +1647,23 @@
           </p>
         </div>
 
-        <div class="work-pair-item reveal d2">
+        <div class="offer-card offer-pair-item reveal d2">
+          <div class="quad-glow"></div>
+          <svg class="quad-icon offer-icon" width="72" height="72" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle class="tc-src" cx="50" cy="26" r="5" fill="#4A80AA"/>
+            <path d="M 40 40 A 14 14 0 0 0 60 40" stroke="#4A80AA" stroke-width="2.5" stroke-linecap="round" opacity="0.70"/>
+            <path d="M 33 50 A 24 24 0 0 0 67 50" stroke="#4A80AA" stroke-width="2" stroke-linecap="round" opacity="0.45"/>
+            <path d="M 26 60 A 34 34 0 0 0 74 60" stroke="#4A80AA" stroke-width="1.5" stroke-linecap="round" opacity="0.25"/>
+            <g>
+              <circle class="tc-d tc-d0" cx="30" cy="76" r="2.5" fill="#4A80AA" opacity="0.7"/>
+              <circle class="tc-d tc-d1" cx="40" cy="76" r="2.5" fill="#4A80AA" opacity="0.7"/>
+              <circle class="tc-d tc-d2" cx="50" cy="76" r="2.5" fill="#4A80AA" opacity="0.7"/>
+              <circle class="tc-d tc-d3" cx="60" cy="76" r="2.5" fill="#4A80AA" opacity="0.7"/>
+              <circle class="tc-d tc-d4" cx="70" cy="76" r="2.5" fill="#4A80AA" opacity="0.7"/>
+            </g>
+          </svg>
           <span class="work-mode">Teacher</span>
-          <h3 class="work-title">Trainings</h3>
+          <h3 class="work-title offer-pair-title">Trainings</h3>
           <p class="work-desc">
             Structured programs that upgrade a whole team at once: first-time
             managers, feedback and difficult conversations, conflict and
@@ -1634,41 +1688,9 @@
         <h2 class="ai-h2">Building at the Frontier</h2>
         <p class="ai-thesis">When intelligence gets cheap, judgment gets expensive.</p>
         <p class="ai-body">I've followed AI for twenty years from two seats at once: cognitive science and contemplative practice. Now I build with it daily. My practice runs on tools I make myself.</p>
+        <p class="ai-body">The current range: realtime synthesis that shows groups what they're actually saying, voice agents over twenty years of my own notes, adaptive assessments in clinical use, and pattern analysis across hundreds of my own coaching sessions.</p>
         <p class="ai-body">What I care about is what these systems do to human judgment, attention, and relationships. That's the conversation I hold with leaders, and it's the standard for what I build.</p>
       </div>
-
-      <div class="ai-projects">
-
-        <div class="ai-proj reveal">
-          <h3 class="ai-proj-name">The Mirror</h3>
-          <p class="ai-proj-desc">Realtime collective synthesis. It shows a group what it's actually saying while the conversation is still happening.</p>
-        </div>
-
-        <div class="ai-proj reveal d1">
-          <h3 class="ai-proj-name">Adaptive Epistemic Training</h3>
-          <p class="ai-proj-desc">AI knowledge transfer that adapts to how each person actually learns, instead of how the material was written.</p>
-        </div>
-
-        <div class="ai-proj reveal d2">
-          <h3 class="ai-proj-name">Vault Voice Agent</h3>
-          <p class="ai-proj-desc">A voice interface to twenty years of my own notes, models, and frameworks. I talk to my thinking; it talks back.</p>
-        </div>
-
-        <div class="ai-proj reveal">
-          <h3 class="ai-proj-name">Transcript Intelligence</h3>
-          <p class="ai-proj-desc">Pipelines that surface the patterns across hundreds of my coaching sessions. I used them to independently validate my methodology.</p>
-        </div>
-
-        <div class="ai-proj reveal d1">
-          <h3 class="ai-proj-name">Living Wikis</h3>
-          <p class="ai-proj-desc">LLM-maintained knowledge bases that communities and clients can talk to, including the #RightRelationshipwithAI wiki.</p>
-        </div>
-
-        <div class="ai-proj reveal d2">
-          <h3 class="ai-proj-name">Adaptive Assessments</h3>
-          <p class="ai-proj-desc">Assessments that meet the person where they are, in clinical use at Antelope Recovery.</p>
-        </div>
-
       </div>
     </div>
   </section>
@@ -1893,7 +1915,7 @@
   <script>
     /* ── Quad spotlight — radial glow follows cursor within each card ── */
     (function () {
-      var items = document.querySelectorAll('.position-compact-item');
+      var items = document.querySelectorAll('.position-compact-item, .offer-card');
 
       items.forEach(function (item) {
         var glow = item.querySelector('.quad-glow');
