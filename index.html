@@ -582,25 +582,57 @@
       border-top: 1px solid var(--rule);
       padding: var(--s-xl) 0 var(--s-2xl);
     }
-    .work-items {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--rule);
-      border: 1px solid var(--rule);
+    .work-intro {
+      max-width: 620px;
+      font-size: 1.1875rem;
+      line-height: 1.75;
+      color: var(--ink-mid);
+      margin: -16px 0 72px;
     }
-    .work-item {
-      background: var(--bg);
-      padding: 64px 48px 72px;
+    .work-intro em {
+      font-style: italic;
+      color: var(--brand);
+    }
+    .work-items {
       display: flex;
       flex-direction: column;
-      gap: 28px;
-      border-top: 2px solid transparent;
-      transition: background 0.25s ease, border-color 0.25s ease;
     }
-    .work-item:hover {
-      background: var(--surface);
-      border-top-color: var(--brand);
+    .work-item {
+      display: grid;
+      grid-template-columns: 110px 4fr 7fr;
+      gap: 48px;
+      padding: 60px 0 64px;
+      border-top: 1px solid var(--rule);
+      transition: background 0.25s ease;
+    }
+    .work-item:last-child {
+      border-bottom: 1px solid var(--rule);
+    }
+    .work-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-top: 8px;
+    }
+    .work-mode {
+      font-family: var(--f-label);
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brand);
+    }
+    .work-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .work-kicker {
+      font-family: var(--f-display);
+      font-size: 1.1875rem;
+      font-style: italic;
+      color: var(--ink-dark);
+      line-height: 1.5;
     }
 
     .work-n {
@@ -1160,7 +1192,8 @@
       .cred:nth-child(n+3)  { padding-top: 28px; border-top: 1px solid var(--rule); }
       .cred-num { font-size: 2.25rem; }
       .cred-tag { font-size: 0.625rem; letter-spacing: 0.14em; }
-      .work-items { grid-template-columns: 1fr; }
+      .work-item { grid-template-columns: 1fr; gap: 18px; padding: 48px 0; }
+      .work-meta { flex-direction: row; align-items: center; gap: 14px; padding-top: 0; }
       .t-grid { grid-template-columns: 1fr; gap: 40px; }
       .proj-grid { grid-template-columns: 1fr; }
       .proj-img { height: 220px; }
@@ -1177,7 +1210,7 @@
         font-size: clamp(1.75rem, 7vw, 2.25rem);
       }
       .hero-sub { font-size: 1.125rem; }
-      .work-item { padding: 48px 32px 56px; }
+      .work-item { padding: 40px 0 48px; }
       .footer-row { flex-direction: column; gap: 16px; text-align: center; }
       .about-portrait img { aspect-ratio: 4 / 3; }
       :root {
@@ -1495,54 +1528,67 @@
         <div class="s-head-rule"></div>
       </div>
 
+      <p class="work-intro reveal">
+        My coaching community has a name for my gift:
+        <em>&ldquo;Robert is the wolf.&rdquo;</em> The one leaders call when a
+        situation needs taking care of. Throw me in, and things get moving.
+      </p>
+
       <div class="work-items">
 
         <div class="work-item reveal">
-          <span class="work-n">01</span>
+          <div class="work-meta">
+            <span class="work-n">01</span>
+            <span class="work-mode">Coach</span>
+          </div>
           <h3 class="work-title">Executive Coaching</h3>
-          <p class="work-desc">
-            One-on-one, ongoing work with founders, executives, and leaders under
-            real pressure. Early on, that might mean helping draft the email you've
-            been sitting on for two weeks, auditing your calendar, or working through
-            a co-founder dynamic that's quietly draining the company. As trust builds,
-            the work goes deeper — into the beliefs and patterns that are actually
-            running the show. Strategic clarity, difficult conversations, high-stakes
-            decisions, and whatever is driving the stress. Even when that's personal.
-          </p>
+          <div class="work-copy">
+            <p class="work-desc">
+              One-on-one, ongoing work with founders, executives, and leaders under
+              real pressure. To start, this typically looks like assessing your
+              capabilities and getting traction on anything that's stuck. It's my
+              job to make sure you and your team are growing at least as fast as
+              the company.
+            </p>
+          </div>
         </div>
 
         <div class="work-item reveal d1">
-          <span class="work-n">02</span>
-          <h3 class="work-title">Leadership Offsites &amp; Strategic Conversations</h3>
-          <p class="work-desc">
-            Facilitated sessions for executive teams, co-founders, and boards.
-            Strategy, alignment, relational repair, and organizational design. The
-            most important work is often naming what's been unspoken — and creating
-            a container where that's possible. What gets said in a well-run offsite
-            usually couldn't surface any other way.
-          </p>
+          <div class="work-meta">
+            <span class="work-n">02</span>
+            <span class="work-mode">Facilitator</span>
+          </div>
+          <h3 class="work-title">Facilitation</h3>
+          <div class="work-copy">
+            <p class="work-desc">
+              Facilitation is the art of creating a context. When the work outgrows
+              the private conversation — an offsite, a planning cycle, a crisis that
+              needs a coordinated response — I design and run the room. The purpose
+              of a meeting is to change the future, so every session ends in
+              commitments people actually track.
+            </p>
+            <p class="work-kicker">
+              A company's ability to execute is correlated with the do:say ratio
+              of its executive team.
+            </p>
+          </div>
         </div>
 
         <div class="work-item reveal d2">
-          <span class="work-n">03</span>
-          <h3 class="work-title">Strategic Advisory</h3>
-          <p class="work-desc">
-            Direct advisory for leaders navigating consequential decisions: acquisitions,
-            exits, fundraising, AI adoption, organizational restructuring, long-term
-            positioning. Thinking partner, not engagement manager. Fast, direct,
-            non-bureaucratic.
-          </p>
-        </div>
-
-        <div class="work-item reveal d3">
-          <span class="work-n">04</span>
-          <h3 class="work-title">Curated Gatherings</h3>
-          <p class="work-desc">
-            Invite-only salons and dinners for leaders who want to think in good
-            company. Not networking events. Protected spaces where serious people
-            can speak honestly about what they're actually navigating — technology,
-            responsibility, power, and what it means to lead well right now.
-          </p>
+          <div class="work-meta">
+            <span class="work-n">03</span>
+            <span class="work-mode">Teacher</span>
+          </div>
+          <h3 class="work-title">Trainings</h3>
+          <div class="work-copy">
+            <p class="work-desc">
+              Structured programs that upgrade a whole team at once: first-time
+              manager training, feedback and difficult conversations, conflict and
+              communication, Right Relationship with AI, and AI enablement and
+              implementation. I also build bespoke trainings that meet your team
+              where it is and take it to the next level.
+            </p>
+          </div>
         </div>
 
       </div>

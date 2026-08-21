@@ -239,17 +239,19 @@ The specific people Robert serves best:
 
 ## Services
 
-### 1. Executive Coaching (1:1)
-Private, ongoing work with individual leaders. The core offering. Includes strategic clarity, accountability, founder psychology, difficult conversations, stakeholder management, decision-making, leadership transitions, and whatever is actually driving the stress — even when that's personal.
+Restructured 2026-08-10 around the triple threat (see [[The Intersection]]). Curated Gatherings dropped — taken off the board until an operator exists. Strategic Advisory absorbed into the ongoing coaching relationship rather than sold separately.
 
-### 2. Team Facilitation & Strategic Offsites
-Facilitated sessions for executive teams, co-founders, and boards. Strategy, alignment, relational repair, organizational design, consequential decisions.
+### 1. Executive Coaching (mode: Coach)
+One-on-one, ongoing work with founders, executives, and leaders under real pressure. Opens with capability assessment and getting traction on what's stuck. The job: making sure the leader and their team grow at least as fast as the company. Includes founder psychology, difficult conversations, stakeholder management, and whatever is actually driving the stress — even when that's personal.
 
-### 3. Strategic Advisory
-Direct advisory for leaders and organizations navigating acquisitions, exits, fundraising, AI adoption, organizational change, scaling, and long-term value creation.
+### 2. Facilitation (mode: Facilitator)
+Facilitation is the art of creating a context. For when the work outgrows the private conversation: offsites, planning cycles, coordinated crisis response. Core frames from [[Facilitating Offsites]]: the purpose of a meeting is to change the future; sessions end in commitments people actually track; "a company's ability to execute is correlated with the do:say ratio of the executive team."
 
-### 4. Curated Gatherings
-Invite-only, high-trust environments for leaders to think and speak honestly. Not networking events. Protected spaces for real conversation among peers.
+### 3. Trainings (mode: Teacher)
+Structured programs that upgrade a whole team at once. Current topics: first-time manager training, feedback and difficult conversations, conflict and communication, Right Relationship with AI, AI enablement and implementation, plus bespoke designs. Named 2026-08-08 as easiest sale, warmest buyer, highest $/hour — quarantined as revenue engine, separate from the development track.
+
+### The Wolf
+Robert's coaching community set this intention for him: **"Robert is the wolf"** — the fixer from Pulp Fiction. The person leaders call to handle any situation; throw him in and things get moving. Integrated 2026-08-10 as the What I Offer intro. Available as a frame for About and future copy.
 
 ---
 
