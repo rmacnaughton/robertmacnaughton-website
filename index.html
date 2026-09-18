@@ -1322,6 +1322,359 @@
       .tch-init { display: inline; }
       .theme-chip { padding: 5px 8px; }
     }
+
+    /* ================================================
+       THEME: TERMINAL
+       Near-black engineering ground, monospace voice,
+       electrified brand blue. Scoped entirely under
+       html[data-theme="terminal"] — Paper is untouched.
+       ================================================ */
+    html[data-theme="terminal"] {
+      --brand:        #5FA8E0;
+      --brand-hover:  #82BCE8;
+      --brand-mid:    #41586E;
+      --brand-light:  #1A2635;
+      --ink-00:   #F2F5FA;
+      --ink-dark: #E8ECF2;
+      --ink-mid:  #B9C2CF;
+      --ink-muted:#8A97AB;
+      --ink-light:#7B8AA0;
+      --ink-faint:#5F708A;
+      --bg:      #0B0E12;
+      --surface: #10151C;
+      --rule:    #223046;
+      --panel:   #141B26;
+      --f-display: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      --f-label:   'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      --f-body:    'IBM Plex Mono', ui-monospace, Menlo, monospace;
+    }
+    html[data-theme="terminal"] .quad-icon { color: var(--brand); }
+    html[data-theme="terminal"] body { line-height: 1.65; }
+    /* grain: on a near-black ground it reads as sensor noise, so dial it back */
+    html[data-theme="terminal"] body::after { opacity: 0.09; }
+
+    /* ── type voice: mono runs wide, so the scale steps down ── */
+    html[data-theme="terminal"] .hero-h1 {
+      font-weight: 700;
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      color: var(--ink-00);
+    }
+    html[data-theme="terminal"] .hero-h1 em { font-style: normal; }
+    html[data-theme="terminal"] .hero-h1 em::after {
+      content: '';
+      display: inline-block;
+      width: 0.45em;
+      height: 0.9em;
+      background: var(--brand);
+      margin-left: 0.18em;
+      vertical-align: -0.08em;
+      animation: cursor-blink 1.1s steps(1) infinite;
+    }
+    @keyframes cursor-blink { 50% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) {
+      html[data-theme="terminal"] .hero-h1 em::after { animation: none; }
+    }
+    html[data-theme="terminal"] .hero-sub {
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      max-width: 440px;
+      padding-left: 20px;
+      position: relative;
+      color: var(--ink-muted);
+    }
+    html[data-theme="terminal"] .hero-sub::before {
+      content: '>';
+      position: absolute;
+      left: 0;
+      color: var(--brand);
+    }
+
+    /* ── // section markers: mono comment headers ── */
+    html[data-theme="terminal"] .label::before,
+    html[data-theme="terminal"] .hero-eyebrow::before,
+    html[data-theme="terminal"] .ai-eyebrow::before,
+    html[data-theme="terminal"] .work-mode::before,
+    html[data-theme="terminal"] .proj-role::before {
+      content: '// ';
+      color: var(--brand);
+    }
+    html[data-theme="terminal"] .s-head .label:not(.label--small),
+    html[data-theme="terminal"] .position-sidebar .label {
+      font-weight: 700;
+      font-size: clamp(1.375rem, 2.4vw, 2rem);
+      letter-spacing: -0.01em;
+      color: var(--ink-00);
+    }
+    html[data-theme="terminal"] .position-sidebar .label {
+      font-size: clamp(1.25rem, 2vw, 1.625rem);
+    }
+    html[data-theme="terminal"] .s-head { margin-bottom: 60px; }
+    /* uppercase mono is already airy — tighten the tracking everywhere */
+    html[data-theme="terminal"] .label--small,
+    html[data-theme="terminal"] .hero-eyebrow,
+    html[data-theme="terminal"] .ai-eyebrow,
+    html[data-theme="terminal"] .work-mode,
+    html[data-theme="terminal"] .proj-role,
+    html[data-theme="terminal"] .nav-link,
+    html[data-theme="terminal"] .nav-cta,
+    html[data-theme="terminal"] .t-role,
+    html[data-theme="terminal"] .cred-tag,
+    html[data-theme="terminal"] .proj-caption,
+    html[data-theme="terminal"] .footer-copy,
+    html[data-theme="terminal"] .footer-link,
+    html[data-theme="terminal"] .theme-chip,
+    html[data-theme="terminal"] .proj-link,
+    html[data-theme="terminal"] .hero-link,
+    html[data-theme="terminal"] .contact-btn {
+      letter-spacing: 0.1em;
+    }
+    html[data-theme="terminal"] .hero-eyebrow { font-size: 0.625rem; }
+    html[data-theme="terminal"] .nav-name {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--ink-00);
+    }
+
+    /* ── italics: no mono italic is loaded, so kill synthetic oblique ── */
+    html[data-theme="terminal"] .position-quote,
+    html[data-theme="terminal"] .t-quote,
+    html[data-theme="terminal"] .work-bridge,
+    html[data-theme="terminal"] .work-kicker,
+    html[data-theme="terminal"] .ai-thesis,
+    html[data-theme="terminal"] .proj-hashtag {
+      font-style: normal;
+    }
+    html[data-theme="terminal"] .position-quote {
+      font-size: clamp(1.125rem, 1.7vw, 1.5rem);
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--ink-00);
+    }
+    html[data-theme="terminal"] .ai-thesis {
+      font-size: clamp(1.0625rem, 1.5vw, 1.3125rem);
+      font-weight: 600;
+      line-height: 1.6;
+    }
+    html[data-theme="terminal"] .work-bridge {
+      font-size: clamp(1rem, 1.4vw, 1.1875rem);
+      color: var(--ink-muted);
+    }
+    html[data-theme="terminal"] .work-kicker {
+      font-size: 0.9375rem;
+      color: var(--ink-mid);
+    }
+
+    /* ── body copy sizes ── */
+    html[data-theme="terminal"] .work-intro { font-size: 1.0625rem; }
+    html[data-theme="terminal"] .ai-body,
+    html[data-theme="terminal"] .about-p { font-size: 0.9375rem; line-height: 1.8; }
+    html[data-theme="terminal"] .position-body,
+    html[data-theme="terminal"] .proj-p,
+    html[data-theme="terminal"] .work-desc,
+    html[data-theme="terminal"] .offer-lead-desc { font-size: 0.9375rem; line-height: 1.8; }
+    html[data-theme="terminal"] .position-quad-body { font-size: 0.875rem; line-height: 1.75; }
+    html[data-theme="terminal"] .t-quote { font-size: 0.9375rem; line-height: 1.8; }
+
+    /* ── headings ── */
+    html[data-theme="terminal"] .about-h2 {
+      font-weight: 700;
+      font-size: clamp(1.625rem, 2.6vw, 2.375rem);
+      line-height: 1.25;
+    }
+    html[data-theme="terminal"] .ai-h2 {
+      font-weight: 700;
+      font-size: clamp(1.5rem, 2.5vw, 2.125rem);
+      line-height: 1.25;
+    }
+    html[data-theme="terminal"] .work-title { font-weight: 700; line-height: 1.25; }
+    html[data-theme="terminal"] .offer-lead-title { font-size: clamp(1.5rem, 2.2vw, 2rem); }
+    html[data-theme="terminal"] .offer-pair-title { font-size: clamp(1.1875rem, 1.6vw, 1.4375rem); }
+    html[data-theme="terminal"] .position-quad-h {
+      font-weight: 700;
+      font-size: clamp(1rem, 1.2vw, 1.125rem);
+      color: var(--ink-00);
+    }
+    html[data-theme="terminal"] .proj-title {
+      font-weight: 700;
+      font-size: clamp(1.125rem, 1.6vw, 1.4375rem);
+      line-height: 1.3;
+    }
+    html[data-theme="terminal"] .t-name { font-weight: 700; font-size: 1rem; }
+    html[data-theme="terminal"] .cred-num { font-weight: 600; font-size: 2.125rem; }
+
+    /* ── hero: blueprint grid + duotone photo ── */
+    html[data-theme="terminal"] .hero {
+      background-image:
+        linear-gradient(rgba(95,168,224,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(95,168,224,0.07) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    html[data-theme="terminal"] .hero-right img,
+    html[data-theme="terminal"] .about-portrait img,
+    html[data-theme="terminal"] .t-photo img {
+      filter: grayscale(1) contrast(1.06);
+    }
+    /* duotone by multiply: highlights land on slate blue, shadows stay near-black */
+    html[data-theme="terminal"] .hero-right::after,
+    html[data-theme="terminal"] .about-portrait::after,
+    html[data-theme="terminal"] .t-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: #3A6188;
+      mix-blend-mode: multiply;
+      pointer-events: none;
+    }
+    html[data-theme="terminal"] .t-photo { position: relative; }
+    /* scanlines over the hero portrait — the one indulgence */
+    html[data-theme="terminal"] .hero-right::before {
+      background:
+        linear-gradient(90deg, var(--bg) 0%, transparent 18%),
+        repeating-linear-gradient(to bottom,
+          rgba(6,9,13,0.30) 0px, rgba(6,9,13,0.30) 1px,
+          transparent 1px, transparent 3px);
+    }
+    @media (max-width: 900px) {
+      html[data-theme="terminal"] .hero-right::before {
+        background:
+          linear-gradient(to bottom, var(--bg) 0%, transparent 14%),
+          linear-gradient(to top, var(--bg) 0%, transparent 14%),
+          repeating-linear-gradient(to bottom,
+            rgba(6,9,13,0.30) 0px, rgba(6,9,13,0.30) 1px,
+            transparent 1px, transparent 3px);
+      }
+    }
+    html[data-theme="terminal"] .proj-img img {
+      filter: grayscale(1) contrast(1.04);
+    }
+    html[data-theme="terminal"] .proj-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: #4D7398;
+      mix-blend-mode: multiply;
+      pointer-events: none;
+    }
+    html[data-theme="terminal"] .proj-img--logo::after { display: none; }
+
+    /* ── buttons / links: bordered mono ── */
+    html[data-theme="terminal"] .nav-cta,
+    html[data-theme="terminal"] .hero-link {
+      border: 1px solid var(--rule);
+      padding: 9px 14px;
+      color: var(--brand);
+      transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+    /* .hero-left is a column flex container, so the chip must not stretch */
+    html[data-theme="terminal"] .hero-link { align-self: flex-start; }
+    html[data-theme="terminal"] .nav-cta:hover,
+    html[data-theme="terminal"] .hero-link:hover {
+      color: var(--brand-hover);
+      border-color: var(--brand);
+      background: rgba(95,168,224,0.08);
+    }
+    html[data-theme="terminal"] .nav-cta:focus-visible,
+    html[data-theme="terminal"] .hero-link:focus-visible,
+    html[data-theme="terminal"] .nav-link:focus-visible,
+    html[data-theme="terminal"] .proj-link:focus-visible,
+    html[data-theme="terminal"] .footer-link:focus-visible {
+      outline: 2px solid var(--brand);
+      outline-offset: 3px;
+    }
+    html[data-theme="terminal"] .contact-btn {
+      background: transparent;
+      color: var(--brand);
+      border: 1px solid var(--brand);
+      padding: 15px 30px;
+    }
+    html[data-theme="terminal"] .contact-btn:hover {
+      background: var(--brand);
+      color: #0B0E12;
+    }
+    html[data-theme="terminal"] .theme-chip[aria-pressed="true"] { color: #0B0E12; }
+    html[data-theme="terminal"] .theme-chip { color: var(--ink-faint); }
+    /* floating Calendly badge — match the bordered mono buttons */
+    html[data-theme="terminal"] .calendly-badge-widget .calendly-badge-content {
+      background: var(--surface) !important;
+      color: var(--brand) !important;
+      border: 1px solid var(--brand) !important;
+      box-shadow: 0 8px 26px rgba(0,0,0,0.6) !important;
+    }
+    /* footer: 8px mono is unreadable — step it up and lift the ink */
+    html[data-theme="terminal"] .footer-copy,
+    html[data-theme="terminal"] .footer-link {
+      font-size: 0.5625rem;
+      color: var(--ink-light);
+    }
+    html[data-theme="terminal"] .footer-link:hover {
+      color: var(--brand);
+      border-color: var(--brand);
+    }
+
+    /* ── logos strip: dark marks need inverting on a dark ground ── */
+    html[data-theme="terminal"] .client-logo {
+      filter: invert(1) grayscale(1) brightness(1.25) opacity(0.7) !important;
+      mix-blend-mode: normal;
+    }
+    html[data-theme="terminal"] .client-logo:hover {
+      filter: invert(1) grayscale(1) brightness(1.25) opacity(1) !important;
+    }
+    /* these marks ship light, so Paper inverts them inline — on dark, don't */
+    html[data-theme="terminal"] .client-logo[src*="reyou"] {
+      filter: grayscale(1) opacity(0.6) !important;
+    }
+    html[data-theme="terminal"] .client-logo[src*="reyou"]:hover {
+      filter: grayscale(1) opacity(0.95) !important;
+    }
+
+    /* ── cards: dark panels with hairlines ── */
+    html[data-theme="terminal"] .position-compact-item:hover,
+    html[data-theme="terminal"] .offer-card:hover {
+      background: var(--panel);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.55);
+    }
+    html[data-theme="terminal"] .proj-card,
+    html[data-theme="terminal"] .t-card {
+      border: 1px solid var(--rule);
+    }
+    html[data-theme="terminal"] .proj-img {
+      border-bottom: 1px solid var(--rule);
+    }
+    html[data-theme="terminal"] .proj-img--logo { background: var(--panel); }
+    html[data-theme="terminal"] .proj-img--logo img {
+      filter: invert(1) grayscale(1) opacity(0.85);
+    }
+    html[data-theme="terminal"] .proj-img--text {
+      background: var(--panel);
+      border-bottom: 1px solid var(--rule);
+    }
+    html[data-theme="terminal"] .proj-hashtag {
+      color: var(--brand);
+      font-weight: 700;
+      font-size: clamp(1.25rem, 2vw, 1.875rem);
+      letter-spacing: -0.01em;
+    }
+    html[data-theme="terminal"] .quad-glow {
+      background: radial-gradient(
+        circle 220px at var(--mx, -200px) var(--my, -200px),
+        rgba(95,168,224,0.16) 0%,
+        rgba(95,168,224,0.05) 50%,
+        transparent 75%
+      );
+    }
+
+    /* ── mobile: keep the headline + cursor on one line ── */
+    @media (max-width: 640px) {
+      html[data-theme="terminal"] .hero-h1 { font-size: clamp(1.5rem, 6.2vw, 2rem); }
+      html[data-theme="terminal"] .s-head .label:not(.label--small),
+      html[data-theme="terminal"] .position-sidebar .label {
+        font-size: clamp(1.25rem, 5.4vw, 1.625rem);
+      }
+      html[data-theme="terminal"] .hero-sub { font-size: 1rem; }
+    }
   </style>
 </head>
 <body>
