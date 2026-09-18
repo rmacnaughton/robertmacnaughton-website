@@ -1676,6 +1676,520 @@
       }
       html[data-theme="terminal"] .hero-sub { font-size: 1rem; }
     }
+
+    /* ================================================
+       THEME: STUDIO
+       Daylight grotesk. White ground, near-black type,
+       ultra-bold Inter headlines, lowercase mono
+       // markers, black pills, flat hairline cards,
+       full-colour untreated photographs. Scoped
+       entirely under html[data-theme="studio"].
+       ================================================ */
+    html[data-theme="studio"] {
+      --brand:        #0A0A0A;
+      --brand-hover:  #2E2E2E;
+      --brand-mid:    #6E6E6E;
+      --brand-light:  #EDEDED;
+      --brand-rgb:    10, 10, 10;
+      /* the one accent: a single blue moment, 5.36:1 on white */
+      --accent:       #2E6FA3;
+      --accent-rgb:   46, 111, 163;
+      --ink-00:   #000000;
+      --ink-dark: #0A0A0A;
+      --ink-mid:  #2E2E2E;
+      --ink-muted:#4F4F4F;
+      --ink-light:#6E6E6E;   /* 5.10:1 — #767676 in the brief only made 4.54 */
+      --ink-faint:#6E6E6E;   /* was #8A8A8A: 3.45:1, fails AA */
+      --mark:     #6B6B6B;   /* mono marker grey, 5.33:1 */
+      --bg:      #FFFFFF;
+      --surface: #FAFAFA;
+      --rule:    #E6E6E6;
+      --radius:  16px;
+      --f-display: 'Inter', system-ui, -apple-system, sans-serif;
+      --f-label:   'Inter', system-ui, -apple-system, sans-serif;
+      --f-body:    'Inter', system-ui, -apple-system, sans-serif;
+    }
+    /* crisp daylight — film grain belongs to the paper theme */
+    html[data-theme="studio"] body::after { opacity: 0; }
+    html[data-theme="studio"] body { line-height: 1.65; }
+    html[data-theme="studio"] .quad-icon { color: #0A0A0A; }
+
+    /* ── type voice: massive, tight, heavy ── */
+    html[data-theme="studio"] .hero-h1 {
+      font-weight: 900;
+      font-size: clamp(3rem, 6vw, 6.25rem);
+      letter-spacing: -0.045em;
+      line-height: 0.95;
+      color: var(--ink-dark);
+      margin-bottom: 34px;
+    }
+    html[data-theme="studio"] .hero-h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+    html[data-theme="studio"] .hero-sub {
+      font-size: 1.1875rem;
+      line-height: 1.6;
+      max-width: 460px;
+      color: var(--ink-muted);
+      margin-bottom: 44px;
+    }
+    html[data-theme="studio"] .nav-name {
+      font-size: 1.125rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--ink-dark);
+    }
+    html[data-theme="studio"] .nav-name:hover { color: var(--accent); }
+
+    /* ── every eyebrow is a code comment ── */
+    html[data-theme="studio"] .label {
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      text-transform: lowercase;
+      color: var(--mark);
+    }
+    html[data-theme="studio"] .label::before { content: '// '; }
+
+    /* ── section titles: mono // marker stacked over a heavy statement ── */
+    html[data-theme="studio"] .s-head {
+      align-items: flex-start;
+      margin-bottom: 58px;
+    }
+    html[data-theme="studio"] .s-head .label:not(.label--small),
+    html[data-theme="studio"] .position-sidebar .label {
+      font-family: var(--f-display);
+      font-weight: 800;
+      font-size: clamp(2.25rem, 4.4vw, 3.5rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      font-style: normal;
+      text-transform: none;
+      color: var(--ink-dark);
+    }
+    html[data-theme="studio"] .position-sidebar .label {
+      font-size: clamp(2rem, 3.2vw, 2.75rem);
+    }
+    html[data-theme="studio"] .s-head .label:not(.label--small)::before,
+    html[data-theme="studio"] .position-sidebar .label::before {
+      content: '//';
+      display: block;
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-size: 0.6875rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--mark);
+      margin-bottom: 16px;
+    }
+    /* the rule runs off the marker, not through the headline's descenders */
+    html[data-theme="studio"] .s-head-rule { margin-top: 8px; }
+    /* the // marker already does the sidebar rule's job */
+    html[data-theme="studio"] .position-sidebar-rule { display: none; }
+    html[data-theme="studio"] .position-sidebar { gap: 0; margin-bottom: 46px; }
+
+    html[data-theme="studio"] .ai-h2,
+    html[data-theme="studio"] .about-h2,
+    html[data-theme="studio"] .contact-h2 {
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.04;
+      font-style: normal;
+    }
+    html[data-theme="studio"] .about-h2 { font-size: clamp(2.25rem, 4vw, 3.75rem); }
+    html[data-theme="studio"] .ai-h2    { font-size: clamp(2rem, 3.6vw, 3.25rem); }
+    html[data-theme="studio"] .work-title,
+    html[data-theme="studio"] .proj-title,
+    html[data-theme="studio"] .t-name,
+    html[data-theme="studio"] .position-quad-h,
+    html[data-theme="studio"] .offer-lead-title,
+    html[data-theme="studio"] .offer-pair-title {
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.12;
+      color: var(--ink-dark);
+    }
+    html[data-theme="studio"] .offer-lead-title { font-size: clamp(2rem, 3vw, 2.875rem); }
+    html[data-theme="studio"] .offer-pair-title { font-size: clamp(1.5rem, 2vw, 1.9375rem); }
+    html[data-theme="studio"] .position-quad-h {
+      font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+      letter-spacing: -0.02em;
+    }
+    html[data-theme="studio"] .t-name { font-size: 1.0625rem; letter-spacing: -0.02em; }
+    html[data-theme="studio"] .proj-title { font-size: clamp(1.375rem, 2vw, 1.75rem); }
+    /* black display numerals — the credential band as a product stat row */
+    html[data-theme="studio"] .cred-num {
+      font-weight: 900;
+      /* the third figure carries an inline 2.25rem — stay in scale with it */
+      font-size: 2.75rem;
+      letter-spacing: -0.05em;
+      color: var(--ink-dark);
+    }
+
+    /* ── mono // markers: the section-comment voice ── */
+    html[data-theme="studio"] .label--small,
+    html[data-theme="studio"] .hero-eyebrow,
+    html[data-theme="studio"] .ai-eyebrow,
+    html[data-theme="studio"] .work-mode,
+    html[data-theme="studio"] .proj-role,
+    html[data-theme="studio"] .cred-tag,
+    html[data-theme="studio"] .t-role,
+    html[data-theme="studio"] .proj-caption,
+    html[data-theme="studio"] .theme-chip,
+    html[data-theme="studio"] .nav-link,
+    html[data-theme="studio"] .footer-copy,
+    html[data-theme="studio"] .footer-link {
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      text-transform: none;
+    }
+    /* lowercase only where no proper noun gets flattened */
+    html[data-theme="studio"] .label--small,
+    html[data-theme="studio"] .hero-eyebrow,
+    html[data-theme="studio"] .ai-eyebrow,
+    html[data-theme="studio"] .work-mode { text-transform: lowercase; }
+    html[data-theme="studio"] .label--small::before,
+    html[data-theme="studio"] .hero-eyebrow::before,
+    html[data-theme="studio"] .ai-eyebrow::before,
+    html[data-theme="studio"] .work-mode::before,
+    html[data-theme="studio"] .proj-role::before { content: '// '; }
+    html[data-theme="studio"] .label--small,
+    html[data-theme="studio"] .hero-eyebrow,
+    html[data-theme="studio"] .ai-eyebrow,
+    html[data-theme="studio"] .work-mode,
+    html[data-theme="studio"] .proj-role {
+      color: var(--mark);
+    }
+    html[data-theme="studio"] .hero-eyebrow {
+      font-size: 0.75rem;
+      margin-bottom: 30px;
+    }
+    html[data-theme="studio"] .ai-eyebrow { font-size: 0.75rem; margin-bottom: 24px; }
+    html[data-theme="studio"] .label--small { font-size: 0.75rem; }
+    html[data-theme="studio"] .work-mode { font-size: 0.75rem; margin-bottom: 14px; }
+    html[data-theme="studio"] .proj-role { font-size: 0.6875rem; margin-bottom: 16px; }
+    /* mono sets wider than Raleway — hold the tag block to two lines */
+    html[data-theme="studio"] .cred-tag {
+      font-size: 0.6875rem;
+      letter-spacing: 0;
+      line-height: 1.6;
+      color: var(--ink-light);
+    }
+    html[data-theme="studio"] .t-role { font-size: 0.6875rem; color: var(--ink-light); }
+    /* 8px uppercase is unreadable; mono normal case at 10-11px is not */
+    html[data-theme="studio"] .proj-caption {
+      font-size: 0.6875rem;
+      color: var(--ink-light);
+    }
+    html[data-theme="studio"] .footer-copy,
+    html[data-theme="studio"] .footer-link {
+      font-size: 0.6875rem;
+      color: var(--ink-light);
+    }
+    html[data-theme="studio"] .footer-link:hover {
+      color: var(--ink-dark);
+      border-color: var(--ink-dark);
+    }
+    /* the hashtag is a brand string — never uppercase it */
+    html[data-theme="studio"] .nav-link {
+      font-size: 0.6875rem;
+      color: var(--ink-muted);
+    }
+    html[data-theme="studio"] .nav-link:hover { color: var(--ink-dark); }
+
+    /* ── italics: no Inter italic is loaded, so kill synthetic oblique ── */
+    html[data-theme="studio"] .position-quote,
+    html[data-theme="studio"] .t-quote,
+    html[data-theme="studio"] .work-bridge,
+    html[data-theme="studio"] .work-kicker,
+    html[data-theme="studio"] .ai-thesis,
+    html[data-theme="studio"] .proj-hashtag {
+      font-style: normal;
+    }
+    /* one step under the section title so the two blacks don't fight */
+    html[data-theme="studio"] .position-quote {
+      font-size: clamp(1.4375rem, 2.2vw, 2.125rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      color: var(--ink-dark);
+      margin-bottom: 30px;
+    }
+    html[data-theme="studio"] .ai-thesis {
+      font-size: clamp(1.25rem, 1.9vw, 1.6875rem);
+      font-weight: 800;
+      line-height: 1.24;
+      letter-spacing: -0.03em;
+      color: var(--ink-dark);
+      margin-bottom: 22px;
+    }
+    html[data-theme="studio"] .work-bridge {
+      font-size: clamp(1.1875rem, 1.8vw, 1.625rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.24;
+      color: var(--ink-dark);
+    }
+    html[data-theme="studio"] .work-kicker {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.4;
+      color: var(--ink-dark);
+    }
+    html[data-theme="studio"] .t-quote {
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--ink-mid);
+    }
+
+    /* ── body copy ── */
+    html[data-theme="studio"] .work-intro {
+      font-size: 1.1875rem;
+      line-height: 1.6;
+      color: var(--ink-muted);
+    }
+    html[data-theme="studio"] .ai-body,
+    html[data-theme="studio"] .about-p { font-size: 1.0625rem; line-height: 1.7; }
+    html[data-theme="studio"] .position-body,
+    html[data-theme="studio"] .proj-p,
+    html[data-theme="studio"] .work-desc,
+    html[data-theme="studio"] .offer-lead-desc,
+    html[data-theme="studio"] .contact-body { font-size: 1rem; line-height: 1.7; }
+    html[data-theme="studio"] .position-quad-body { font-size: 0.9375rem; line-height: 1.65; }
+
+    /* ── pills: the interactive signature ── */
+    html[data-theme="studio"] .nav-cta {
+      background: #0A0A0A;
+      color: #FFFFFF;
+      border: none;
+      border-bottom: none;
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-transform: none;
+      transition: background 0.2s ease, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    html[data-theme="studio"] .hero-link {
+      background: #0A0A0A;
+      color: #FFFFFF;
+      border: none;
+      border-bottom: none;
+      border-radius: 999px;
+      padding: 14px 26px;
+      gap: 8px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-transform: none;
+      align-self: flex-start;
+      transition: background 0.2s ease, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    html[data-theme="studio"] .hero-link::after,
+    html[data-theme="studio"] .contact-btn::after {
+      content: '↗';
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 0.9375rem;
+    }
+    html[data-theme="studio"] .contact-btn {
+      background: #0A0A0A;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 999px;
+      padding: 16px 32px;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-transform: none;
+      transition: background 0.2s ease, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    html[data-theme="studio"] .nav-cta:hover,
+    html[data-theme="studio"] .hero-link:hover,
+    html[data-theme="studio"] .contact-btn:hover {
+      background: #2E2E2E;
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+    html[data-theme="studio"] .nav-cta:active,
+    html[data-theme="studio"] .hero-link:active,
+    html[data-theme="studio"] .contact-btn:active { transform: translateY(0); }
+    html[data-theme="studio"] .hero-link:hover::after,
+    html[data-theme="studio"] .contact-btn:hover::after {
+      transform: translate(3px, -3px);
+    }
+    /* secondary action reads as the outlined sibling of the black pill */
+    html[data-theme="studio"] .proj-link {
+      border: 1px solid #0A0A0A;
+      border-bottom: 1px solid #0A0A0A;
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-transform: none;
+      color: var(--ink-dark);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    html[data-theme="studio"] .proj-link:hover {
+      background: #0A0A0A;
+      color: #FFFFFF;
+      border-color: #0A0A0A;
+    }
+    html[data-theme="studio"] .nav-cta:focus-visible,
+    html[data-theme="studio"] .hero-link:focus-visible,
+    html[data-theme="studio"] .nav-link:focus-visible,
+    html[data-theme="studio"] .nav-name:focus-visible,
+    html[data-theme="studio"] .proj-link:focus-visible,
+    html[data-theme="studio"] .footer-link:focus-visible,
+    html[data-theme="studio"] .contact-btn:focus-visible,
+    html[data-theme="studio"] .theme-chip:focus-visible {
+      outline: 2px solid #0A0A0A;
+      outline-offset: 3px;
+    }
+    html[data-theme="studio"] .theme-chip {
+      border-radius: 999px;
+      border-color: var(--rule);
+      font-size: 0.6875rem;
+      color: var(--ink-muted);
+      padding: 5px 12px;
+    }
+    html[data-theme="studio"] .theme-chip:hover {
+      color: var(--ink-dark);
+      border-color: var(--ink-dark);
+    }
+    html[data-theme="studio"] .theme-chip[aria-pressed="true"] {
+      background: #0A0A0A;
+      border-color: #0A0A0A;
+      color: #FFFFFF;
+    }
+    /* floating Calendly badge — the black pill, everywhere */
+    html[data-theme="studio"] .calendly-badge-widget .calendly-badge-content {
+      font-family: 'Inter', system-ui, sans-serif !important;
+      background: #0A0A0A !important;
+      color: #FFFFFF !important;
+      font-size: 0.8125rem !important;
+      font-weight: 700 !important;
+      letter-spacing: -0.01em !important;
+      text-transform: none !important;
+      border-radius: 999px !important;
+      box-shadow: 0 10px 30px rgba(var(--brand-rgb), 0.22) !important;
+    }
+
+    /* ── cards: flat white, hairline, soft radius ── */
+    html[data-theme="studio"] .offer-card,
+    html[data-theme="studio"] .t-card,
+    html[data-theme="studio"] .proj-card {
+      background: #FFFFFF;
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    html[data-theme="studio"] .offer-card { border-radius: 20px; }
+    /* the quadrant becomes four discrete cards, not a ruled table */
+    html[data-theme="studio"] .position-compact-quad {
+      border-top: none;
+      border-left: none;
+      gap: 16px;
+    }
+    html[data-theme="studio"] .position-compact-item {
+      background: #FFFFFF;
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      padding: 36px 34px 38px;
+    }
+    @media (hover: hover) {
+      html[data-theme="studio"] .offer-card,
+      html[data-theme="studio"] .position-compact-item {
+        transition: box-shadow 0.35s ease,
+                    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      html[data-theme="studio"] .offer-card:hover,
+      html[data-theme="studio"] .position-compact-item:hover {
+        background: #FFFFFF;
+        transform: translateY(-3px);
+        box-shadow:
+          0 1px 2px rgba(var(--brand-rgb), 0.04),
+          0 14px 40px rgba(var(--brand-rgb), 0.09);
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html[data-theme="studio"] .offer-card:hover,
+      html[data-theme="studio"] .position-compact-item:hover,
+      html[data-theme="studio"] .nav-cta:hover,
+      html[data-theme="studio"] .hero-link:hover,
+      html[data-theme="studio"] .contact-btn:hover { transform: none; }
+    }
+    html[data-theme="studio"] .quad-glow {
+      background: radial-gradient(
+        circle 220px at var(--mx, -200px) var(--my, -200px),
+        rgba(var(--accent-rgb), 0.10) 0%,
+        rgba(var(--accent-rgb), 0.04) 50%,
+        transparent 75%
+      );
+    }
+    html[data-theme="studio"] .proj-img { border-bottom: 1px solid var(--rule); }
+    html[data-theme="studio"] .proj-img--logo {
+      background: #F4F4F4;
+      border-bottom: 1px solid var(--rule);
+    }
+    html[data-theme="studio"] .proj-img--text { background: #0A0A0A; }
+    html[data-theme="studio"] .proj-hashtag {
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      color: #FFFFFF;
+    }
+    html[data-theme="studio"] .position-sidebar-rule { background: #0A0A0A; }
+
+    /* ── photographs: full colour, no treatment, softened corners ── */
+    html[data-theme="studio"] .hero-right::before,
+    html[data-theme="studio"] .about-portrait::after { display: none; }
+    html[data-theme="studio"] .hero-right img,
+    html[data-theme="studio"] .about-portrait img,
+    html[data-theme="studio"] .t-photo img,
+    html[data-theme="studio"] .proj-img img { filter: none; }
+    html[data-theme="studio"] .about-portrait { border-radius: 20px; }
+    /* client marks: the ground is brighter here, so they can carry more ink */
+    html[data-theme="studio"] .client-logo {
+      filter: grayscale(100%) opacity(0.62);
+    }
+    html[data-theme="studio"] .client-logo:hover {
+      filter: grayscale(100%) opacity(1);
+    }
+    html[data-theme="studio"] .client-logo[src*="reyou"] {
+      filter: invert(1) grayscale(100%) opacity(0.62) !important;
+    }
+    html[data-theme="studio"] .client-logo[src*="reyou"]:hover {
+      filter: invert(1) grayscale(100%) opacity(1) !important;
+    }
+
+    /* ── mobile ── */
+    @media (max-width: 640px) {
+      html[data-theme="studio"] .hero-h1 {
+        font-size: clamp(2.125rem, 9.2vw, 2.875rem);
+        letter-spacing: -0.04em;
+      }
+      /* a pill plus mono sets too wide for 430px: the nav keeps the
+         name, the theme chips and the CTA, and drops the hashtag link
+         (the Special Projects card carries it two screens down) */
+      html[data-theme="studio"] .nav-right { gap: 12px; }
+      html[data-theme="studio"] .nav-name { font-size: 1rem; white-space: nowrap; }
+      html[data-theme="studio"] .nav-link { display: none; }
+      html[data-theme="studio"] .nav-cta { padding: 8px 14px; font-size: 0.6875rem; }
+      html[data-theme="studio"] .theme-chip { padding: 5px 9px; }
+      html[data-theme="studio"] .s-head .label:not(.label--small),
+      html[data-theme="studio"] .position-sidebar .label {
+        font-size: clamp(2rem, 9vw, 2.625rem);
+      }
+      html[data-theme="studio"] .hero-sub { font-size: 1.0625rem; }
+      html[data-theme="studio"] .cred-num { font-size: 2.25rem; }
+    }
   </style>
 </head>
 <body>
