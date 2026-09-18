@@ -5,3 +5,4 @@ temporary screenshots/
 .vercel
 .env*.local
 font-compare.html
+.superpowers/
