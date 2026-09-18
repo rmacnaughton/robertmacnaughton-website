@@ -9,7 +9,6 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Raleway:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
 
   <script>
     /* Apply saved theme before first paint */
@@ -18,6 +17,8 @@
       if (__t === 'terminal' || __t === 'studio') document.documentElement.setAttribute('data-theme', __t);
     } catch (e) {}
   </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Raleway:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Calendly badge widget -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -1321,6 +1322,8 @@
       .tch-full { display: none; }
       .tch-init { display: inline; }
       .theme-chip { padding: 5px 8px; }
+      .nav-right { gap: 12px; }
+      .nav-link { display: none; }
     }
 
     /* ================================================
@@ -1330,6 +1333,7 @@
        html[data-theme="terminal"] — Paper is untouched.
        ================================================ */
     html[data-theme="terminal"] {
+      color-scheme: dark;
       --brand:        #5FA8E0;
       --brand-rgb:    95, 168, 224;
       --brand-hover:  #82BCE8;
@@ -2167,9 +2171,7 @@
       /* a pill plus mono sets too wide for 430px: the nav keeps the
          name, the theme chips and the CTA, and drops the hashtag link
          (the Special Projects card carries it two screens down) */
-      html[data-theme="studio"] .nav-right { gap: 12px; }
       html[data-theme="studio"] .nav-name { font-size: 1rem; white-space: nowrap; }
-      html[data-theme="studio"] .nav-link { display: none; }
       html[data-theme="studio"] .nav-cta { padding: 8px 14px; font-size: 0.6875rem; }
       html[data-theme="studio"] .theme-chip { padding: 5px 9px; }
       html[data-theme="studio"] .s-head .label:not(.label--small),
@@ -2821,11 +2823,16 @@
       /* ── Theme switcher ── */
       var THEME_KEY = 'siteTheme';
       var chips = document.querySelectorAll('.theme-chip');
-      function applyTheme(t) {
-        document.documentElement.setAttribute('data-theme', t);
+      var pendingTheme = null;
+      var fadeTimer = null;
+      function setPressed(t) {
         chips.forEach(function (c) {
           c.setAttribute('aria-pressed', String(c.getAttribute('data-theme') === t));
         });
+      }
+      function applyTheme(t) {
+        document.documentElement.setAttribute('data-theme', t);
+        setPressed(t);
       }
       var savedTheme = null;
       try { savedTheme = localStorage.getItem(THEME_KEY); } catch (e) {}
@@ -2833,10 +2840,16 @@
       chips.forEach(function (chip) {
         chip.addEventListener('click', function () {
           var t = chip.getAttribute('data-theme');
-          if (document.documentElement.getAttribute('data-theme') === t) return;
+          var current = pendingTheme || document.documentElement.getAttribute('data-theme');
+          if (current === t) return;
+          pendingTheme = t;
+          setPressed(t);
+          if (fadeTimer) clearTimeout(fadeTimer);
           document.body.classList.add('theme-fading');
-          setTimeout(function () {
+          fadeTimer = setTimeout(function () {
             applyTheme(t);
+            pendingTheme = null;
+            fadeTimer = null;
             try { localStorage.setItem(THEME_KEY, t); } catch (e) {}
             requestAnimationFrame(function () {
               document.body.classList.remove('theme-fading');
