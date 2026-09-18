@@ -1290,6 +1290,38 @@
        ================================================ */
     body { transition: opacity 0.15s ease; }
     body.theme-fading { opacity: 0; }
+
+    .theme-switch {
+      display: flex;
+      gap: 6px;
+    }
+    .theme-chip {
+      font-family: var(--f-label);
+      font-size: 0.5625rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      background: transparent;
+      border: 1px solid var(--rule);
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+    .theme-chip:hover { color: var(--brand); border-color: var(--brand); }
+    .theme-chip:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+    .theme-chip:active { transform: translateY(1px); }
+    .theme-chip[aria-pressed="true"] {
+      background: var(--brand);
+      border-color: var(--brand);
+      color: #FFFFFF;
+    }
+    .tch-init { display: none; }
+    @media (max-width: 640px) {
+      .tch-full { display: none; }
+      .tch-init { display: inline; }
+      .theme-chip { padding: 5px 8px; }
+    }
   </style>
 </head>
 <body>
@@ -1302,6 +1334,11 @@
       <div class="nav-row">
         <a href="/" class="nav-name">Robert MacNaughton</a>
         <div class="nav-right">
+          <div class="theme-switch" role="group" aria-label="Site theme">
+            <button type="button" class="theme-chip" data-theme="paper" aria-pressed="true"><span class="tch-full">Paper</span><span class="tch-init">P</span></button>
+            <button type="button" class="theme-chip" data-theme="terminal" aria-pressed="false"><span class="tch-full">Terminal</span><span class="tch-init">T</span></button>
+            <button type="button" class="theme-chip" data-theme="studio" aria-pressed="false"><span class="tch-full">Studio</span><span class="tch-init">S</span></button>
+          </div>
           <a href="#right-relationship" class="nav-link">#RightRelationshipwithAI</a>
           <a href="https://calendly.com/macnaughton/coaching-discovery" target="_blank" rel="noopener noreferrer" class="nav-cta">Get in Touch</a>
         </div>
@@ -1923,6 +1960,33 @@
       }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
 
       revealEls.forEach(function (el) { obs.observe(el); });
+
+      /* ── Theme switcher ── */
+      var THEME_KEY = 'siteTheme';
+      var chips = document.querySelectorAll('.theme-chip');
+      function applyTheme(t) {
+        document.documentElement.setAttribute('data-theme', t);
+        chips.forEach(function (c) {
+          c.setAttribute('aria-pressed', String(c.getAttribute('data-theme') === t));
+        });
+      }
+      var savedTheme = null;
+      try { savedTheme = localStorage.getItem(THEME_KEY); } catch (e) {}
+      applyTheme(savedTheme === 'terminal' || savedTheme === 'studio' ? savedTheme : 'paper');
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          var t = chip.getAttribute('data-theme');
+          if (document.documentElement.getAttribute('data-theme') === t) return;
+          document.body.classList.add('theme-fading');
+          setTimeout(function () {
+            applyTheme(t);
+            try { localStorage.setItem(THEME_KEY, t); } catch (e) {}
+            requestAnimationFrame(function () {
+              document.body.classList.remove('theme-fading');
+            });
+          }, 150);
+        });
+      });
     })();
   </script>
 
