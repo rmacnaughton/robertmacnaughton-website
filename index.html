@@ -1318,12 +1318,14 @@
       color: #FFFFFF;
     }
     .tch-init { display: none; }
+    @media (max-width: 700px) {
+      .nav-link { display: none; }
+    }
     @media (max-width: 640px) {
       .tch-full { display: none; }
       .tch-init { display: inline; }
       .theme-chip { padding: 5px 8px; }
       .nav-right { gap: 12px; }
-      .nav-link { display: none; }
     }
 
     /* ================================================

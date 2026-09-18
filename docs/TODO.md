@@ -52,6 +52,7 @@ Niamh's structural sequence, in her order:
 
 ## Shipped ✅
 
+- [x] **Theme switcher: Paper / Terminal / Studio** (2026-09-17) — nav selector swaps the whole site among three design personalities; first "demonstrations of what I'm building" exhibit (agent canaries, LLM chat surfaces planned next). Spec: docs/superpowers/specs/2026-09-17-theme-switcher-design.md
 - [x] Testimonials widget (Capshaw / Terchila / Champion)
 - [x] Special-projects content: Antelope Recovery, Integral Center + Ken Wilber, #RightRelationshipwithAI
 - [x] SLI podcast callout

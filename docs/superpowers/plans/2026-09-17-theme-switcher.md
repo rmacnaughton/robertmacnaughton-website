@@ -25,7 +25,7 @@ The inline SVG icons hardcode `#4A80AA` (63 occurrences: `stroke="#4A80AA"` and 
 **Files:**
 - Modify: `index.html`
 
-- [ ] **Step 1: Capture Paper baseline screenshots (pre-change)**
+- [x] **Step 1: Capture Paper baseline screenshots (pre-change)**
 
 ```bash
 cd /Users/ram/Documents/Websites/RobertMacNaughton.com-site
@@ -34,7 +34,7 @@ node screenshot.mjs http://localhost:3210 paper-baseline
 ```
 Expected: `Screenshot saved: .../screenshot-N-paper-baseline.png`
 
-- [ ] **Step 2: Replace the hardcoded icon color**
+- [x] **Step 2: Replace the hardcoded icon color**
 
 ```bash
 python3 - <<'EOF'
@@ -62,14 +62,14 @@ EOF
 ```
 Expected: `ok`. (`.offer-icon` elements also carry class `quad-icon`, so one rule covers both.)
 
-- [ ] **Step 3: Screenshot and compare against baseline**
+- [x] **Step 3: Screenshot and compare against baseline**
 
 ```bash
 node screenshot.mjs http://localhost:3210 paper-after-currentcolor
 ```
 Read both PNGs with the Read tool. The quadrant icons (The Work section) and offer-card icons must be identical in color to the baseline. Any color shift = the base rule is missing or wrong.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add index.html && git commit -m "Refactor icon SVGs to currentColor (no visual change)
@@ -84,7 +84,7 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 **Files:**
 - Modify: `index.html` (head, line ~12 font link; `<style>` end)
 
-- [ ] **Step 1: Extend the Google Fonts link**
+- [x] **Step 1: Extend the Google Fonts link**
 
 Replace (line ~12):
 ```html
@@ -95,7 +95,7 @@ with:
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Raleway:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
 ```
 
-- [ ] **Step 2: Add the FOUC guard immediately after the font `<link>`**
+- [x] **Step 2: Add the FOUC guard immediately after the font `<link>`**
 
 ```html
   <script>
@@ -107,7 +107,7 @@ with:
   </script>
 ```
 
-- [ ] **Step 3: Add the fade rule at the end of the main `<style>` block (before `</style>`)**
+- [x] **Step 3: Add the fade rule at the end of the main `<style>` block (before `</style>`)**
 
 ```css
     /* ================================================
@@ -117,14 +117,14 @@ with:
     body.theme-fading { opacity: 0; }
 ```
 
-- [ ] **Step 4: Verify no visual change and no console errors**
+- [x] **Step 4: Verify no visual change and no console errors**
 
 ```bash
 node screenshot.mjs http://localhost:3210 paper-after-infra
 ```
 Compare with Task 1 baseline via Read tool: identical. Also `curl -s http://localhost:3210 | grep -c 'siteTheme'` → `1`.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add index.html && git commit -m "Add theme fonts, FOUC guard, and fade infrastructure
@@ -139,7 +139,7 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 **Files:**
 - Modify: `index.html` (nav markup ~line 1289; `<style>`; bottom `<script>`)
 
-- [ ] **Step 1: Insert chips into `.nav-right`**
+- [x] **Step 1: Insert chips into `.nav-right`**
 
 Replace:
 ```html
@@ -158,7 +158,7 @@ with:
 ```
 (Do NOT reuse class prefixes `tc-` — `.tc-src`/`.tc-d` belong to the Trainings icon.)
 
-- [ ] **Step 2: Add chip CSS at the end of the main `<style>` (after the fade rules)**
+- [x] **Step 2: Add chip CSS at the end of the main `<style>` (after the fade rules)**
 
 ```css
     .theme-switch {
@@ -194,7 +194,7 @@ with:
     }
 ```
 
-- [ ] **Step 3: Add switch JS inside the existing bottom `<script>` IIFE (before its closing `})();`)**
+- [x] **Step 3: Add switch JS inside the existing bottom `<script>` IIFE (before its closing `})();`)**
 
 ```js
       /* ── Theme switcher ── */
@@ -225,7 +225,7 @@ with:
       });
 ```
 
-- [ ] **Step 4: Verify chips render and switching sets the attribute**
+- [x] **Step 4: Verify chips render and switching sets the attribute**
 
 ```bash
 node screenshot.mjs http://localhost:3210 chips
@@ -248,7 +248,7 @@ EOF
 ```
 Expected output: `attr: terminal` then `persisted: terminal`. Screenshot shows three chips in nav with PAPER filled, no layout break.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add index.html && git commit -m "Add Paper/Terminal/Studio selector chips with persistence
@@ -263,7 +263,7 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 **Files:**
 - Modify: `index.html` (append a clearly-commented override block at the end of the main `<style>`)
 
-- [ ] **Step 1: Append the Terminal block**
+- [x] **Step 1: Append the Terminal block**
 
 ```css
     /* ================================================
@@ -375,7 +375,7 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 ```
 Adjust selectors on sight if a rule misses (e.g., `.t-card` class name should be confirmed by grep before writing).
 
-- [ ] **Step 2: Screenshot Terminal (full page + hero close-up), two comparison rounds vs mockup**
+- [x] **Step 2: Screenshot Terminal (full page + hero close-up), two comparison rounds vs mockup**
 
 ```bash
 S="/private/tmp/claude-501/-Users-ram-Documents-Websites-RobertMacNaughton-com-site/87103410-3998-48a0-b241-8cf018d80210/scratchpad/shot-clip.mjs"
@@ -398,7 +398,7 @@ THEME=terminal node "$S" http://localhost:3210 "temporary screenshots/screenshot
 ```
 Read each. Compare hero against the Terminal-Noir mockup card: dark ground, grid, mono headline, cursor, `//` markers, accent #5FA8E0. Fix mismatches, re-screenshot (minimum 2 rounds). Watch for: unreadable creds bar, logo strip legibility, testimonial headshot treatment, footer.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add index.html && git commit -m "Add Terminal theme
@@ -413,7 +413,7 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 **Files:**
 - Modify: `index.html` (append after Terminal block)
 
-- [ ] **Step 1: Append the Studio block**
+- [x] **Step 1: Append the Studio block**
 
 ```css
     /* ================================================
@@ -513,7 +513,7 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 ```
 Same caveat: grep-confirm `.t-card` etc. before finalizing; adjust on sight.
 
-- [ ] **Step 2: Screenshot Studio, two rounds vs the Grotesk-Daylight mockup**
+- [x] **Step 2: Screenshot Studio, two rounds vs the Grotesk-Daylight mockup**
 
 ```bash
 THEME=studio node "$S" http://localhost:3210 "temporary screenshots/screenshot-N-studio-hero.png" 0
@@ -522,7 +522,7 @@ THEME=studio node "$S" http://localhost:3210 "temporary screenshots/screenshot-N
 ```
 Check: heavy tight headline, lowercase mono markers, black pills, rounded hairline cards, full-color photos. Iterate ≥2 rounds.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add index.html && git commit -m "Add Studio theme
@@ -537,14 +537,14 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 **Files:**
 - Modify: `index.html` (fixes only, as found)
 
-- [ ] **Step 1: Paper regression check**
+- [x] **Step 1: Paper regression check**
 
 ```bash
 node screenshot.mjs http://localhost:3210 paper-final
 ```
 Compare against Task 1 baseline with the Read tool. Paper must be pixel-identical (chips in nav are the ONLY permitted difference).
 
-- [ ] **Step 2: Mobile matrix**
+- [x] **Step 2: Mobile matrix**
 
 ```bash
 VW=430 VH=930 THEME=terminal node "$S" http://localhost:3210 "temporary screenshots/screenshot-N-terminal-mobile.png" 0
@@ -553,7 +553,7 @@ VW=430 VH=930 node "$S" http://localhost:3210 "temporary screenshots/screenshot-
 ```
 Check: chips show P · T · S initials; Terminal headline fits at mobile clamp; Studio pills don't overflow nav.
 
-- [ ] **Step 3: Behavior checks**
+- [x] **Step 3: Behavior checks**
 
 Re-run the Task 3 Step 4 puppeteer snippet for each theme value. Also no-JS check:
 ```bash
@@ -561,7 +561,7 @@ curl -s http://localhost:3210 | grep -o 'data-theme' | wc -l
 ```
 Expected: `0` occurrences in served HTML outside the guard script string (static markup has no `data-theme` attr → crawlers get Paper).
 
-- [ ] **Step 4: Fix anything found, re-screenshot, commit**
+- [x] **Step 4: Fix anything found, re-screenshot, commit**
 
 ```bash
 git add index.html && git commit -m "Theme polish pass from verification matrix
@@ -577,12 +577,12 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 **Files:**
 - Modify: `docs/TODO.md`, `docs/Positioning.md`
 
-- [ ] **Step 1: Record in docs**
+- [x] **Step 1: Record in docs**
 
 Append to `docs/TODO.md` under Shipped: `- [x] Theme switcher: Paper / Terminal / Studio (2026-09-17) — first "demonstrations" exhibit; spec in docs/superpowers/specs/`.
 In `docs/Positioning.md`, add one line to "The AI Section" noting the switcher as the first live demonstration exhibit (agent canaries and chat surfaces planned next).
 
-- [ ] **Step 2: Commit docs and push everything**
+- [x] **Step 2: Commit docs and push everything**
 
 ```bash
 git add docs/TODO.md docs/Positioning.md && git commit -m "Docs: record theme switcher ship
@@ -591,7 +591,7 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 git push origin main
 ```
 
-- [ ] **Step 3: Verify live (auto-deploy)**
+- [x] **Step 3: Verify live (auto-deploy)**
 
 ```bash
 for i in 1 2 3 4 5 6; do sleep 10; c=$(curl -sL https://www.robertmacnaughton.com | grep -c 'theme-chip'); [ "$c" -ge 3 ] && echo LIVE && break; done

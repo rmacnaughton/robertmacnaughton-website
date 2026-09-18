@@ -135,6 +135,8 @@ Rebuilt 2026-08-10 from the [[AI Projects]] list. Rules (from Niamh + the 2026-0
 
 Structure (revised 2026-08-10 after Robert's feedback — no portfolio list): thesis line ("When intelligence gets cheap, judgment gets expensive."), then three short paragraphs — stance (twenty years, two seats: cognitive science and contemplative practice; builds daily), breadth in prose (realtime group synthesis, voice agents over his notes, adaptive assessments in clinical use, pattern analysis across hundreds of sessions), and what he cares about (what these systems do to human judgment, attention, relationships). Individual projects are deliberately NOT named on the site. The "376 transcripts" stat replaced with the durable "hundreds of sessions."
 
+The first live demonstration exhibit shipped 2026-09-17: the **theme switcher** (Paper / Terminal / Studio in the nav) — the site itself demonstrating the building, without a word of claim. Future exhibits planned: agent canaries, LLM chat surfaces.
+
 ---
 
 ## Key Frames and Talk Tracks
