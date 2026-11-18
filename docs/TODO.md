@@ -1,58 +1,77 @@
-# RobertMacNaughton.com — TODO, organized by ROI
+# RobertMacNaughton.com — Roadmap
 
-Merged from the personal notes file and the Niamh punch list (2026-04-15 co-working call, reconciled 2026-08-09). Ordered by return on effort: visual fixes first per current priority, then copy work, then items gated on upstream decisions, then post-publish.
+**Reorganized 2026-11-18 around Robert's section-by-section audit** (overall grade: B-). The audit supersedes the old ROI tiers; surviving open items are merged into the sections they serve.
 
----
-
-## Tier 1 — Visual quick wins (high impact, low effort — Niamh's direct feedback)
-
-- [x] **Strip the AI whitewash off every photo.** Done 2026-08-08: removed the desaturating sepia/saturate filters on hero and About portrait; cut the hero dissolve gradient from 36% to 16% (mobile fades 35% → 14%). Decision: the hero photo itself (`Headhost_2023.png`) stays — Niamh saw the original and approved it; the wash was the CSS treatment, not the file.
-- [x] **"Selected Projects" → "Special Projects."** Done 2026-08-08.
-- [x] **Heading typeface — resolved: Cormorant Garamond stays.** 2026-08-08: the "fat/weird" italic was a bug, not the face — the font link only loaded italic 300/400, so headings at 500/600 were being synthetically bolded. True italic 500/600 cuts now load; hero italic set to real 500. Instrument Serif and Fraunces were tried and rejected along the way. **PP Fragment declined deliberately:** it's Cosmos Institute's brand face and Robert is being considered to coach their incoming CEO — mirroring their identity is the real risk, not licensing. Final pick 2026-08-09: **DM Serif Display**, chosen via a live dev font picker (since removed from `serve.mjs`; it's in git history at commit e43c085 if ever needed again).
-- [x] **Deepen black/white contrast.** Done 2026-08-08: ink scale darkened (L10/15/35/48 → L7/11/29/40). Palette and blue untouched.
-
-## Tier 2 — Cuts (high impact, low effort, minimal new writing)
-
-- [x] **Trim the hero subtext.** Done 2026-08-09: four stacked claims replaced with one sentence carrying phronesis — "I work with founders and executives on the judgment that doesn't come from more information."
-- [x] **Cut the copy under "What I Offer."** Done 2026-08-10 as part of the triple-threat rebuild — each offering is now one tight paragraph.
-- [ ] **Stat maintenance.** Live claims — 5,000+ hours, 100+ group sessions, 36+ months average relationship, 20+ years — need a source and a date per the endorsement protocol. ("376 sessions" resolved 2026-08-10: replaced on-site with the durable "hundreds of sessions.")
-
-## Tier 3 — Hero & quadrant restructure (high impact, needs copy decisions)
-
-Niamh's structural sequence, in her order:
-
-- [x] **Hero = name + one big statement.** Done 2026-08-09: headline is **"Advisor for the Intelligence Age"** (Robert's call, validated by everyone he ran it by). Eyebrow now plants the triple threat: Executive Coach · Teacher · Facilitator. "When intelligence gets cheap, judgment gets expensive" placed in the AI section as its thesis line — commentator register kept out of the hero. See "The Intersection" in Positioning.md.
-- [x] **Headline positioning decided** — see above. Boundary line still unused on the site, keep for offer copy: "I don't do AI consulting engagements. I work with leaders in an ongoing advisory relationship where AI is one of several strategic threads… If your challenge is *leading through this transition* — that's what I do."
-- [ ] **Move "the most expensive thing in your life is the conversation you're avoiding" further down.** It scopes the work too narrowly ("It's just about conversations… the work spans beyond that").
-- [ ] **Replace that slot with subtext that teaches the four quadrants** — how to read Experience / Actions / People / Systems, and that they get worked simultaneously: "most coaching or advisory will focus on one of these four quadrants, whereas I'm well versed across all of them" (the idea, not the copy).
-- [ ] **Write quadrant copy for the buyer who actually walks in** — the skeptical engineering CEO. Describe the inner landscape through a lens they'd already value. The site builds trust; it doesn't disclose the scope.
-
-## Tier 4 — Section-level copy updates (medium impact, moderate effort)
-
-- [x] **Rewrite "How I Work With AI."** Done 2026-08-10 (revised same day): reputation assumed, human-centered stance, breadth summarized in prose — Robert's call: no project portfolio list on the site. Still unused material for future passes: ICON, Keith Martin-Smith / Integral Life episode, Walsh and Dupuy, RRwAI reference deck.
-- [x] **Exec coaching section.** Done 2026-08-10 via the offer rebuild: "draft the email" gone; copy now opens with capability assessment and traction.
-- [ ] **About section:** true timeline — Atlanta → Boulder → engineering → Naropa → Integral → community builder → coach.
-- [ ] **Surface the NeubergGore relationships** more prominently.
-- [ ] **Extend "the wolf" into the About section.** The frame is live as the What I Offer intro; Positioning.md has it under Services → The Wolf. Consider a beat in About (crisis work, "throw me in").
-
-## Tier 5 — Structural, gated on upstream decisions
-
-- [x] **Update docs/Positioning.md.** Done 2026-08-10: Services section restructured around the triple threat, Curated Gatherings removed, "The Wolf" frame added.
-- [x] **Restructure "What I Offer" around the triple threat.** Done 2026-08-10: three full-width rows — 01 Coach / Executive Coaching (capability assessment, traction on what's stuck, "growing at least as fast as the company"), 02 Facilitator / Facilitation (art of creating a context; do:say ratio kicker from [[Facilitating Offsites]]), 03 Teacher / Trainings (first-time managers, feedback & difficult conversations, conflict & communication, RRwAI, AI enablement, bespoke). Wolf intro above the rows: "Robert is the wolf."
-- [x] **Resolve Curated Gatherings.** Robert's call 2026-08-10: let it go. Removed from the site and Positioning.md.
-- [ ] **IntegralCentered.com decision** — fold in, keep as event brand, or sunset. Gates how the Integral Center legacy section reads.
-- [ ] **Card animations** à la [commonsstack.org](https://www.commonsstack.org/). Polish; do after structure settles.
-
-## Tier 6 — After publish
-
-- [ ] Menu options: How I use AI in client work · Upcoming Events · Posts/articles/Obsidian notes
-- [ ] "Talk with AI about Robert's coaching" — spec exists (the AI that tells people when they're *not* a fit)
+**North star (Robert, verbatim):** "I want it to be more compelling about who I am as a broad, generalist, maybe more eccentric or enigmatic? …but in ways that all make me more compelling to my exec coaching prospects." Every rewrite below gets judged against that: less prescriptive, more acumen; clear stories over specifics; intrigue without turning off the exec-coaching buyer.
 
 ---
 
-## Shipped ✅
+## P1 — The Work (audit: C+, worst section)
 
-- [x] **Theme switcher: Paper / Terminal / Studio** (2026-09-17) — nav selector swaps the whole site among three design personalities; first "demonstrations of what I'm building" exhibit (agent canaries, LLM chat surfaces planned next). Spec: docs/superpowers/specs/2026-09-17-theme-switcher-design.md
-- [x] Testimonials widget (Capshaw / Terchila / Champion)
-- [x] Special-projects content: Antelope Recovery, Integral Center + Ken Wilber, #RightRelationshipwithAI
-- [x] SLI podcast callout
+The audit and Niamh's open structural notes converge here.
+
+- [ ] **De-prescribe the quadrant copy.** Audit: "too specific and limiting… it's prescribing what we're going to do — which may have nothing to do with this." Rewrite direction per quadrant:
+  - Your Actions → workable actions generally, not what-will-happen-with-Robert
+  - Your People → cultural dynamics, not prescriptive moves
+  - Your Experience → (same lens: acumen, not prescription)
+  - Your Systems → "not bad" — lightest touch
+  - Whole section: broadly applicable **clear stories**, less prescriptive specifics; show acumen.
+- [ ] **Move "the most expensive thing in your life is the conversation you're avoiding" further down** (Niamh, still open — scopes the work too narrowly).
+- [ ] **Replace that slot with subtext that teaches the four quadrants** — how to read them, worked simultaneously; "most coaching focuses on one of these four; I'm well versed across all of them" (the idea, not the copy).
+- [ ] **Write for the buyer who actually walks in** — the skeptical engineering CEO. The site builds trust; it doesn't disclose the scope.
+
+## P1 — Building at the Frontier (audit: C+)
+
+- [ ] **Third pass on the section.** No audit notes beyond the grade — needs a direction conversation first. Prior constraints still stand: assume the reputation; cover what AI does to humans; durable claims; no project portfolio list (Robert's call, 2026-08-10). Unused material: ICON, Keith Martin-Smith / Integral Life episode, Walsh and Dupuy, RRwAI reference deck. Note: Robert has an uncommitted podcast embed (Deep Transformation episode) staged into this section — fold into the same pass.
+
+## P2 — What I Offer (audit: B-)
+
+- [ ] **Rework the opening examples — "too narrow and specific."** Likely target: the wolf intro's example list ("A stuck quarter, a co-founder rift, a reorg…") and the offering openers. Keep: the distinctive clear stories from LTV material (audit approves). Keep the wolf strategy (audible, unsaid).
+
+## P2 — About (audit: B — "does the job fine, but not my language")
+
+One rewrite pass absorbing three old open items:
+
+- [ ] **Rewrite in Robert's voice** (source from his verbatim material in Positioning.md + style guides).
+- [ ] True timeline: Atlanta → Boulder → engineering → Naropa → Integral → community builder → coach.
+- [ ] Surface the NeubergGore relationships more prominently.
+- [ ] Extend "the wolf" into About (crisis work, "throw me in") — frame lives in Positioning.md → Services → The Wolf.
+
+## P2 — What Clients Say (audit: B — "need more")
+
+- [ ] **Collect more testimonials.** Needs Robert: outreach to clients. Site work is trivial once quotes exist (grid already handles N cards). Candidates worth asking per earlier material: Greg Berry, Ken W-adjacent colleagues, NeubergGore partners.
+
+## P3 — Numbers + Logos (audit: B+)
+
+- [ ] **Calculate the real stats** (needs Robert's data): average client relationship length, # of paid coaching sessions known. Replaces the stale stat-maintenance item — same endorsement-protocol rule: every live claim needs a source and a date. Current live claims: 5,000+ hours, 100+ group sessions, 36+ months, 20+ years.
+- [ ] **Filter the logo strip** — "some of the brand names aren't doing me any favors." Needs Robert's keep/cut list; site change is minutes.
+
+## P3 — Special Projects (audit: B+)
+
+- [ ] **Rewrite the #RightRelationshipwithAI card copy.** The rest of the section passes.
+
+## P4 — Above the fold (audit: A-)
+
+- [ ] **Widen the intrigue without losing the exec-coaching buyer.** "There may be a way to receive more visitors with intrigue without turning off exec coaching clients." Lowest priority — it's the best-scoring section; touch only with a concrete idea.
+
+## Backlog (unchanged)
+
+- [ ] IntegralCentered.com decision — fold in, keep as event brand, or sunset. Gates the Integral Center legacy framing.
+- [ ] Card animations à la commonsstack.org. Polish; after copy settles.
+- [ ] Menu options: How I use AI in client work · Upcoming Events · Posts/articles/Obsidian notes.
+- [ ] "Talk with AI about Robert's coaching" — spec exists (the AI that tells people when they're *not* a fit). Next "demonstrations" exhibit alongside agent canaries.
+
+---
+
+## Shipped ✅ (decisions preserved — do not re-litigate)
+
+- [x] **Theme switcher: Paper / Terminal / Studio** (2026-09-17) — first "demonstrations of what I'm building" exhibit. Spec: docs/superpowers/specs/2026-09-17-theme-switcher-design.md
+- [x] **Tier 1 visual fixes** (2026-08-08): photo whitewash removed (hero photo itself stays — Niamh approved the original); ink contrast deepened; "Special Projects" rename.
+- [x] **Typeface: DM Serif Display** (2026-08-09) after Cormorant weight-bump, Instrument Serif, and Fraunces were rejected. **PP Fragment declined deliberately** — it's Cosmos Institute's brand face and Robert may coach their incoming CEO. Dev font picker lives in git history at e43c085.
+- [x] **Hero** (2026-08-09): "Advisor for the Intelligence Age" (Robert's call); triple-threat eyebrow; phronesis subtext — "judgment that matters when intelligence is cheap" (v2, Robert-picked); "When intelligence gets cheap, judgment gets expensive" placed in AI section. Intelligence Age de-italicized.
+- [x] **What I Offer triple-threat rebuild** (2026-08-10, twice revised): card system matching quadrant cards; coaching leads, bridge line, facilitation+trainings pair; animated mode icons; wolf carried by intro without quoting the community line (strategy in Positioning.md → The Wolf). Curated Gatherings dropped (Robert's call).
+- [x] **Building at the Frontier v2** (2026-08-10): reputation assumed; breadth in prose; **no project portfolio list** (Robert's call); "376 sessions" → durable "hundreds of sessions".
+- [x] **Exec coaching copy** (2026-08-10): opens with capability assessment; "growing at least as fast as the company."
+- [x] Boundary line still unused, keep for offer copy: "I don't do AI consulting engagements… If your challenge is *leading through this transition* — that's what I do."
+- [x] Testimonials widget (Capshaw / Terchila / Champion); Special Projects content incl. ICON photo on RRwAI card; SLI podcast callout.
+- [x] Infra: Vercel git auto-deploy fixed (2026-08-10); mobile nav overflow fixed ≤700px (2026-09-17).
